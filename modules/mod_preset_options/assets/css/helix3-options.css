@@ -1,0 +1,116 @@
+.template-options
+{
+	    position: fixed!important;
+    top: 130px!important;
+    right: -240px;
+    width: 240px;
+    background: #fff;
+    -webkit-transition: right 400ms!important;
+    transition: right 400ms!important;
+    z-index: 99;
+    left: inherit!important;
+}
+
+.template-options.opened
+{
+	right:0;
+	box-shadow:0 0 5px rgba(0,0,0,0.2);
+	-webkit-box-shadow:0 0 5px rgba(0,0,0,0.2)
+}
+
+.option-section
+{
+	padding-bottom:20px;
+	margin-bottom:20px;
+	border-bottom:1px solid #f1f1f1
+}
+
+.option-section:last-child
+{
+	padding-bottom:0;
+	margin-bottom:0;
+	border-bottom:0
+}
+
+.option-section h4
+{
+	color:#333;
+	margin:0 0 10px;
+	font-size:14px;
+	line-height:14px;
+	font-weight:600;
+	text-transform:uppercase;
+	letter-spacing:1px
+}
+
+.option-section .checkbox
+{
+	margin-bottom:0
+}
+
+.options-inner
+{
+	position:relative;
+	padding:20px
+}
+
+.helix3-toggler
+{
+	position:absolute;
+	top:0;
+	left:-48px;
+	display:inline-block;
+	background:#fff;
+	width:48px;
+	height:48px;
+	line-height:48px;
+	text-align:center;
+	font-size:24px;
+	color:#000;
+	box-shadow:0 0 5px rgba(0,0,0,0.2);
+	-webkit-box-shadow:0 0 5px rgba(0,0,0,0.2)
+}
+
+.helix3-toggler:hover
+{
+	color:#000
+}
+
+.helix3-presets,.helix3-bg-images
+{
+	list-style:none;
+	padding:0;
+	margin:-5px
+}
+
+.helix3-presets li,.helix3-bg-images li
+{
+	display:block;
+	float:left;
+	margin:5px
+}
+
+.helix3-presets li a,.helix3-bg-images li a
+{
+	display:block;
+	width:42px;
+	height:42px;
+	border-radius:2px;
+	float:left
+}
+
+.helix3-bg-images li a img
+{
+	width:100%
+}
+
+.helix3-bg-images li.active a
+{
+	border:3px solid #22b8f0
+}
+
+.helix3-presets li.active a
+{
+	-webkit-box-shadow:0 0 0 3px rgba(0,0,0,.2) inset;
+	box-shadow:0 0 0 3px rgba(0,0,0,.2) inset
+}

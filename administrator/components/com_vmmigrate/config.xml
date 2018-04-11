@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config addfieldpath="/administrator/components/com_vmmigrate/elements">
+	<fieldset name="component">
+		<field type="customjs" default="" />
+		<field type="versioncheck" extension="vm_migrate" name="versioncheck" label="PLG_DAYCOUNTS_VERSION" />
+		<field type="versionhistory" name="versionhistory" default="33" label="" description="" />
+		<field type="versiondownload" name="downloadcode" label="PLG_DAYCOUNTS_DOWNLOAD_CODE" description="PLG_DAYCOUNTS_DOWNLOAD_CODE_DESC" />
+		<field name="show_disclaimer" type="radio" class="btn-group btn-group-yesno" default="1" label="VMMIGRATE_SHOW_DISCLAIMER" description="VMMIGRATE_SHOW_DISCLAIMER_DESC" filter="integer">
+			<option value="1">VMMIGRATE_SHOW</option>
+			<option value="0">VMMIGRATE_HIDE</option>
+		</field>
+		<field name="show_addon" type="radio" class="btn-group btn-group-yesno" default="1" label="VMMIGRATE_SHOW_ADDON" description="VMMIGRATE_SHOW_ADDON_DESC" filter="integer">
+			<option value="1">VMMIGRATE_SHOW</option>
+			<option value="0">VMMIGRATE_HIDE</option>
+		</field>
+		<field name="checkversion" type="radio" default="1" label="PLG_DAYCOUNTS_CHECK_VERSION" description="PLG_DAYCOUNTS_CHECK_VERSION_DESC" class="btn-group btn-group-yesno">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+		</field>
+		<field type="hidden" name="show_spash_config" default="0" />
+		
+	</fieldset>
+    <fieldset name="database" label="VMMIGRATE_DATABASE_SETTINGS_LABEL" description="VMMIGRATE_DATABASE_SETTINGS_DESC">  
+		<field name="joomla_version" type="list" default="1.5" label="VMMIGRATE_JOOMLA_VERSION" description="VMMIGRATE_JOOMLA_VERSION_DESC">
+			<option value="1.0">Joomla 1.0</option>
+			<option value="1.5">Joomla 1.5</option>
+			<option value="1.6">Joomla 1.6</option>
+			<option value="1.7">Joomla 1.7</option>
+			<option value="2.5">Joomla 2.5</option>
+			<option value="3">Joomla 3.x</option>
+		</field>
+		<field name="driver" type="databaseconnection" label="VMMIGRATE_DRIVER_LABEL" description="VMMIGRATE_DRIVER_DESC" supported="mysql,mysqli,sqlsrv,sqlazure" filter="string" />
+        <field name="host" type="text" default="localhost" label="VMMIGRATE_HOST_LABEL" description="VMMIGRATE_HOST_DESC" filter="string" size="30" />
+        <field name="source_database_name" type="text" default="" label="VMMIGRATE_SOURCE_DATABASE_NAME_LABEL" filter="string" size="30" />
+        <field name="source_user_name" type="text" default="" label="VMMIGRATE_SOURCE_USERNAME_NAME_LABEL" description="VMMIGRATE_SOURCE_USER_NAME_DESC" filter="string" size="30" />
+        <field name="source_password" type="password" default="" label="VMMIGRATE_SOURCE_PASSWORD_LABEL" filter="string" size="30" />
+        <field name="source_db_prefix" type="text" default="jos_" label="VMMIGRATE_SOURCE_DB_PREFIX_LABEL" description="VMMIGRATE_SOURCE_DB_PREFIX_DESC" filter="string" size="30" />
+		<field type="testdatabase" name="testdatabase" default="" label="" description="" />
+    </fieldset>
+    <fieldset name="filesystem" label="VMMIGRATE_FTP_SETTINGS_LABEL" description="VMMIGRATE_FTP_SETTINGS_DESC">  
+		<field name="ftp_enable" type="radio" class="btn-group btn-group-yesno" default="0" label="COM_CONFIG_FIELD_FTP_ENABLE_LABEL" description="COM_CONFIG_FIELD_FTP_ENABLE_DESC" filter="integer">
+			<option value="1">JYes</option>
+			<option value="0">JNo</option>
+		</field>
+		<field class="ftp" name="ftp_host" type="text" label="COM_CONFIG_FIELD_FTP_HOST_LABEL" description="COM_CONFIG_FIELD_FTP_HOST_DESC" filter="string" size="30" />
+		<field class="ftp" name="ftp_port" type="text" label="COM_CONFIG_FIELD_FTP_PORT_LABEL" description="COM_CONFIG_FIELD_FTP_PORT_DESC" filter="string" size="8" />
+		<field class="ftp" name="ftp_user" type="text" label="COM_CONFIG_FIELD_FTP_USERNAME_LABEL" description="COM_CONFIG_FIELD_FTP_USERNAME_DESC" filter="string" autocomplete="off" size="25" />
+		<field class="ftp" name="ftp_pass" type="password" label="COM_CONFIG_FIELD_FTP_PASSWORD_LABEL" description="COM_CONFIG_FIELD_FTP_PASSWORD_DESC" filter="raw" autocomplete="off" size="25" />
+		<field class="ftp" name="ftp_root" default="" type="text" label="COM_CONFIG_FIELD_FTP_ROOT_LABEL" description="COM_CONFIG_FIELD_FTP_ROOT_DESC" filter="string" size="50" />
+		<field class="path" name="source_path" type="text" default="" label="VMMIGRATE_SOURCE_PATH_LABEL" description="VMMIGRATE_SOURCE_PATH_DESC" filter="string" size="50" />
+		<field class="path" name="source_path_help" type="rootpath" label="VMMIGRATE_SOURCE_PATH_LABEL_HELP" />
+		<field type="testfiles" name="testdatabase" default="" label="" description="" />
+    </fieldset>
+    <fieldset name="vmspecific" label="VMMIGRATE_VM_SETTINGS_LABEL" description="VMMIGRATE_VM_SETTINGS_DESC">  
+		<field name="rename_files_safe" type="radio" class="btn-group btn-group-yesno" default="0" label="VMMIGRATE_RENAME_FILES_SAFE" description="VMMIGRATE_RENAME_FILES_SAFE_DESC" >
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="import_thumbs" type="radio" class="btn-group btn-group-yesno" default="0" label="VMMIGRATE_IMPORT_THUMBS" description="VMMIGRATE_IMPORT_THUMBS_DESC" >
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+    </fieldset>
+    <fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL" description="JCONFIG_PERMISSIONS_DESC">
+        <field name="rules" type="rules" label="JCONFIG_PERMISSIONS_LABEL" class="inputbox" validate="rules" filter="rules" component="com_vmmigrate" section="component" />
+	</fieldset>
+</config>
+
+                

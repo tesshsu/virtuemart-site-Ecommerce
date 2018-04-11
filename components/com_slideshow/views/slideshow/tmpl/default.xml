@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="COM_SLIDESHOW_SLIDESHOW_VIEW_DEFAULT_TITLE">
+        <message>COM_SLIDESHOW_SLIDESHOW_VIEW_DEFAULT_DESC</message>
+    </layout>
+    <fields
+        name="request"
+        addfieldpath="/components/com_slideshow/models/fields"
+    >
+        <fieldset name="request">
+            <field
+                name="id"
+                type="slideshow"
+                type_="text"
+                label="COM_SLIDESHOW_SLIDESHOW_FIELD_GREETING_LABEL"
+                description="COM_SLIDESHOW_SLIDESHOW_FIELD_GREETING_DESC"
+            />
+        </fieldset>
+    </fields>
+</metadata>

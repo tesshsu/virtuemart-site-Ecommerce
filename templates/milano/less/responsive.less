@@ -1,0 +1,331 @@
+/* Copyright (C) YOOtheme GmbH, http://www.gnu.org/licenses/gpl.html GNU/GPL */
+ 
+
+
+      
+/* Breakpoints
+----------------------------------------------------------------------------------------------------*/
+
+/* All except large Screens */
+@media (max-width: 1199px) {
+
+/*********** HOME 03 *****************/ 
+ .home3-style {
+    .sp-megamenu-parent{
+        display: none;
+     } 
+     #offcanvas-toggler{
+        display: block!important;
+        i{
+            color: #fff;
+        }
+     }
+     #sp-header-static{
+        .cart-header{
+            display: none;
+        }
+     }
+ }
+}
+
+/* Only Tablets (Portrait) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .layout-corpora {
+    	.slider-title { 
+    		.sp-smart-pretitle {   
+    			font-size: 120px; 
+    		}
+    		.sp-smart-title {			 
+    			font-size: 80px; 
+    		}
+    	} 
+    }
+    .banner {
+        position: relative;
+        margin-bottom: 20px;   
+    	.banner-content { 
+    		.banner-inner {
+    			h4 { 
+    				font-size: 16px;
+    			} 
+    			h2 {
+    				font-size: 24px; 
+    			} 
+    		}  
+    	} 
+    }
+    #slide-newsletter {
+        .form-subscribe-header {
+            float: none; 
+        }
+        .acymailing_form { 
+            margin-left: 0!important; 
+        }
+    }
+    .comments-link {
+        display: none;
+    }
+    ul.social-icons li { 
+        margin-right: 4px; 
+    }
+}
+
+/* Only Phones and Tablets (Portrait) */
+@media (max-width: 991px) {
+    .social-icons, .logo-text {
+        margin-bottom: 15px;
+    }
+    .contact-info {
+        margin-top: 50px;
+    }
+}
+
+/* Only Tablets (Portrait) */
+@media (min-width: 768px) and (max-width: 991px) {
+   .layout-corpora {
+    	.slider-title { 
+    		.sp-smart-pretitle {   
+    			font-size: 80px; 
+    		}
+    		.sp-smart-title {			 
+    			font-size: 60px; 
+    		}
+    	} 
+    }
+    .sp-module.home-categories {
+        .sp-module-title { 
+            padding: 10px 20px; 
+            font-size: 14px;
+        }
+    } 
+    .banner .banner-content .banner-inner {
+            padding: 15px 10px;
+        h4 { 
+            font-size: 16px;
+        }
+        h3 {
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        h2 {
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+    }  
+    .banner.banner-style2 .banner-content .banner-inner h2 { 
+        font-size: 30px; 
+    }
+    .btn-cart.button, input.button{
+        span, input { 
+            font-size: 11px;
+            height: 30px;
+            line-height: 30px;
+            padding: 0 5px; 
+        }
+    }
+    #sp-smart-slider .sp-slider-content .sp-pretitle { 
+        font-size: 60px; 
+    }
+    .nav.nav-tabs > li > a{
+        font-size: 18px;
+        padding: 0 0 0 25px;
+    }
+    .client .client-inner {
+        padding: 90px 50px;
+    }
+    .group-blogs .blog_info {
+        margin-top: 30px;
+    }
+    .entry-header h2 {
+        font-size: 18px;
+    }
+    .blog-item .info-block-extra {
+        .published { 
+            width: 70px;
+            height: 70px; 
+        }
+        .published time { 
+            padding-top: 15px;
+        }
+        .day {
+            font-size: 150%;
+        }
+    }
+    .comments-link {
+        display: none;
+    }
+    #comments .comment-date { 
+        display: none;
+    }
+}
+
+/* Only Tablets (Portrait) and Phones (Landscape) */
+@media (min-width: 480px) and (max-width: 991px) {
+
+	/* Layout */
+	#search { display: none; }
+
+}
+
+/* Only Phones */
+@media (max-width: 767px) { 
+    #sp-top-bar { 
+        text-align: center;
+    }
+    #sp-search {
+        padding-top: 0;
+    }
+
+    #sp-header-block{
+        height: 90px; 
+        background: #ffffff; 
+        .sp-module {
+            margin-top: 0;
+        }
+    } 
+    #sp-logo { 
+        height: 90px;
+        .logo { 
+            height: 70px;
+            margin: 10px 0; 
+            img { 
+                max-height: 70px;
+            }
+        }
+    }
+    #sp-header-static {
+        padding-top: 30px;
+    }
+    .warpper-mobile-search{
+        display: block;
+        position: fixed;
+        z-index: 9999;
+        background: #fff;
+        padding: 30px 10px;
+        width: 100%;
+        top: -100%;
+        left: 0;
+        box-shadow: 10px 5px 30px 3px #d1d1d1;
+        text-align: center;
+    }
+    .is-sticky { 
+        #sp-header-block{ 
+            border-bottom: 1px solid #ddd;
+    		-webkit-box-shadow: 0 1px 12px 0 rgba(0,0,0,0.15);
+    		box-shadow: 0 1px 12px 0 rgba(0,0,0,0.15); 
+        } 
+    }
+    .miniCartWrap {
+        .cart-header{display: none;}
+    }
+    .layout-corpora {
+        .slider-content-wrapper {
+            width: 100%;
+        }
+    	.slider-title { 
+    		.sp-smart-pretitle {   
+    			font-size: 60px; 
+    		}
+    		.sp-smart-title {			 
+    			font-size: 40px; 
+    		}
+    	} 
+    }
+    .home2-style{ 
+        #sp-home2-slider {
+            padding-left: 15px;
+            padding-right: 15px;
+            margin: 30px 0;
+        }
+    }
+    #sp-home6-slider {
+        margin-bottom: 30px;
+    }
+    .banner-block {
+        .banner-col{
+            margin-bottom: 30px;
+            &:last-child{    margin-bottom: 0px;}
+        }
+    }
+    .nav.nav-tabs {
+        margin-bottom: 30px;
+        > li { 
+            margin-bottom: 20px;
+        }
+    }
+    #sp-component.col-xs-10{width: 100%;}
+    #sp-left, #sp-right  {
+        position: fixed;
+        top: 0;
+        overflow-y: auto;
+        background: #fff;
+        z-index: 9998;
+        width: 80%;
+        display: none;
+        height: 100%;
+        padding: 30px 15px; 
+    }
+    .product-image img {
+        width: 100%;
+    }
+    .owl-theme {
+        .owl-nav [class*="owl-"]{background:  #ececec;}
+        &:hover .owl-nav {
+            .owl-prev {
+                left: -15px;
+            }
+            .owl-next {
+                right: -15px;
+            }
+        }
+    } 
+    .group-blogs { 
+         h2 {
+            font-size: 18px;
+        }
+    }
+    #comments .comment-date { 
+        display: none;
+    }
+    #sp-bottom-block3{clear: both;}
+    .client .client-inner {
+        padding: 90px 0px;
+    }
+    #slide-newsletter {
+        .form-subscribe-header {
+            float: none; 
+        }
+        .acymailing_form { 
+            margin-left: 0!important; 
+        }
+    }
+    .contact-information .media {
+        margin-top: 8px;
+    }
+    #sp-footer-top ul li a {
+        padding: 10px 5px;
+    }
+}
+
+/* Only Phones (Landscape) */
+@media (min-width: 480px) and (max-width: 767px) {
+
+}
+
+/* Only Phones (Portrait) */
+@media (max-width: 479px) {
+
+    .col-xxs-12 {width: 100%; }
+    .group-blogs {
+        .entry-image {
+            display: block;
+        }
+        .blog_info {
+            margin-top: 20px;
+        } 
+    }
+    #sp-bottom, #sp-bottom-block{
+        .col-xs-6{width: 100%;}
+    }
+
+}

@@ -1,0 +1,28 @@
+div.icon-48-vmmigrate {background: url(../images/vmmigrate48.png) no-repeat left;}
+div.migratoricon48 img {max-width:48px; max-height:48px;float:none;}
+
+tbody.progressbars tr td {padding:0 8px;}
+div.pg {width:100%;float:left;height:17px;margin-top:2px;}
+div.pg .ui-progressbar-value {background-color: #eee;}
+div.pg .ui-progressbar-overlay {opacity: 0.10;background-color:#0F0}
+.pg-label {float: left;margin-left: 15%;/*margin-top: 5px;*/line-height:1em;font-weight: bold;text-shadow: 1px 1px 0 #fff;font-style:normal;}
+
+#live_log_filters {display:inline-block;}
+#live_log_filters input.off {background-color:#ddd!important;color:#999!important;}
+#live_log_container {min-height:400px;max-height:600px; overflow:scroll;}
+#live_log ul span.stepname {font-weight:bold; font-size:16px;}
+#live_log li {padding:0 0 0 20px;}
+#live_log li.stepname {font-weight:bold; font-size:16px;}
+#live_log li.error {color:red; font-weight:bold;}
+#live_log li.warning {color:#F90; font-weight:bold;}
+#live_log li.translation {color:#00F;}
+#live_log li.systemerror {color:#999;}
+#live_log ul.critical {padding:5px; background-color:#FF0; border:solid 2px #F00; color:#F00;}
+#live_log li.critical {padding:5px; max-height:500px; background-color:#FFF; border:solid 1px #F00; color:#000; overflow:scroll;}
+
+.btn_getaddon {background-color:white;font-weight:bold;color:black;padding:5px;border-radius:5px;}
+.block_disabled {position:absolute; top:0; width:100%; height:100%; text-align:center;padding-top:40px;color:#FFF;font-weight:bold;font-size:16px;background-image:url(../images/shade.png);}
+.joomfishicon {background-image:url(../images/icon-16-joomfish.png); width:16px; height:16px; clear:left; padding-right:5px; display:inline-block; background-repeat:no-repeat;}
+tbody.progressbars  tr td.joomfish {background:url(../images/icon-16-joomfish.png) right center no-repeat; }
+tbody.progressbars  tr td label,thead.progressbars  tr th label, #live_log_filters input {cursor:pointer;}
+

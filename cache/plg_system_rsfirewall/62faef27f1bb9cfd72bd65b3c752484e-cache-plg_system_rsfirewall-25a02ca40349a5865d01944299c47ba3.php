@@ -1,0 +1,1 @@
+<?php die("Access Denied"); ?>#x#a:2:{s:6:"output";s:0:"";s:6:"result";O:8:"stdClass":2:{s:5:"dnsbl";s:20:"sbl-xbl.spamhaus.org";s:6:"reason";s:52:"Direct snowshoe spam sources detected via automation";}}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="plugin" group="system" method="upgrade">
+    <name>System - Ulathemes Template</name>
+    <author>ulathemes.com</author>
+    <creationDate>July 21, 2016</creationDate>
+    <copyright>Copyright (C) 2016 ulathemes. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GPLv2 or later</license>
+    <authorEmail>support@ulathemes.com</authorEmail>
+    <authorUrl>www.ulathemes.com</authorUrl>
+    <version>1.0</version>
+    <description>Ulathemes Template Plugin - Fix bug W3C Validate, change Presets and change Home Demo for live Demo.</description>
+	
+    <files>
+		<filename plugin="ulathemes">ulathemes.php</filename>
+    </files>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="cookieName"
+					type="text"
+					default="ulathemes_template"					
+					label="Cookie Name"
+					description="Cookie Name" />
+			</fieldset>
+		</fields>
+	</config>
+	
+</extension>

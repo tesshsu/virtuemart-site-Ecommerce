@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.2" client="site" method="upgrade">
+
+<!-- Author Block -->
+	<name>Ulathemes Manufacturers Carousel for VirtueMart</name>
+	<author>ulathemes.com</author>
+	<creationDate>July 18, 2016</creationDate>
+	<copyright>Copyright (C) 2016 ulathemes.com. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenseses/gpl-3.0.html GNU/GPL</license>
+	<authorEmail>admin@ulathemes.com</authorEmail>
+	<authorUrl>http://ulathemes.com</authorUrl>
+	<version>1.0.0</version>
+	
+<!-- Description Block -->
+	<description>
+		<![CDATA[<div style="border: 1px solid red; border-radius: 7px; padding: 10px;">
+			<strong>Ulathemes Manufacturers Carousel for VirtueMart</strong> will help you to show more <strong>Manufacturers Logo and/or Manufacturers Name of VirtueMart Component</strong> in beautiful responsive carousel slider. It has options for setting the pagination/sliding speed, enabling/disabling autoplay, showing bullet navigation and more.<br>			
+		</div>]]>
+	</description>
+	
+<!-- Files upload Block -->	
+	<files>
+		<filename module="mod_ulathemes_manufacturers_virtuemart">mod_ulathemes_manufacturers_virtuemart.php</filename>
+		<filename>index.html</filename>
+		<folder>assets</folder>
+		<folder>languages</folder>
+		<folder>tmpl</folder>
+	</files>
+	
+<!-- Languages Block -->
+	<languages>
+		<language tag="en-GB">languages/en-GB.mod_ulathemes_manufacturers_virtuemart.ini</language>
+	</languages>
+
+<!-- Config Block -->
+	<config>
+		<fields name="params">
+			<!-- Basic Block -->
+			<fieldset name="basic">
+				<field
+                    name="showImage"
+                    type="radio"
+                    default="1"
+					class="btn-group btn-group-yesno"
+                    label="ULATHEMES_MANUFACTURERS_VMART_IMAGE"
+                    description="ULATHEMES_MANUFACTURERS_VMART_IMAGE_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+                </field>
+				<field
+                    name="linkOnImage"
+                    type="radio"
+                    default="1"
+					class="btn-group btn-group-yesno"
+                    label="ULATHEMES_MANUFACTURERS_VMART_LINK_IMAGE"
+                    description="ULATHEMES_MANUFACTURERS_VMART_LINK_IMAGE_DESC">
+						<option value="0">Disable</option>
+						<option value="1">Enable</option>
+                </field>
+				<field
+                    name="showName"
+                    type="radio"
+                    default="0"
+					class="btn-group btn-group-yesno"
+                    label="ULATHEMES_MANUFACTURERS_VMART_NAME"
+                    description="ULATHEMES_MANUFACTURERS_VMART_NAME_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+                </field>
+				<field
+                    name="linkOnName"
+                    type="radio"
+                    default="0"
+					class="btn-group btn-group-yesno"
+                    label="ULATHEMES_MANUFACTURERS_VMART_LINK_NAME"
+                    description="ULATHEMES_MANUFACTURERS_VMART_LINK_NAME_DESC">
+						<option value="0">Disable</option>
+						<option value="1">Enable</option>
+                </field>
+				
+				<field type="spacer" name="@module" hr="true" />				
+				<field
+					name="bgImage"
+					type="media" 
+					label="ULATHEMES_MANUFACTURERS_VMART_BACKGROUND_IMAGE" 
+					description="ULATHEMES_MANUFACTURERS_VMART_BACKGROUND_IMAGE_DESC" 
+					size="30"
+					default="" />
+				<field 
+                    name="isBgColor" 
+                    type="radio" 
+                    default="1" 
+					class="btn-group btn-group-yesno"
+                    label="ULATHEMES_MANUFACTURERS_VMART_IS_BG_COLOR" 
+                    description="ULATHEMES_MANUFACTURERS_VMART_IS_BG_COLOR_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field
+					name="bgColor"
+					type="color" 
+					label="ULATHEMES_MANUFACTURERS_VMART_BG_COLOR" 
+					description="ULATHEMES_MANUFACTURERS_VMART_BG_COLOR_DESC" 
+					size="30"
+					default="#dddddd" />
+			</fieldset>
+			
+			<!-- Carousel Block -->
+			<fieldset name="carousel">				
+				<field
+					name="rows"
+					type="text"
+					default="1"
+					label="ULATHEMES_MANUFACTURERS_VMART_ROWS"
+					description="ULATHEMES_MANUFACTURERS_VMART_ROWS_DESC" />
+				<field
+					name="cols"
+					type="text"
+					default="4"
+					label="ULATHEMES_MANUFACTURERS_VMART_COLS"
+					description="ULATHEMES_MANUFACTURERS_VMART_COLS_DESC" />
+				<field
+					name="colsOnDesktop"
+					type="text"
+					default="4"
+					label="ULATHEMES_MANUFACTURERS_VMART_COL_ON_DESKTOP"
+					description="ULATHEMES_MANUFACTURERS_VMART_COL_ON_DESKTOP_DESC" />
+				<field
+					name="colsOnDesktopSmall"
+					type="text"
+					default="3"
+					label="ULATHEMES_MANUFACTURERS_VMART_COL_ON_DESKTOP_SMALL"
+					description="ULATHEMES_MANUFACTURERS_VMART_COL_ON_DESKTOP_SMALL_DESC" />
+				<field
+					name="colsOnTablet"
+					type="text"
+					default="2"
+					label="ULATHEMES_MANUFACTURERS_VMART_COL_ON_TABLET"
+					description="ULATHEMES_MANUFACTURERS_VMART_COL_ON_TABLET_DESC" />
+				<field
+					name="colsOnMobile"
+					type="text"
+					default="1"
+					label="ULATHEMES_MANUFACTURERS_VMART_COL_ON_MOBILE"
+					description="ULATHEMES_MANUFACTURERS_VMART_COL_ON_MOBILE_DESC" />
+				<field
+					name="itemsSpace"
+					type="text"
+					default="30"
+					label="ULATHEMES_MANUFACTURERS_VMART_ITEMS_SPACE"
+					description="ULATHEMES_MANUFACTURERS_VMART_ITEMS_SPACE_DESC" />			
+				<field 
+                    name="autoPlay" 
+                    type="radio" 
+                    default="1" 
+					class="btn-group btn-group-yesno"
+                    label="ULATHEMES_MANUFACTURERS_VMART_AUTO_PLAY" 
+                    description="ULATHEMES_MANUFACTURERS_VMART_AUTO_PLAY_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field
+					name="autoPlayTimeout"
+					type="text"
+					default="5000"
+					label="ULATHEMES_MANUFACTURERS_VMART_AUTO_PLAY_TIMEOUT"
+					description="ULATHEMES_MANUFACTURERS_VMART_AUTO_PLAY_TIMEOUT_DESC" />	
+				<field 
+                    name="pauseOnHover" 
+                    type="radio" 
+                    default="0" 
+					class="btn-group btn-group-yesno"
+                    label="ULATHEMES_MANUFACTURERS_VMART_PAUSE_HOVER" 
+                    description="ULATHEMES_MANUFACTURERS_VMART_PAUSE_HOVER_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field 
+                    name="loop" 
+                    type="radio" 
+                    default="1" 
+					class="btn-group btn-group-yesno"
+                    label="ULATHEMES_MANUFACTURERS_VMART_LOOP" 
+                    description="ULATHEMES_MANUFACTURERS_VMART_LOOP_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field 
+                    name="mouseDrag" 
+                    type="radio" 
+                    default="1" 
+					class="btn-group btn-group-yesno"
+                    label="ULATHEMES_MANUFACTURERS_VMART_MOUSE_DRAG" 
+                    description="ULATHEMES_MANUFACTURERS_VMART_MOUSE_DRAG_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>				
+				<field 
+                    name="touchDrag" 
+                    type="radio" 
+                    default="0" 
+					class="btn-group btn-group-yesno"
+                    label="ULATHEMES_MANUFACTURERS_VMART_TOUCH_DRAG" 
+                    description="ULATHEMES_MANUFACTURERS_VMART_TOUCH_DRAG_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field
+					name="scrollItems"
+					type="text"
+					default="1"
+					label="ULATHEMES_MANUFACTURERS_VMART_SCROLL_ITEMS"
+					description="ULATHEMES_MANUFACTURERS_VMART_SCROLL_ITEMS_DESC" />				
+				<field 
+                    name="pagination" 
+                    type="radio" 
+                    default="0" 
+					class="btn-group btn-group-yesno"
+                    label="ULATHEMES_MANUFACTURERS_VMART_PAGINATION" 
+                    description="ULATHEMES_MANUFACTURERS_VMART_PAGINATION_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field 
+                    name="navigation" 
+                    type="radio" 
+                    default="1" 
+					class="btn-group btn-group-yesno"
+                    label="ULATHEMES_MANUFACTURERS_VMART_NAVIGATION" 
+                    description="ULATHEMES_MANUFACTURERS_VMART_NAVIGATION_DESC">
+                        <option value="0">JNO</option>
+                        <option value="1">JYES</option>
+                </field>
+				<field
+					name="nextNav"
+					type="text"
+					default="Next"
+					label="ULATHEMES_MANUFACTURERS_VMART_NEXT_NAV"
+					description="ULATHEMES_MANUFACTURERS_VMART_NEXT_NAV_DESC" />
+				<field
+					name="prevNav"
+					type="text"
+					default="Prev"
+					label="ULATHEMES_MANUFACTURERS_VMART_PREV_NAV"
+					description="ULATHEMES_MANUFACTURERS_VMART_PREV_NAV_DESC" />
+				
+			</fieldset>
+			
+			<!-- Advanced Block -->
+			<fieldset name="advanced">
+				<field
+					name="moduleclass_sfx"
+					type="textarea" rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+						<option value="1">JGLOBAL_USE_GLOBAL</option>
+						<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

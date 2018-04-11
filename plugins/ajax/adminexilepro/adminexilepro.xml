@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="ajax" method="upgrade">
+    <name>PLG_AJAX_ADMINEXILEPRO</name>
+    <version>3.14</version>
+    <creationDate>March 2017</creationDate>
+    <author>Michael Richey</author>
+    <authorEmail>support@richeyweb.com</authorEmail>
+    <authorUrl>www.richeyweb.com</authorUrl>
+    <license>GNU General Public License version 2 or later</license>
+    <copyright>Copyright (C) 2013 Michael Richey. All rights reserved.</copyright>
+    <description>PLG_AJAX_ADMINEXILEPRO_XML_DESC</description>
+    <files>
+        <filename plugin="adminexilepro">adminexilepro.php</filename>
+    </files>
+    <languages>
+        <language tag="en-GB">en-GB.plg_ajax_adminexilepro.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+            </fieldset>
+        </fields>
+    </config>
+</extension>

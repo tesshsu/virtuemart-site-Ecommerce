@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<data>
+
+  <table name='jos_fst_emails'>
+    <keyfields>
+      <field>tmpl</field>
+    </keyfields>
+    <rows>
+      <row>
+        <tmpl>comment</tmpl>
+        <body>
+          <![CDATA[{title} has been added. {moderated_start}This requires moderation.{moderated_end}
+
+{article_type} : {article}
+{name_start}Name: {name}
+{name_end}{email_start}EMail: {email}
+{email_end}{website_start}Website: {website}
+{website_end}{customfields_start}{customfields}
+{customfields_end}Comment Body: 
+{body}
+
+{linkmod_start}This comment can be found for moderation {linkmod}.
+
+{linkmod_end}The article for this comment can be viewed {linkart}.]]>
+        </body>
+        <description>Comment or Testimonial submitted</description>
+        <subject><![CDATA[{title} has been added.{moderated_start} Moderation is required{moderated_end}]]></subject>
+        <ishtml>0</ishtml>
+      </row>
+    </rows>
+  </table>
+
+
+  <table name='jos_fst_templates' alwaysreplace='1'>
+    <keyfields>
+      <field>template</field>
+      <field>tpltype</field>
+    </keyfields>
+    <rows>
+      <!-- comments_general -->
+      <row>
+        <template>comments_general</template>
+        <tpltype>3</tpltype>
+        <value decode='1'>
+          <![CDATA[&lt;div class='fst_comment' id='{divid}' {modcolor}&gt;
+	&lt;div class='fst_comment_left'&gt;
+	&lt;div class='fst_comment_name'&gt;{name}&lt;/div&gt;
+	{if,website}
+	&lt;div class='fst_comment_website'&gt;{website}&lt;/div&gt;
+	{endif}
+	&lt;div class='fst_comment_created'&gt;{created_nice}&lt;/div&gt;
+	&lt;/div&gt;
+	{moderation}
+	{if,custom}
+	&lt;div class='fst_comment_custom'&gt;{custom}&lt;/div&gt;
+	{endif}
+	&lt;div class='fst_comment_comment'&gt;{body}&lt;/div&gt;
+  &lt;div class='fst_clear'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class='fst_clear'&gt;&lt;/div&gt;]]>
+        </value>
+      </row>
+      <!-- comments_test -->
+      <row>
+        <template>comments_test</template>
+        <tpltype>3</tpltype>
+        <value decode='1'>
+          <![CDATA[&lt;div class='fst_comment' id='{divid}' {modcolor}&gt;
+	&lt;div class='fst_comment_left'&gt;
+	&lt;div class='fst_comment_name'&gt;{name}&lt;/div&gt;
+	{if,website}
+	&lt;div class='fst_comment_website'&gt;{website}&lt;/div&gt;
+	{endif}
+	&lt;div class='fst_comment_created'&gt;{created_nice}&lt;/div&gt;
+	&lt;/div&gt;
+	{moderation}
+	{if,custom}
+	&lt;div class='fst_comment_custom'&gt;{custom}&lt;/div&gt;
+	{endif}
+	&lt;div class='fst_comment_comment'&gt;{body}&lt;/div&gt;
+  &lt;div class='fst_clear'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class='fst_clear'&gt;&lt;/div&gt;]]>
+        </value>
+      </row>
+      <!-- comments_testmod -->
+      <row>
+        <template>comments_testmod</template>
+        <tpltype>3</tpltype>
+        <value decode='1'>
+          <![CDATA[&lt;div class='fst_comment' id='fst_comment_{uid}_{id}' {modcolor}&gt;
+  &lt;div class='fst_comment_name'&gt;{name}&lt;/div&gt;
+  {if,website}
+  &lt;div class='fst_comment_website'&gt;{website}&lt;/div&gt;
+  {endif}
+  &lt;div class='fst_comment_created'&gt;{created_nice}&lt;/div&gt;
+  {moderation}
+  {if,custom}
+  &lt;div class='fst_comment_custom'&gt;{custom}&lt;/div&gt;
+  {endif}
+  &lt;div class='fst_comment_commentmod'&gt;{body}&lt;/div&gt;
+  &lt;div class='fst_clear'&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class='fst_clear'&gt;&lt;/div&gt;]]>
+        </value>
+      </row>
+    </rows>
+  </table>
+
+</data>

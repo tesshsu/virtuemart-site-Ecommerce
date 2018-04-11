@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="3.0" method="upgrade" group="system">
+    <name>Plugin Zt Virtuemarter</name>
+    <!-- The following elements are optional and free of formatting conttraints -->
+    <creationDate>May 25, 2016</creationDate>
+    <author>Zootemplate</author>
+    <authorEmail>support@zootemplate.com</authorEmail>
+    <authorUrl>http://www.zootemplate.com/</authorUrl>
+    <copyright>Copyright (c) 2008 - 2016 ZooTemplate.com</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GPLv2 or later</license>
+    <version>1.2.0</version>
+    <description>Description of Zoo Virtuemart Plugin</description>
+
+    <scriptfile>script.php</scriptfile>
+    <files>
+        <filename plugin="ztvirtuemarter">ztvirtuemarter.php</filename>
+        <filename>ztvirtuemarter.xml</filename>
+        <filename>index.html</filename>
+        <filename>script.php</filename>
+        <folder>assets</folder>
+    </files>
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_system_ztvirtuemarter.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_system_ztvirtuemarter.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+            </fieldset>
+        </fields>
+    </config>
+</extension>

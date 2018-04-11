@@ -1,0 +1,9 @@
+<?php
+if (!class_exists( 'VmConfig' )) require(JPATH_ADMINISTRATOR.DS.'components'.DS.'com_virtuemart'.DS.'helpers'.DS.'config.php');
+
+$categoryModel = VmModel::getModel('Category');
+$cats = $categoryModel->getCategoryTreeArray();   //Params $parentId=0, $level = 0, $onlyPublished = true,$keyword = ''
+var_dump($cats);
+
+
+?>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="2.5"
+	client="site"
+	method="upgrade">
+  <help url="HELP_MODULE" key="HELP_MODULE"></help>
+  <name>Freestyle Testimonials: Testimonials</name>
+  <author>Freestyle Joomla</author>
+  <creationDate>2013 09 26</creationDate>
+  <version>1.11.8.1718</version>
+  <description>Module to list your testimonials</description>
+  <files>
+    <filename>mod_fst_test.xml</filename>
+    <filename module="mod_fst_test">mod_fst_test.php</filename>
+    <filename>index.html</filename>
+    <folder>tmpl</folder>
+  </files>
+  <languages>
+    <language tag="en-GB">en-GB.mod_fst_test.ini</language>
+  </languages>
+
+  <!-- Joomla 1.6+ -->
+  <config>
+    <fields name="params">
+      <fieldset name="basic">
+        <field name="prodid" type="sql" default="" label="Select Product" query="(SELECT -1 as id, 'All Products' as title) UNION (SELECT 0 as id, 'General Testimonials' as title) UNION (SELECT id, title FROM #__fst_prod ORDER BY ordering)" key_field="id" value_field="title" />
+        <field name="listtype" type="radio" default="0" label="Which Testimonials" description="Which testimonials, all or most recent ones">
+          <option value="1">Most Recent</option>
+          <option value="0">Random</option>
+        </field>
+        <field name="dispcount" type="text" size="3" default="3" label="Number of testimonials to display" description="How many testimonials to display" />
+        <field name="maxheight" type="text" size="5" default="0" label="Maximum Height" description="Maximum height of testimonials display. If larger than this, the display will scroll. Use 0 for auto height." />
+        <field name="show_more" type="radio" default="1" label="Show More Testimonials button" description="Show the more button">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </field>
+        <field name="show_add" type="radio" default="1" label="Show Add Testimonial button" description="Show the add button">
+          <option value="0">No</option>
+          <option value="1">Yes</option>
+        </field>
+        <field name="maxlength" type="text" size="5" default="150" label="Maximum length" description="Maximum number of characters to displa in a testimonial" />
+        <field name="morelink" type="text" size="60" default="" label="Read More link" description="Enter link for main testimonials page. Leave blank to auto pick item" />
+        <field name="addlink" type="text" size="60" default="" label="Add link" description="Enter link for testimonials add page. Leave blank to auto pick item" />
+      </fieldset>
+      <fieldset name="advanced">
+        <field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+      </fieldset>
+    </fields>
+  </config>
+</extension>

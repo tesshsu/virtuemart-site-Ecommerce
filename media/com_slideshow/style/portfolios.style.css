@@ -1,0 +1,14 @@
+.page-title [class^="icon-"], .page-title [class*=" icon-"]{
+   background: url('../images/hugeslider.png');
+   width: 17px;
+   height: 17px;
+   margin:0px;
+   padding: 0px;
+}
+.icon-Sliders{
+     background: url('../images/hugeslider.png');
+   width: 17px;
+   height: 17px;
+   margin:0px;
+   padding: 0px;  
+}

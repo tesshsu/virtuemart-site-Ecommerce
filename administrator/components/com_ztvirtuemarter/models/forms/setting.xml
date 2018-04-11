@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldsets name="setting">
+        <field name="enable_wishlist"
+               type="radio"
+               label="COM_ZTVIRTUEMARTER_ADMIN_ENABLE_WISHLIST_LABEL"
+               description="COM_ZTVIRTUEMARTER_ADMIN_ENABLE_WISHLIST_DESC"
+               class="inputbox btn-group"
+               size="1"
+               default="1">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="enable_compare"
+               type="radio"
+               label="COM_ZTVIRTUEMARTER_ADMIN_ENABLE_COMPARE_LABEL"
+               description="COM_ZTVIRTUEMARTER_ADMIN_ENABLE_COMPARE_LABEL"
+               class="inputbox btn-group"
+               size="1"
+               default="1">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="enable_quickview"
+               type="radio"
+               label="COM_ZTVIRTUEMARTER_ADMIN_ENABLE_QICKVIEW_LABEL"
+               description="COM_ZTVIRTUEMARTER_ADMIN_ENABLE_QICKVIEW_desc"
+               class="inputbox btn-group"
+               size="1"
+               default="1">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="enable_countdown"
+               type="radio"
+               label="COM_ZTVIRTUEMARTER_ADMIN_ENABLE_COUNTDOWN_LABEL"
+               description="COM_ZTVIRTUEMARTER_ADMIN_ENABLE_COUNTDOWN_DESC"
+               class="inputbox btn-group"
+               size="1"
+               default="1">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+        <field name="enable_photozoom"
+               type="radio"
+               label="COM_ZTVIRTUEMARTER_ADMIN_ENABLE_PHOTOZOOM_LABEL"
+               description="COM_ZTVIRTUEMARTER_ADMIN_ENABLE_PHOTOZOOM_DESC"
+               class="inputbox btn-group"
+               size="1"
+               default="1">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+
+        <field name="enable_auto_insert"
+               type="radio"
+               label="COM_ZTVIRTUEMARTER_ADMIN_ENABLE_AUTO_INSERT_LABEL"
+               description="COM_ZTVIRTUEMARTER_ADMIN_ENABLE_AUTO_INSERT_DESC"
+               class="inputbox btn-group"
+               size="1"
+               default="1">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+    </fieldsets>
+</form>

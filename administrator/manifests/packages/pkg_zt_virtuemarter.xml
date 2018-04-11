@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="package" version="3.0" method="upgrade">
+    <name>Zt VirtueMarter Package</name>
+    <packagename>VirtueMarter</packagename>
+    <creationDate>May 25, 2016</creationDate>
+    <author>Zootemplate</author>
+    <authorEmail>support@zootemplate.com</authorEmail>
+    <authorUrl>http://www.zootemplate.com/</authorUrl>
+    <copyright>Copyright (c) 2008 - 2016 ZooTemplate.com</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GPLv2 or later</license>
+    <version>1.2.0</version>
+    <description>Description of Zt VirtueMarter Package</description>
+
+    <scriptfile>pkg_zt_virtuemarter.php</scriptfile>
+    <files folder="sources">
+        <folder type="plugin" id="ztvirtuemarter" group="system">plg_system_ztvirtuemarter.zip</folder>
+        <folder type="component" id="com_ztvirtuemarter" client="site">com_ztvirtuemarter.zip</folder>
+        <folder type="module" id="mod_zt_comparelist" client="site">mod_zt_comparelist.zip</folder>
+        <folder type="module" id="mod_zt_wishlist" client="site">mod_zt_wishlist.zip</folder>
+        <folder type="module" id="mod_ztvirtuemarter_product" client="site">mod_ztvirtuemarter_product.zip</folder>
+    </files>
+</extension>

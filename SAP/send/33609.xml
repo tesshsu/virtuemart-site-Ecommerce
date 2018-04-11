@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<OB>
+	<CLIENT>
+		<BOM>
+			<BO>
+			<AdmInfo>
+				<Object>2</Object>
+				<Version>2</Version>
+			</AdmInfo>
+			<BusinessPartners>
+				<row>
+					<CardType>cCustomer</CardType>
+					<CardCode>0000000645INTFR</CardCode>
+					<CardName>Sampson Deborah</CardName>
+					<GroupCode>100</GroupCode>
+					<Phone1>33555180309</Phone1>
+					<Fax/>
+					<Cellular>33675562473</Cellular>
+					<EmailAddress>deborah.sampson@bbox.fr</EmailAddress>
+					<FederalTaxID/>
+					<LanguageCode>22</LanguageCode>
+					<U_OB1TYPETOTAL>TTC</U_OB1TYPETOTAL>
+					<VatLiable>vLiable</VatLiable>
+					<VatGroup>C4</VatGroup>
+					<ContactPerson>Sampson</ContactPerson>
+					<PayTermsGrpCode>131</PayTermsGrpCode>
+				</row>
+			</BusinessPartners>
+			<ContactEmployees>
+				<row>
+					<Name>Sampson</Name>
+					<FirstName>Deborah</FirstName>
+					<Phone1>0675562473/0555180309</Phone1>
+					<Fax/>
+					<MobilePhone/>
+					<E_Mail>deborah.sampson@bbox.fr</E_Mail>
+				</row>
+			</ContactEmployees>
+			<BPAddresses>
+				<row>
+					<AddressType>bo_ShipTo</AddressType>
+					<AddressName>Sampson Deborah</AddressName>
+					<AddressName3/>
+					<Street>31 Rue de la Fontaine Bleue</Street>
+					<Block/>
+					<ZipCode>19100</ZipCode>
+					<City>Brive la Gaillarde</City>
+					<State/>
+					<BuildingFloorRoom>0675562473/0555180309</BuildingFloorRoom>
+					<Country>FR</Country>
+				</row>
+				<row>
+					<AddressType>bo_BillTo</AddressType>
+					<AddressName>Sampson Deborah</AddressName>
+					<AddressName3/>
+					<Street>La Poujade Basse</Street>
+					<Block/>
+					<ZipCode>46600</ZipCode>
+					<City>St Denis les Martel</City>
+					<State/>
+					<BuildingFloorRoom>33555180309</BuildingFloorRoom>
+					<Country>FR</Country>
+				</row>
+			</BPAddresses>
+			</BO>
+		</BOM>
+	</CLIENT>
+	<COMMANDE>
+		<BOM>
+			<BO>
+			<AdmInfo>
+				<Object>17</Object>
+				<Version>2</Version>
+			</AdmInfo>
+			<Documents>
+				<row>
+					<DocType>dDocument_Items</DocType>
+					<DocDate>20180305</DocDate>
+					<DocDueDate>20180305</DocDueDate>
+					<CardCode>0000000645INTFR</CardCode>
+					<NumAtCard>33609</NumAtCard>
+					<ShipToCode>Sampson Deborah</ShipToCode>
+					<PayToCode>Sampson Deborah</PayToCode>
+					<U_OB1CODELANGUE>22</U_OB1CODELANGUE>
+					<U_OB1TYPETOTAL>TTC</U_OB1TYPETOTAL>
+					<U_OB1REMARKPACK>Paiement : Carte bancaire || Livraison : Frais de port gratuits</U_OB1REMARKPACK>
+					<PaymentGroupCode>131</PaymentGroupCode>
+					<U_OB1TRANSP>2</U_OB1TRANSP>
+				</row>
+			</Documents>
+			<Document_Lines>
+				<row>
+					<ItemCode>FLV002 - 1000ml</ItemCode>
+					<Quantity>3</Quantity>
+					<UnitPrice>37.07</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLE155 - 5g</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>9.09</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLE040 - 5g</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>5.99</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLE009 - 5g</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>4.94</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLE148 - 5g</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>4.9</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLJ164 - 5g</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>5.67</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLE028 - 5g</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>3.78</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLE047 - 5g</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>4.52</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLE127 - 5g</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>5.25</UnitPrice>
+				</row>
+			</Document_Lines>
+			</BO>
+		</BOM>
+	</COMMANDE>
+</OB>

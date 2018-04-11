@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<OB>
+	<CLIENT>
+		<BOM>
+			<BO>
+			<AdmInfo>
+				<Object>2</Object>
+				<Version>2</Version>
+			</AdmInfo>
+			<BusinessPartners>
+				<row>
+					<CardType>cCustomer</CardType>
+					<CardCode>0000025510INTFR</CardCode>
+					<CardName>TAN SHUYI</CardName>
+					<GroupCode>100</GroupCode>
+					<Phone1>0034-640322237</Phone1>
+					<Fax/>
+					<Cellular/>
+					<EmailAddress>814198687@QQ.COM</EmailAddress>
+					<FederalTaxID/>
+					<LanguageCode>3</LanguageCode>
+					<U_OB1TYPETOTAL>DDP</U_OB1TYPETOTAL>
+					<VatLiable>vLiable</VatLiable>
+					<VatGroup>C6</VatGroup>
+					<ContactPerson>TAN</ContactPerson>
+					<PayTermsGrpCode>131</PayTermsGrpCode>
+				</row>
+			</BusinessPartners>
+			<ContactEmployees>
+				<row>
+					<Name>TAN</Name>
+					<FirstName>SHUYI</FirstName>
+					<Phone1>0034-640322237</Phone1>
+					<Fax/>
+					<MobilePhone/>
+					<E_Mail>814198687@QQ.COM</E_Mail>
+				</row>
+			</ContactEmployees>
+			<BPAddresses>
+				<row>
+					<AddressType>bo_ShipTo</AddressType>
+					<AddressName>TAN SHUYI</AddressName>
+					<AddressName3/>
+					<Street>CL VILLABLINO 18 LOCAL12  COBO CALLEJA FUENLABRADA</Street>
+					<Block/>
+					<ZipCode>28947</ZipCode>
+					<City>MADRID</City>
+					<State/>
+					<BuildingFloorRoom>0034-640322237</BuildingFloorRoom>
+					<Country>ES</Country>
+				</row>
+				<row>
+					<AddressType>bo_BillTo</AddressType>
+					<AddressName>TAN SHUYI</AddressName>
+					<AddressName3/>
+					<Street>CL VILLABLINO 18 LOCAL12  COBO CALLEJA FUENLABRADA</Street>
+					<Block/>
+					<ZipCode>28947</ZipCode>
+					<City>MADRID</City>
+					<State/>
+					<BuildingFloorRoom>0034-640322237</BuildingFloorRoom>
+					<Country>ES</Country>
+				</row>
+			</BPAddresses>
+			</BO>
+		</BOM>
+	</CLIENT>
+	<COMMANDE>
+		<BOM>
+			<BO>
+			<AdmInfo>
+				<Object>17</Object>
+				<Version>2</Version>
+			</AdmInfo>
+			<Documents>
+				<row>
+					<DocType>dDocument_Items</DocType>
+					<DocDate>20180305</DocDate>
+					<DocDueDate>20180305</DocDueDate>
+					<CardCode>0000025510INTFR</CardCode>
+					<NumAtCard>33608</NumAtCard>
+					<ShipToCode>TAN SHUYI</ShipToCode>
+					<PayToCode>TAN SHUYI</PayToCode>
+					<U_OB1CODELANGUE>3</U_OB1CODELANGUE>
+					<U_OB1TYPETOTAL>DDP</U_OB1TYPETOTAL>
+					<U_OB1REMARKPACK>Paiement : Carte bancaire || Livraison : FedEx Eco Zone R,S 1.61-2.5 kg</U_OB1REMARKPACK>
+					<PaymentGroupCode>131</PaymentGroupCode>
+					<U_OB1TRANSP>1</U_OB1TRANSP>
+				</row>
+			</Documents>
+			<Document_Lines>
+				<row>
+					<ItemCode>FLE024 - 5g</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>3.36</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLE013 - 5g</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>4.73</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLE055 - 5g</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>3.47</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLE073 - 5g</ItemCode>
+					<Quantity>2</Quantity>
+					<UnitPrice>4.94</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLH031 - 1000ml</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>17.64</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLE085 - 5g</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>7.04</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLH031 - 500ml</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>12.71</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLE145 - 5g</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>5.78</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLE047 - 5g</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>4.52</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLV025 - 100ml</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>3.78</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLV015 - 100ml</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>11.82</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLE015 - 2g</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>10.4</UnitPrice>
+				</row>
+			</Document_Lines>
+			<DocumentsAdditionalExpenses>
+				<row>
+					<ExpenseCode>3</ExpenseCode>
+					<LineTotal>14.27</LineTotal>
+				</row>
+			</DocumentsAdditionalExpenses>
+			</BO>
+		</BOM>
+	</COMMANDE>
+</OB>

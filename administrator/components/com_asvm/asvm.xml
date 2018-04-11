@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>com_asvm</name>
+    <creationDate>June, 2015</creationDate>
+    <copyright>Copyright (C) 2015. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>JoomDev</author>
+    <authorEmail>info@joomdev.com</authorEmail>
+    <authorUrl>http://www.joomdev.com/</authorUrl>
+    <version>1.2</version>
+    <description><![CDATA[<div style="font-size:16px; font-weight:bold; color:black; text-align:left; margin:0px; padding:5px;">Advanced Search Manager for VirtueMart installed successfully.</div><div style="font-weight:normal; border-bottom:1px solid #f0dc7e; border-top:1px solid #f0dc7e; display:block; padding:5px; margin:5px; background-color:#fff;">
+<img src="components/com_asvm/assets/images/vmloga4.png" style="float:right;margin:0px 15px;"/>
+<p style="color:black; font-size:13px; text-align:left; margin:0px; padding:5px;">Advanced Order Manager for Virtuemart lets your manage your Virutemart Orders easily. You can Search and Export your orders by the following options:</p>
+	<p style="color:black; font-weight:normal; font-size:14px; text-align:left;  margin:0px; padding:5px;">Customer First/Last name</p>
+	<p style="color:black; font-weight:normal; font-size:14px; text-align:left;  margin:0px; padding:5px;">Email Address</p>
+	<p style="color:black; font-weight:normal; font-size:14px; text-align:left;  margin:0px; padding:5px;">Address</p>
+	<p style="color:black; font-weight:normal; font-size:14px; text-align:left;  margin:0px; padding:5px;">City</p>
+	<p style="color:black; font-weight:normal; font-size:14px; text-align:left;  margin:0px; padding:5px;">State</p>
+	<p style="color:black; font-weight:normal; font-size:14px; text-align:left;  margin:0px; padding:5px;">Zip</p>
+	<p style="color:black; font-weight:normal; font-size:14px; text-align:left;  margin:0px; padding:5px;">Country</p>
+	<p style="color:black; font-weight:normal; font-size:14px; text-align:left;  margin:0px; padding:5px;">Date range</p>
+	<p style="color:black; font-weight:normal; font-size:14px; text-align:left;  margin:0px; padding:5px;">Order Number or Id</p>
+	<p style="color:black; font-weight:normal; font-size:14px; text-align:left;  margin:0px; padding:5px;">Product Name/SKU</p>
+	<p style="color:black; font-weight:normal; font-size:14px; text-align:left;  margin:0px; padding:5px;">Payment Method</p>
+	<p style="color:black; font-weight:normal; font-size:14px; text-align:left;  margin:0px; padding:5px;">Order Status</p>	
+	</div>
+	
+	]]></description>   
+	<scriptfile>script.php</scriptfile>
+    <administration>
+		<menu img="components/com_asvm/assets/images/s_com_asvm.png" >COM_ASVM</menu>        
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <filename>asvm.php</filename>
+            <folder>controllers</folder>
+            <folder>assets</folder>
+            <folder>helpers</folder>
+            <folder>models</folder>           
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="languages/administrator">            
+			<language tag="en-GB">en-GB/en-GB.com_asvm.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_asvm.sys.ini</language>
+        </languages>
+    </administration>
+	<updateservers>
+		<server type="extension" name="com_asvm" priority="1">https://www.joomdev.com/extensionupdates/com_asvm.xml</server>
+	</updateservers>
+	
+</extension>

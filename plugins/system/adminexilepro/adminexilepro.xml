@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5.0" type="plugin" group="system" method="upgrade">
+    <name>PLG_SYS_ADMINEXILEPRO</name>
+    <author>Michael Richey</author>
+    <creationDate>March 2017</creationDate>
+    <copyright>Copyright (C) 2011 Michael Richey. All rights reserved.</copyright>
+    <license>GNU General Public License</license>
+    <authorEmail>support@richeyweb.com</authorEmail>
+    <authorUrl>http://www.richeyweb.com</authorUrl>
+    <version>3.14</version>
+    <description>PLG_SYS_ADMINEXILEPRO_XML_DESC</description>
+    <!-- pro feature start -->
+    <scriptfile>script.php</scriptfile>
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <update> 
+        <schemas> 
+            <schemapath type="mysql">sql/updates</schemapath> 
+        </schemas> 
+    </update>
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+    <!-- pro feature end -->
+    <media folder="media" destination="plg_system_adminexilepro">
+        <folder>js</folder>
+    </media>
+    <files>
+        <folder>classes</folder>
+        <folder>fields</folder>
+        <!-- pro feature start -->
+        <folder>forms</folder>
+        <folder>sql</folder>
+        <folder>installers</folder>
+        <filename>script.php</filename>
+        <!-- pro feature end -->
+        <filename plugin="adminexilepro">adminexilepro.php</filename>
+    </files>
+    <languages>
+        <language tag="en-GB">en-GB.plg_system_adminexilepro.ini</language>
+        <language tag="en-GB">en-GB.plg_system_adminexilepro.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params" addfieldpath="plugins/system/adminexilepro/fields">
+            <fieldset name="basic">
+                <!-- pro feature start -->
+                <field name="downloadid" type="text" default="" size="30"
+                       label="PLG_SYS_ADMINEXILEPRO_DOWNLOADID_LABEL"
+                       description ="PLG_SYS_ADMINEXILEPRO_DOWNLOADID_DESC" />
+                <!-- pro feature end -->
+                <field name="url" type="spacer"
+                       label="PLG_SYS_ADMINEXILEPRO_BACKEND_URL_LABEL"
+                />
+                <field name="key" type="text" default="adminexilepro"
+                       label="PLG_SYS_ADMINEXILEPRO_KEY_LABEL"
+                       description="PLG_SYS_ADMINEXILEPRO_KEY_DESC"
+                       class="validate-notnumeric"
+                />
+                <field name="twofactor" type="radio" class="radio btn-group"
+                       default="0" label="PLG_SYS_ADMINEXILEPRO_KEYPAIR_LABEL"
+                       description="PLG_SYS_ADMINEXILEPRO_KEYPAIR_DESC"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="keyvalue" type="text" default="ROCKS" showon="twofactor:1"
+                       label="PLG_SYS_ADMINEXILEPRO_KEYVALUE_LABEL"
+                       description="PLG_SYS_ADMINEXILEPRO_KEYVALUE_DESC"
+                />
+                <field name="redirect" type="radio" class="radio btn-group"
+                       default="404" label="PLG_SYS_ADMINEXILEPRO_REDIRECT_LABEL"
+                       description="PLG_SYS_ADMINEXILEPRO_REDIRECT_DESC">
+                    <option value="HOME">PLG_SYS_ADMINEXILEPRO_REDIRECT_HOME</option>
+                    <option value="404">PLG_SYS_ADMINEXILEPRO_REDIRECT_404</option>
+                    <option value="URL">PLG_SYS_ADMINEXILEPRO_REDIRECT_URL</option>                    
+                </field>
+                <field name="fourofour" type="textarea" showon="redirect:404"
+                       default="&#60;!DOCTYPE HTML PUBLIC &#34;-//IETF//DTD HTML 2.0//EN&#34;&#62;&#13;&#10;&#60;html&#62;&#60;head&#62;&#13;&#10;&#60;title&#62;404 Not Found&#60;/title&#62;&#13;&#10;&#60;/head&#62;&#60;body&#62;&#13;&#10;&#60;h1&#62;Not Found&#60;/h1&#62;&#13;&#10;&#60;p&#62;The requested URL {url} was not found on this server.&#60;/p&#62;&#13;&#10;&#60;hr&#62;&#13;&#10;{serversignature}&#13;&#10;&#60;/body&#62;&#60;/html&#62;" 
+                       label="PLG_SYS_ADMINEXILEPRO_FOUROFOUR_LABEL" 
+                       description="PLG_SYS_ADMINEXILEPRO_FOUROFOUR_DESC" 
+                       filter="raw"
+                />
+                <field name="redirecturl" type="url" showon="redirect:URL" default="https://www.fbi.gov"
+                       label="PLG_SYS_ADMINEXILEPRO_REDIRECTURL_LABEL" 
+                       description="PLG_SYS_ADMINEXILEPRO_REDIRECTURL_DESC"
+                />
+                <!-- pro feature start -->
+                <field name="allow_reentry" type="radio" class="radio btn-group"
+                       default="0" label="PLG_SYS_ADMINEXILEPRO_ALLOW_REENTRY_LABEL"
+                       description="PLG_SYS_ADMINEXILEPRO_ALLOW_REENTRY_DESC"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="reentry_time" type="integer" first="0" last="300" 
+                       showon="allow_reentry:1" step="10" default="60"
+                       label="PLG_SYS_ADMINEXILEPRO_REENTRY_TIME_LABEL"
+                       description="PLG_SYS_ADMINEXILEPRO_REENTRY_TIME_DESC"
+                />          
+                <!-- pro feature end -->     
+                <field name="frontrestrictspacer" type="spacer" label="PLG_SYS_ADMINEXILEPRO_FRONTRESTRICT_SPACER" />
+                <field name="frontrestrict" type="radio" class="radio btn-group"
+                       default="0" label="PLG_SYS_ADMINEXILEPRO_FRONTRESTRICT_LABEL"
+                       description="PLG_SYS_ADMINEXILEPRO_FRONTRESTRICT_DESC"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field type="usergroup" name="restrictgroup" showon="frontrestrict:1"
+                       multiple="true" default="" 
+                       label="PLG_SYS_ADMINEXILEPRO_RESTRICTGROUP_LABEL" 
+                       description="PLG_SYS_ADMINEXILEPRO_RESTRICTGROUP_DESC"
+                />
+                <field name="maillinkspacer" type="spacer" label="PLG_SYS_ADMINEXILEPRO_MAILLINK_SPACER" />
+                <field name="maillink" type="radio" 
+                       class="radio btn-group" default="1" 
+                       label="PLG_SYS_ADMINEXILEPRO_MAILLINK_LABEL" 
+                       description="PLG_SYS_ADMINEXILEPRO_MAILLINK_DESC"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field type="usergroup" name="maillinkgroup" showon="maillink:1"
+                       multiple="true" default="8" 
+                       label="PLG_SYS_ADMINEXILEPRO_MAILLINKGROUP_LABEL" 
+                       description="PLG_SYS_ADMINEXILEPRO_MAILLINKGROUP_DESC"
+                />           
+                <field name="faillogspacer" type="spacer" label="PLG_SYS_ADMINEXILEPRO_FAILLOG_SPACER" />             
+                <field name="faillog" type="radio" class="radio btn-group"
+                       default="0" label="PLG_SYS_ADMINEXILEPRO_FAILLOG_LABEL"
+                       description="PLG_SYS_ADMINEXILEPRO_FAILLOG_DESC"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="javascripts" type="javascript" label="" />
+            </fieldset>
+            <!-- pro feature start -->
+            <fieldset name="ipsecurity">
+                <field name="enableip" type="radio" default="0" class="radio btn-group"
+                       label="PLG_SYS_ADMINEXILEPRO_ENABLEIP_LABEL"
+                       description="PLG_SYS_ADMINEXILEPRO_ENABLEIP_DESC"
+                >
+                    <option value="0">JNo</option>
+                    <option value="1">JYes</option>
+                </field>
+                <field name="ipsecurityspacer" type="spacer" label="PLG_SYS_ADMINEXILEPRO_IPSECURITY_SPACER" showon="enableip:1" />
+                <field name="whitelist" type="subform" layout="joomla.form.field.subform.repeatable-table"
+                       multiple="true" formsource="plugins/system/adminexilepro/forms/iplist.xml" 
+                       label="PLG_SYS_ADMINEXILEPRO_WHITELIST_LABEL"
+                       description="PLG_SYS_ADMINEXILEPRO_WHITELIST_DESC"
+                       showon="enableip:1"
+                />
+                <field name="blacklist" type="subform" layout="joomla.form.field.subform.repeatable-table"
+                       multiple="true" formsource="plugins/system/adminexilepro/forms/iplist.xml" 
+                       label="PLG_SYS_ADMINEXILEPRO_BLACKLIST_LABEL"
+                       description="PLG_SYS_ADMINEXILEPRO_BLACKLIST_DESC"
+                       showon="enableip:1"
+                />
+            </fieldset>
+            <fieldset name="bruteforce">
+                <field name="enablebruteforce" type="radio" default="0" class="radio btn-group"
+                       label="PLG_SYS_ADMINEXILEPRO_ENABLEBRUTEFORCE_LABEL"
+                       description="PLG_SYS_ADMINEXILEPRO_ENABLEBRUTEFORCE_DESC"
+                >
+                    <option value="0">JNo</option>
+                    <option value="1">JYes</option>
+                </field>
+                <field name="bfthreshold" type="integer" first="2" last="20" 
+                       showon="enablebruteforce:1" step="1" default="5"
+                       label="PLG_SYS_ADMINEXILEPRO_BFTHRESHOLD_LABEL"
+                       description="PLG_SYS_ADMINEXILEPRO_BFTHRESHOLD_DESC"
+                />
+                <field name="bfpenalty" type="integer" first="1" last="30"
+                       showon="enablebruteforce:1" step="1" default="5"
+                       label="PLG_SYS_ADMINEXILEPRO_BFPENALTY_LABEL"
+                       description="PLG_SYS_ADMINEXILEPRO_BFPENALTY_DESC"
+                />
+                <field name="bfmultiplier" type="integer" first="1" last="5"
+                       showon="enablebruteforce:1" step="1" default="1"
+                       label="PLG_SYS_ADMINEXILEPRO_BFMULTIPLIER_LABEL"
+                       description="PLG_SYS_ADMINEXILEPRO_BFMULTIPLIER_DESC"
+                />
+                <field name="bfnotify" type="radio" default="0" class="radio btn-group"
+                       label="PLG_SYS_ADMINEXILEPRO_BFNOTIFY_LABEL"
+                       description="PLG_SYS_ADMINEXILEPRO_BFNOTIFY_DESC"
+                >
+                    <option value="0">JNo</option>
+                    <option value="1">JYes</option>
+                </field>
+                <field name="bfuser" type="user" default="" showon="bfnotify:1"
+                       label="PLG_SYS_ADMINEXILEPRO_BFUSER_LABEL"
+                       description="PLG_SYS_ADMINEXILEPRO_BFUSER_DESC"
+                />
+                <field name="bfnotifyonce" type="radio" default="1" class="radio btn-group"
+                       showon="bfnotify:1"
+                       label="PLG_SYS_ADMINEXILEPRO_BFNOTIFYONCE_LABEL"
+                       description="PLG_SYS_ADMINEXILEPRO_BFNOTIFYONCE_DESC"
+                >
+                    <option value="0">JNo</option>
+                    <option value="1">JYes</option>
+                </field>
+                <field name="bfblocked" type="spacer" label="PLG_SYS_ADMINEXILEPRO_BFBLOCKED_LABEL" showon="enablebruteforce:1" />
+            </fieldset>
+            <!-- pro feature end -->
+        </fields>
+    </config>
+    <updateservers>
+        <server type="extension" priority="1" name="RicheyWeb Update Site">https://www.richeyweb.com/updates/adminexilepro.xml</server>
+    </updateservers>
+</extension>

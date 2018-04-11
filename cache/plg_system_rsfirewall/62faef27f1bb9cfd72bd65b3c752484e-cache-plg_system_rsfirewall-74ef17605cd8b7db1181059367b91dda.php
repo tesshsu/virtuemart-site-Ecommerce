@@ -1,0 +1,1 @@
+<?php die("Access Denied"); ?>#x#a:2:{s:6:"output";s:0:"";s:6:"result";s:48:"dynamicip-109-194-59-73.pppoe.kursk.ertelecom.ru";}

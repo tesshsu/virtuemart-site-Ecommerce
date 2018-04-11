@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" minimum_version="2.5" method="upgrade" >
+
+    <name>COM_VMMIGRATE</name>
+	<license>Open Source License, GPL v2 based</license>
+	<author>Daycounts.com</author>
+	<authorEmail>info@daycounts.com</authorEmail>
+	<authorUrl>http://www.daycounts.com</authorUrl>
+	<creationDate>Aug. 2016</creationDate>
+	<copyright>2010 Daycounts.com</copyright>
+	<version>4.2.0</version>
+    <description>VM Migrator</description>
+    <scriptfile>script.php</scriptfile>
+
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+    <update>
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </update>
+    <administration>
+        <menu img="components/com_vmmigrate/assets/images/vmmigrate16.png">COM_VMMIGRATE_MENU</menu>
+        <files folder="admin">
+            <filename>index.html</filename>
+            <filename>config.xml</filename>
+            <filename>access.xml</filename>
+            <filename>vmmigrate.php</filename>
+            <filename>controller.php</filename>
+            <folder>sql</folder>
+            <folder>assets</folder>
+            <folder>controllers</folder>
+            <folder>elements</folder>
+	        <folder>language</folder>
+            <folder>helpers</folder>
+            <folder>migrators</folder>
+            <folder>migratorsdemo</folder>
+            <folder>models</folder>
+            <folder>views</folder>
+        </files>
+    </administration>
+	<custom>
+		<versioncheckercat>33</versioncheckercat>
+	</custom>
+	<updateservers>
+		<server type="extension" priority="1" name="Virtuemart Migrator Updater"><![CDATA[https://www.daycounts.com/index.php?option=com_versions&catid=33&task=updateserver.xml]]></server>
+	</updateservers>
+</extension>

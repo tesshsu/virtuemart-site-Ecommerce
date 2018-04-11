@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" method="upgrade">
+    <name>VirtueMart Reorder module</name>
+    <creationDate>October 2012</creationDate>
+    <author>EasyJoomla.org</author>
+    <authorUrl>http://www.easysoftware.cz</authorUrl>
+    <copyright>Copyright (C) EasyJoomla.org. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+    <version>1.0.7</version>
+    <description>
+		<![CDATA[
+		<link rel="stylesheet" href="http://www.easyjoomla.org/free_packages/install.css" type="text/css">
+		<p>
+			<a class="easylogo" href="http://www.easyjoomla.org" target="_blank">
+			  	<img src="http://www.easyjoomla.org/free_packages/logo.png" />
+			</a>
+		</p>
+		<p>This module inserts a button which appears on order detail only. After clicking this button, user is redirected to the cart and all products and its quantities from the order are prefilled.</p>
+		<p>More info at <a href="http://www.easyjoomla.org/paid-extensions/virtuemart-orders-templates-reorders"  target="_blank" >EasyJoomla.org</a>.</p>
+	  ]]>
+	</description>
+    <files>
+        <filename module="mod_virtuemart_reorder">mod_virtuemart_reorder.php</filename>
+        <filename>helper.php</filename>
+        <filename>index.html</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field  name="pretext" 
+                        type="textarea" default="Reorder items of this order."
+                        label="Pretext"
+						description="Text which displays before the button." />
+                <field  name="buttontext" 
+                        type="text" default="Reorder"
+                        label="Button text"
+						description="Text which displays on the button." />
+                <field  name="moduleclass_sfx" 
+                        type="text"
+                        label="Module class"
+						description="Add module class suffix." />
+            </fieldset>
+        </fields>
+    </config>
+	<updateservers>
+        <server type="easyjoomla" priority="1" name="Easy Joomla Update"><![CDATA[ http://easyjoomla.org/index.php?option=com_easyupdate&view=easyupdate&element=mod_virtuemart_reorder ]]></server>
+    </updateservers>
+</extension>

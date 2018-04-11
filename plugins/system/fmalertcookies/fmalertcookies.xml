@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system" method="upgrade">
+	<name>PLG_SYSTEM_FMALERTCOOKIES</name>
+	<author>Folcomedia</author>
+	<creationDate>2014</creationDate>
+	<copyright>2014 Folcomedia</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>contact@folcomedia.fr</authorEmail>
+	<authorUrl>http://www.folcomedia.fr</authorUrl>
+	<version>1.3.3</version>
+	<description>PLG_SYSTEM_FMALERTCOOKIES_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="fmalertcookies">fmalertcookies.php</filename>
+		<filename>index.html</filename>
+		<folder>assets</folder>		
+		<folder>classes</folder>		
+	</files>
+	<languages>
+		<language tag="fr-FR">language/fr-FR/fr-FR.plg_system_fmalertcookies.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.plg_system_fmalertcookies.sys.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_system_fmalertcookies.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_system_fmalertcookies.sys.ini</language>		
+		<language tag="hu-HU">language/hu-HU/hu-HU.plg_system_fmalertcookies.ini</language>
+		<language tag="hu-HU">language/hu-HU/hu-HU.plg_system_fmalertcookies.sys.ini</language>	
+	</languages>
+    <config>
+        <fields name="params" labelclass="order">
+			<fieldset labelclass="order" class="order" name="affichage" label="PLG_SYSTEM_FMALERTCOOKIES_TITLE_PARAMS">
+				
+				<field name="name_plugin" type="hidden" default="fmalertcookies" />
+				<field name="version_plugin" type="hidden" default="1.3.3" />
+								
+                <field type="spacer" name="general_spacer" label="PLG_SYSTEM_FMALERTCOOKIES_HEADER_GENERAL_LABEL" />     
+                <field name="ajouter_jquery" type="list"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_AJOUTER_JQUERY_DESC"
+                    default="0" label="PLG_SYSTEM_FMALERTCOOKIES_AJOUTER_JQUERY_LABEL" >
+                    	<option value="0">PLG_SYSTEM_FMALERTCOOKIES_NO_USE_JQUERY_SITE</option>
+				  		<option value="1">PLG_SYSTEM_FMALERTCOOKIES_YES_USE_JQUERY_PLUGIN</option>
+				</field> 						            			
+            	<field name="mylanguage" type="language" client="site" 
+            		label="PLG_SYSTEM_FMALERTCOOKIES_MYLANGUAGE_LABEL" description="PLG_SYSTEM_FMALERTCOOKIES_MYLANGUAGE_DESC" />
+
+				<field name="duree_cookie" type="text" filter="integer" default="30" label="PLG_SYSTEM_FMALERTCOOKIES_DUREE_COOKIE_LABEL" 
+				description="PLG_SYSTEM_FMALERTCOOKIES_DUREE_COOKIE_DESC"  />
+           	
+                 <field name="deleteCookie" type="radio"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_DELETE_COOKIE_DESC"
+                    default="0" class="btn-group" labelclass="control-label" label="PLG_SYSTEM_FMALERTCOOKIES_DELETE_COOKIE">
+                    	<option value="0">JNO</option>
+				  		<option value="1">JYES</option>
+				</field>           	
+           	
+           	
+            	<field type="spacer" name="alerte_spacer" label="PLG_SYSTEM_FMALERTCOOKIES_HEADER_ALERTE_LABEL" />
+ 
+                 <field name="display_offline" type="radio"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_DISPLAY_OFFLINE_DESC"
+                    default="0" class="btn-group" labelclass="control-label" label="PLG_SYSTEM_FMALERTCOOKIES_DISPLAY_OFFLINE">
+                    	<option value="0">JNO</option>
+				  		<option value="1">JYES</option>
+				</field>
+            	
+                <field name="affichage_msg_page_cookie" type="list"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_AFFICHAGE_MSG_PAGE_COOKIE_DESC"
+                    default="0" label="PLG_SYSTEM_FMALERTCOOKIES_AFFICHAGE_MSG_PAGE_COOKIE_LABEL" >
+                    	<option value="0">PLG_SYSTEM_FMALERTCOOKIES_AFFICHAGE_MSG_PAGE_COOKIE_NOT_ALL_PAGES</option>
+				  		<option value="1">PLG_SYSTEM_FMALERTCOOKIES_AFFICHAGE_MSG_PAGE_COOKIE_ALL_PAGES</option>
+				</field>
+            		
+                <field name="type_affichage" type="list"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_TYPE_AFFICHAGE_DESC"
+                    default="1" label="PLG_SYSTEM_FMALERTCOOKIES_TYPE_AFFICHAGE_LABEL" >
+                    	<option value="0">PLG_SYSTEM_FMALERTCOOKIES_POPUP</option>
+				  		<option value="1">PLG_SYSTEM_FMALERTCOOKIES_ENCADRE</option>
+				</field>   
+				
+				<field name="num_opacity" type="integer" default="100" 
+				label="PLG_SYSTEM_FMALERTCOOKIES_NUM_OPACITY_LABEL" 
+				description="PLG_SYSTEM_FMALERTCOOKIES_NUM_OPACITY_DESC" 
+				first="0" last="100" step="1" />
+				
+				            
+                 <field name="position" type="list"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_POSITION_DESC"
+                    default="0" label="PLG_SYSTEM_FMALERTCOOKIES_POSITION_LABEL">
+                    	<option value="0">PLG_SYSTEM_FMALERTCOOKIES_HAUT</option>
+				  		<option value="1">PLG_SYSTEM_FMALERTCOOKIES_BAS</option>
+				</field> 
+
+            	<field name="position_contenu" type="list"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_POSITION_CONTENU_DESC"
+                    default="center" label="PLG_SYSTEM_FMALERTCOOKIES_POSITION_CONTENU_LABEL">
+                    	<option value="center">PLG_SYSTEM_FMALERTCOOKIES_POSITION_CONTENU_CENTRER</option>
+				  		<option value="left">PLG_SYSTEM_FMALERTCOOKIES_POSITION_CONTENU_GAUCHE</option>
+				  		<option value="right">PLG_SYSTEM_FMALERTCOOKIES_POSITION_CONTENU_DROITE</option>
+				</field>
+
+                <field name="position_fixe" type="radio"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_POSITION_FIXE_DESC"
+                    default="0" class="btn-group" labelclass="control-label" label="PLG_SYSTEM_FMALERTCOOKIES_POSITION_FIXE_LABEL">
+                    	<option value="0">JNO</option>
+				  		<option value="1">JYES</option>
+				</field>   
+
+               <field name="taille_cadre" type="text" 
+                    description="PLG_SYSTEM_FMALERTCOOKIES_TAILLE_CADRE_DESC"
+                    label="PLG_SYSTEM_FMALERTCOOKIES_TAILLE_CADRE_LABEL" default="100%"
+                />
+
+               <field name="marge_ext" type="text" filter="integer"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_MARGE_EXT_DESC"
+                    label="PLG_SYSTEM_FMALERTCOOKIES_MARGE_EXT_LABEL" default="0"
+                />
+ 
+               <field name="marge_int" type="text" filter="integer"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_MARGE_INT_DESC"
+                    label="PLG_SYSTEM_FMALERTCOOKIES_MARGE_INT_LABEL" default="10"
+                /> 
+               
+                <field name="couleur_texte" type="color"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_COULEUR_TEXTE_DESC"
+                    default="#666666" label="PLG_SYSTEM_FMALERTCOOKIES_COULEUR_TEXTE_LABEL" 
+                 />	
+                <field name="couleur_fond" type="color"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_COULEUR_FOND_DESC"
+                    default="#FFFFFF" label="PLG_SYSTEM_FMALERTCOOKIES_COULEUR_FOND_LABEL" 
+                 />	  				
+                
+                <field type="spacer" name="bordure_spacer" label="PLG_SYSTEM_FMALERTCOOKIES_HEADER_BORDURE_LABEL" />
+                <field name="type_bordure" type="list"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_TYPE_BORDURE_DESC"
+                    default="1" label="PLG_SYSTEM_FMALERTCOOKIES_TYPE_BORDURE_LABEL">
+                    	<option value="0">PLG_SYSTEM_FMALERTCOOKIES_ARRONDI</option>
+				  		<option value="1">PLG_SYSTEM_FMALERTCOOKIES_RECTANGULAIRE</option>
+				  		<option value="2">PLG_SYSTEM_FMALERTCOOKIES_SANS_BORDURE</option>
+				</field>	
+					
+                <field name="couleur_bordure" type="color"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BORDURE_DESC"
+                    default="#eee" label="PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BORDURE_LABEL" 
+                 />	
+               <field name="taille_bordure" type="text" filter="integer"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_TAILLE_BORDURE_DESC"
+                    label="PLG_SYSTEM_FMALERTCOOKIES_TAILLE_BORDURE_LABEL" default="0"
+                />  
+            </fieldset>      
+            
+            <fieldset name="boutons" label="PLG_SYSTEM_FMALERTCOOKIES_TITLE_BOUTONS">
+            	<field type="spacer" name="general_spacer_btn" label="PLG_SYSTEM_FMALERTCOOKIES_HEADER_GENERAL_LABEL" />
+                <field name="first_btn" type="list"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_FIRST_BTN_DESC"
+                    default="0" class="btn-group" labelclass="control-label" label="PLG_SYSTEM_FMALERTCOOKIES_FIRST_BTN_LABEL">
+                    	<option value="0">PLG_SYSTEM_FMALERTCOOKIES_FIRST_BTN_CLOSE</option>
+				  		<option value="1">PLG_SYSTEM_FMALERTCOOKIES_FIRST_BTN_MORE</option>
+				</field>            	
+                  <field name="position_btn" type="list"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_POSITION_BTN_DESC"
+                    default="0" class="btn-group" labelclass="control-label" label="PLG_SYSTEM_FMALERTCOOKIES_POSITION_BTN_LABEL">
+                    	<option value="0">PLG_SYSTEM_FMALERTCOOKIES_POSITION_BTN_A_LA_LIGNE</option>
+				  		<option value="1">PLG_SYSTEM_FMALERTCOOKIES_POSITION_BTN_MEME_LIGNE</option>
+				</field>            	
+            	
+                 <field type="spacer" name="btn_more_spacer" label="PLG_SYSTEM_FMALERTCOOKIES_HEADER_BTN_MORE_LABEL" />
+                 <field name="btn_more" type="radio"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_BTN_MORE_DESC"
+                    default="1" class="btn-group" labelclass="control-label" label="PLG_SYSTEM_FMALERTCOOKIES_BTN_MORE_LABEL">
+                    	<option value="0">JNO</option>
+				  		<option value="1">JYES</option>
+				</field>
+                <field name="position_btn_more" type="list"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_POSITION_BTN_CLOSE_DESC"
+                    default="center" label="PLG_SYSTEM_FMALERTCOOKIES_POSITION_BTN_MORE_LABEL">
+                    	<option value="center">PLG_SYSTEM_FMALERTCOOKIES_POSITION_BTN_CENTRER</option>
+				  		<option value="left">PLG_SYSTEM_FMALERTCOOKIES_POSITION_BTN_GAUCHE</option>
+				  		<option value="right">PLG_SYSTEM_FMALERTCOOKIES_POSITION_BTN_DROITE</option>
+				</field>  
+                <field name="taille_btn_more" type="list"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_TAILLE_BTN_MORE_DESC"
+                    default="" label="PLG_SYSTEM_FMALERTCOOKIES_TAILLE_BTN_MORE_LABEL">
+                    	<option value="btn-large">PLG_SYSTEM_FMALERTCOOKIES_TAILLE_BTN_LARGE</option>
+				  		<option value="">PLG_SYSTEM_FMALERTCOOKIES_TAILLE_BTN_DEFAULT</option>
+				  		<option value="btn-small">PLG_SYSTEM_FMALERTCOOKIES_TAILLE_BTN_SMALL</option>
+				  		<option value="btn-mini">PLG_SYSTEM_FMALERTCOOKIES_TAILLE_BTN_MINI</option>
+				</field>  
+				<field name="couleur_btn_more" type="list"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_MORE_DESC"
+                    default="btn-inverse" label="PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_MORE_LABEL">
+                    	<option value="btn-grey">PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_DEFAULT</option>
+				  		<option value="btn-primary">PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_BLEU_FONCE</option>
+				  		<option value="btn-info">PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_BLEU_CLAIR</option>
+				  		<option value="btn-success">PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_VERT</option>				  		
+				  		<option value="btn-warning">PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_ORANGE</option>
+				  		<option value="btn-danger">PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_ROUGE</option>
+				  		<option value="btn-inverse">PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_NOIR</option>
+				  		<option value="btn-link">PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_RIEN</option>
+				  		<option value="btn-custom">PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_CUSTOM</option>			  		
+				</field>
+
+				<field name="couleur_btn_more_custom" type="color"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_MORE_CUSTOM_DESC" label="PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_MORE_CUSTOM_LABEL" 
+                 />	
+
+				<field name="couleur_texte_btn_more" type="color"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_COULEUR_TEXTE_MORE_DESC"
+                    default="#eeeeee" label="PLG_SYSTEM_FMALERTCOOKIES_COULEUR_TEXTE_MORE_LABEL" 
+                 />					
+								              
+                <field type="spacer" name="btn_close_spacer" label="PLG_SYSTEM_FMALERTCOOKIES_HEADER_BTN_CLOSE_LABEL" />
+                 <field name="btn_close" type="radio"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_BTN_CLOSE_DESC"
+                    default="1" class="btn-group" labelclass="control-label" label="PLG_SYSTEM_FMALERTCOOKIES_BTN_CLOSE_LABEL">
+                    	<option value="0">JNO</option>
+				  		<option value="1">JYES</option>
+				</field>
+   
+                <field name="position_btn_close" type="list"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_POSITION_BTN_CLOSE_DESC"
+                    default="center" label="PLG_SYSTEM_FMALERTCOOKIES_POSITION_BTN_CLOSE_LABEL">
+                    	<option value="center">PLG_SYSTEM_FMALERTCOOKIES_POSITION_BTN_CENTRER</option>
+				  		<option value="left">PLG_SYSTEM_FMALERTCOOKIES_POSITION_BTN_GAUCHE</option>
+				  		<option value="right">PLG_SYSTEM_FMALERTCOOKIES_POSITION_BTN_DROITE</option>
+				</field>
+                <field name="taille_btn_close" type="list"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_TAILLE_BTN_CLOSE_DESC"
+                    default="" label="PLG_SYSTEM_FMALERTCOOKIES_TAILLE_BTN_CLOSE_LABEL">
+                    	<option value="btn-large">PLG_SYSTEM_FMALERTCOOKIES_TAILLE_BTN_LARGE</option>
+				  		<option value="">PLG_SYSTEM_FMALERTCOOKIES_TAILLE_BTN_DEFAULT</option>
+				  		<option value="btn-small">PLG_SYSTEM_FMALERTCOOKIES_TAILLE_BTN_SMALL</option>
+				  		<option value="btn-mini">PLG_SYSTEM_FMALERTCOOKIES_TAILLE_BTN_MINI</option>
+				</field>	
+				<field name="couleur_btn_close" type="list"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_CLOSE_DESC"
+                    default="btn-warning" label="PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_CLOSE_LABEL">
+                    	<option value="btn-grey">PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_DEFAULT</option>
+				  		<option value="btn-primary">PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_BLEU_FONCE</option>
+				  		<option value="btn-info">PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_BLEU_CLAIR</option>
+				  		<option value="btn-success">PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_VERT</option>				  		
+				  		<option value="btn-warning">PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_ORANGE</option>
+				  		<option value="btn-danger">PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_ROUGE</option>
+				  		<option value="btn-inverse">PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_NOIR</option>
+				  		<option value="btn-link">PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_RIEN</option>
+				  		<option value="btn-custom">PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_CUSTOM</option>	
+				</field>
+				
+				<field name="couleur_btn_close_custom" type="color"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_CLOSE_CUSTOM_DESC" label="PLG_SYSTEM_FMALERTCOOKIES_COULEUR_BTN_CLOSE_CUSTOM_LABEL" 
+                 />					
+				
+				<field name="couleur_texte_btn_close" type="color"
+                    description="PLG_SYSTEM_FMALERTCOOKIES_COULEUR_TEXTE_CLOSE_DESC"
+                    default="#eeeeee" label="PLG_SYSTEM_FMALERTCOOKIES_COULEUR_TEXTE_CLOSE_LABEL" 
+                 />	
+								                          
+            </fieldset>        
+			<fieldset name="seo" label="PLG_SYSTEM_FMALERTCOOKIES_TITLE_SEO">
+                <field name="user_agent" type="textarea" label="PLG_SYSTEM_FMALERTCOOKIES_USER_AGENT_LABEL" description="PLG_SYSTEM_FMALERTCOOKIES_USER_AGENT_DESC" rows="10" cols="100" 
+                default="Teoma,alexa,froogle,Gigabot,inktomi,looksmart,URL_Spider_SQL,Firefly,NationalDirectory,AskJeeves,TECNOSEEK,InfoSeek,WebFindBot,girafabot,crawler,www.galaxy.com,Googlebot,Scooter,Slurp,bing,msnbot,appie,FAST,WebBug,Spade,ZyBorg,rabaz,Baiduspider,Feedfetcher-Google,TechnoratiSnoop,Rankivabot,Mediapartners-Google,Sogouwebspider,WebAltaCrawler,TweetmemeBot,Butterfly,Twitturls,Me.dium,Twiceler"/>                             
+            </fieldset>  
+            
+			<fieldset name="support" label="PLG_SYSTEM_FMALERTCOOKIES_TITLE_SUPPORT">
+                <field name="support" type="spacer"                   
+                    label="PLG_SYSTEM_FMALERTCOOKIES_SUPPORT_LABEL" filter="safehtml"
+                />                             
+            </fieldset>                                          
+        </fields>     
+    </config>
+    <updateservers>
+		<server type="extension" priority="1" name="Folcomedia Update">http://www.folcomedia.fr/joomla/update/plg-system-fmalertcookies</server>
+    </updateservers>
+</extension>

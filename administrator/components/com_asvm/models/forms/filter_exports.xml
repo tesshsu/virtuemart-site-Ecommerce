@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="filter">
+		<field
+			name="search"
+			type="text"
+			label="JSEARCH_FILTER"
+			hint="JSEARCH_FILTER"
+			class="js-stools-search-string clr"
+		/>
+		
+		<field
+			name="order_id"
+			type="text"
+			hint="COM_ASVM_ORDER_ID"
+			label="COM_ASVM_ORDER_ID"
+			description="COM_ASVM_ORDER_ID"	
+			class="js-stools-search-string clr"		
+		/>
+		
+		<field
+			name="order_number"
+			type="text"
+			hint="COM_ASVM_FORM_ORDER_NUMBER"
+			label="COM_ASVM_FORM_ORDER_NUMBER"
+			class="clr"
+			description="COM_ASVM_FORM_ORDER_NUMBER"			
+		/>
+		
+		<field
+			name="product_sku"
+			type="productsku"
+			multiple="true"	
+			class="clr"	
+			label="COM_ASVM_ORDER_PRODUCT_SKU"
+			description="COM_ASVM_ORDER_PRODUCT_SKU"
+					
+			>			
+		</field>		
+		<field
+			name="produt_name"
+			type="productname"
+			multiple="true"
+			class="clr"
+			label="COM_ASVM_ORDER_PRODUCT_NAME"			
+			description="COM_ASVM_ORDER_PRODUCT_NAME"
+		
+			>
+		
+		</field>
+		
+		<field
+			name="order_status"
+			type="orderstatus"
+			multiple="true"
+			class="clr"
+			label="COM_ASVM_ORDER_ORDER_STATUS"			
+			description="COM_ASVM_ORDER_ORDER_STATUS"
+			
+			>
+			
+		</field>
+		
+		<field
+			name="payment_method"
+			type="paymentmethod"
+			multiple="true"
+			class="clr"
+			label="COM_ASVM_PAYMENT_METHOD"			
+			description="COM_ASVM_PAYMENT_METHOD"
+			
+			>
+			
+		</field>
+		
+		<field
+			name="email"
+			type="text"
+			class="clr"
+			hint="COM_ASVM_FORM_LBL_ORDER_EMAIL"
+			label="COM_ASVM_FORM_LBL_ORDER_EMAIL"			
+			description="COM_ASVM_FORM_LBL_ORDER_EMAIL"			
+		/>
+			
+		
+		<field
+			name="first_name"
+			type="text"
+			class="clr"
+			hint="COM_ASVM_FIRST_NAME"
+			label="COM_ASVM_FIRST_NAME"			
+			description="COM_ASVM_FIRST_NAME"			
+		/>
+			
+		
+		<field
+			name="last_name"
+			type="text"
+			class="clr"
+			hint="COM_ASVM_LAST_NAME"
+			label="COM_ASVM_LAST_NAME"			
+			description="COM_ASVM_LAST_NAME"			
+		/>
+			
+
+		<field
+			name="address"
+			type="text"
+			class="clr"
+			hint="COM_ASVM_ADDRESS"
+			label="COM_ASVM_ADDRESS"			
+			description="COM_ASVM_ADDRESS"			
+		/>
+			
+		
+		<field
+			name="city"
+			type="text"
+			class="clr"
+			hint="COM_ASVM_CITY"
+			label="COM_ASVM_CITY"			
+			description="COM_ASVM_CITY"			
+		/>
+		<field
+			name="state"
+			type="text"
+			class="clr"
+			hint="COM_ASVM_STATE"
+			label="COM_ASVM_STATE"			
+			description="COM_ASVM_STATE"			
+		/>
+		
+		<field
+			name="country"
+			type="vmcountry"
+			class="clr"
+			multiple="true"
+			label="COM_ASVM_COUNTRY"			
+			description="COM_ASVM_COUNTRY"
+			placeholder="COM_ASVM_COUNTRY"
+			
+			>			
+		</field>
+		
+		<field
+			name="zip"
+			type="text"
+			class="clr"
+			hint="COM_ASVM_ZIP"
+			label="COM_ASVM_ZIP"			
+			description="COM_ASVM_ZIP"			
+		/>
+		
+		<field
+			name="include_columnheader"
+			type="checkbox"
+			class="clr"
+			hint="COM_ASVM_COL_HEADER"
+			label="COM_ASVM_COL_HEADER"			
+			description="COM_ASVM_COL_HEADER"						
+		/>
+		
+		<field
+			name="delimiter"
+			type="text"
+			class="clr"
+			hint="COM_ASVM_DELIMITER"
+			label="COM_ASVM_DELIMITER"			
+			description="COM_ASVM_DELIMITER"						
+		/>
+		
+		<field
+			name="enclosure"
+			type="text"
+			class="clr"
+			hint="COM_ASVM_FIELD_ENCLOSURE"
+			label="COM_ASVM_FIELD_ENCLOSURE"			
+			description="COM_ASVM_FIELD_ENCLOSURE"						
+		/>
+		
+		
+	</fields>
+	
+</form>

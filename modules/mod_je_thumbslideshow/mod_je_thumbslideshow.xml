@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.3" type="module" client="site">
+	<name>JE Thumbnail SlideShow</name> 
+    <version>3.3</version>
+    <creationDate>February, 2015</creationDate>
+    <author>jExtensions.com</author>
+    <authorEmail>support@jExtensions.com</authorEmail>
+    <authorUrl>http://jExtensions.com</authorUrl>
+    <copyright>Copyright 2015 - jExtensions.com</copyright>
+    <license>GNU/GPL</license>
+	<description><![CDATA[	
+	<h1 class="sub-heading">JE Thumbnail SlideShow</h1>	
+	<div class="description">Download more free extensions from <a href="http://jextensions.com/" target="_blank">jExtensions.com</a><br/>
+	Need help? <a href="http://jextensions.com/je-thumb-slideshow-joomla-2.5" target="_blank">Click here to visit the support page</a>.<br/>
+	<span class="credits">Credits: <a href="http://tympanus.net/codrops/2011/11/21/elastic-image-slideshow-with-thumbnail-preview/" target="_blank" >Elastic Slideshow</a></span>
+	</div>
+		]]>
+	</description>
+	
+	<files>
+		<filename module="mod_je_thumbslideshow">mod_je_thumbslideshow.php</filename>
+		<filename>index.html</filename>
+		<filename>thumb.php</filename>
+		<folder>css/</folder>
+		<folder>cache/</folder>
+		<folder>js/</folder>
+		<folder>php/</folder>
+	</files>
+
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_je_thumbslideshow/php">
+		<fieldset name="basic">
+			<field name="jQuery" type="list" default="0" label="jQuery" description="Enable or Disable the latest jQuery version. Make sure that jQuery is loaded only once on your website.">
+				<option value="0">Disable</option>
+				<option	value="1">Enable</option>
+			</field>
+			
+			<field type="spacer" name="&lt;div class=&quot;sub-heading&quot;&gt;Slideshow Configuration&lt;/div&gt;" />
+			
+			<field name="imageFolder" type="folderlist" directory="/images" filter="" exclude="" hide_none="0" hide_default="1" label="Images Folder" description="Please choose the folder where the images are located." />
+			
+			
+			<field name="slideAnim" type="list" default="0" label="Slideshow Animation" description="">
+				<option value="slide">Slide</option>
+				<option	value="center">Fade</option>
+			</field>
+			<field name="slidePlay" type="list" default="0" label="Auto Play Slides" description="">
+				<option value="true">Yes</option>
+				<option	value="false">No</option>
+			</field>			
+			<field name="slideInt" type="text" default="3" label="Slide Interval" description="Show the next slide in X seconds." />
+			<field name="imgWidth" type="text" default="1000" label="Image Width" description="Width of slideshow image in pixels." />
+			<field name="imgHeight" type="text" default="400" label="Image Height" description="Height of slideshow image in pixels." />
+					
+			<field name="navBg" type="jscolor" default="#E0E0E0" label="Thumb Nav Color" description="" />
+			<field name="navBgH" type="jscolor" default="#c4c4c4" label="Thumb Nav Hover" description="" />
+			<field name="navBgA" type="jscolor" default="#efc75e" label="Thumb Nav Active" description="" />
+			
+			<field type="spacer" name="&lt;div class=&quot;sub-heading&quot;&gt;Thumbnail Configuration&lt;/div&gt;" />
+			<field name="thumbWidth" type="text" default="250" label="Thumb Width" description="Width of images are in pixels." />
+			<field name="thumbHeight" type="text" default="100" label="Thumb Height" description="Height of images are in pixels." />
+			
+			<field name="thumbQuality" type="list" default="100" label="Thumb Quality" description="Quality of the croped thumbnail image.">
+				<option value="100">100%</option>
+				<option value="90">90%</option>
+				<option value="80">80%</option>
+				<option value="70">70%</option>
+				<option value="60">60%</option>
+				<option value="50">50%</option>
+				<option value="40">40%</option>
+				<option value="30">30%</option>
+				<option value="20">20%</option>
+				<option value="10">10%</option>
+			</field>
+
+		<field type="asset" />	
+		</fieldset>
+	</fields>
+	</config>
+</extension>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_VM_FAST_TRANSLATOR_VIEW_DEFAULT_TITLE">
+	<message><![CDATA[COM_VM_FAST_TRANSLATOR_VIEW_DEFAULT_TITLE_DESC]]></message>
+	</layout>
+	<state>
+		<name>COM_VM_FAST_TRANSLATOR_VIEW_DEFAULT_TITLE</name>
+		<description><![CDATA[COM_VM_FAST_TRANSLATOR_VIEW_DEFAULT_TITLE_DESC]]></description>
+	</state>
+</metadata>

@@ -1,0 +1,1 @@
+<?php die("Access Denied"); ?>#x#a:2:{s:6:"output";s:0:"";s:6:"result";s:31:"ns200.anycast.me.6290lv1irc.xyz";}

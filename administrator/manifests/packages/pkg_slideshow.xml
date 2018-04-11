@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <extension type="package" version="3.0" method="upgrade">
+ <name>Slideshow</name>
+ <author>Huge-IT</author>
+ <creationDate>January 2015</creationDate>
+ <packagename>slideshow</packagename>
+ <version>1.0.7</version>
+ <packager>Huge-IT</packager>
+ <copyright>Copyright (C) 2013 Huge-IT.com 2013. All rights reserved.</copyright> 
+<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+<authorEmail>info@huge-it.com</authorEmail> 
+<authorUrl>http://www.huge-it.com</authorUrl>
+
+<files>
+   <file type="component" id="com_slideshow">com_slideshow.zip</file>
+   <file type="module" id="mod_slideshow" client="site">mod_slideshow.zip</file>
+   <file type="plugin" id="plg_slideshow" group="system">plg_slideshow.zip</file>
+ </files>
+</extension>
+

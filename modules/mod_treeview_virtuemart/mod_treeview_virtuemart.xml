@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.2" client="site" method="upgrade">
+
+<!-- Author Block -->
+	<name>Treeview for VirtueMart</name>
+	<author>UlaThemes.com</author>
+	<creationDate>Oct 31, 2015</creationDate>
+	<copyright>Copyright (C) 2015 UlaThemes.com. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenseses/gpl-3.0.html GNU/GPL</license>
+	<authorEmail>ulathemes@gmail.com</authorEmail>
+	<authorUrl>http://ulathemes.com</authorUrl>
+	<version>1.0</version>
+ 
+<!-- Files upload Block -->	
+	<files>
+		<filename module="mod_treeview_virtuemart">mod_treeview_virtuemart.php</filename>
+		<filename>index.html</filename>
+		<filename>helper.php</filename>
+		<folder>assets</folder>
+		<folder>languages</folder>
+		<folder>tmpl</folder>
+	</files>
+
+<!-- Languages Block -->
+	<languages>
+		<language tag="en-GB">languages/en-GB.mod_treeview_virtuemart.ini</language>
+	</languages>
+	
+<!-- Config Block -->
+	<config>
+		<fields name="params">
+			<!-- Basic Block -->
+			<fieldset name="basic" addfieldpath="/administrator/components/com_virtuemart/fields">				<field 					name="maxVMCategoryMenu" 					type="text" 					default="12"										label="ULA_TREEVIEW_VMART_MAX_CATEGORY_MENU" 					description="ULA_TREEVIEW_VMART_MAX_CATEGORY_MENU_DESC" />					
+                <field 
+					name="parentCategoryID" 
+					type="vmcategories" 
+					value_field="category_name" 
+					label="ULA_TREEVIEW_VMART_PARENT_CATEGORY" 
+					description="ULA_TREEVIEW_VMART_PARENT_CATEGORY_DESC" />
+				<field
+                    name="sort"
+                    type="list"
+                    default="id"
+                    label="ULA_TREEVIEW_VMART_SORT"
+                    description="ULA_TREEVIEW_VMART_SORT_DESC">
+						<option value="category_name">ULA_TREEVIEW_VMART_NAME</option>
+						<option value="category_description">ULA_TREEVIEW_VMART_DESC</option>
+						<option value="c.ordering">ULA_TREEVIEW_VMART_ORDERING</option>
+						<option value="c.category_shared">ULA_TREEVIEW_VMART_SHARED</option>
+						<option value="c.published">ULA_TREEVIEW_VMART_PUBLISHED</option>
+                </field>                
+                <field
+                    name="ordering"
+                    type="radio"
+					class="btn-group btn-group-yesno"
+                    default="asc"
+                    label="ULA_TREEVIEW_VMART_ORDERING"
+                    description="ULA_TREEVIEW_VMART_ORDERING_DESC">
+						<option value="asc">ULA_TREEVIEW_VMART_ASCENDING</option>
+						<option	value="desc">ULA_TREEVIEW_VMART_DESCENDING</option>
+                </field>
+				<field 
+					name="showCountItems" 
+					type="radio" 
+					default="1" 
+					class="btn-group btn-group-yesno"
+					label="ULA_TREEVIEW_VMART_COUNT_ITEMS" 
+					description="ULA_TREEVIEW_VMART_COUNT_ITEMS_DESC">
+						<option value="0">JHIDE</option>
+						<option value="1">JSHOW</option>
+                </field>
+				<field 
+					name="useCache" 
+					type="radio" 
+					default="0" 
+					class="btn-group btn-group-yesno"
+					label="ULA_TREEVIEW_VMART_USE_CACHE" 
+					description="ULA_TREEVIEW_VMART_USE_CACHE_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+                </field>
+				
+				<field type="spacer" name="@style" hr="true" />
+				<field 
+					name="moduleStyle" 
+					type="list" 
+					default="" 
+					label="ULA_TREEVIEW_VMART_STYLE" 
+					description="ULA_TREEVIEW_VMART_STYLE_DESC">
+						<option value="">Default</option>
+						<option value="filetree">File Tree</option>
+						<option value="treeview-red">Tree View Red</option>
+						<option value="treeview-black">Tree View Black</option>
+						<option value="treeview-gray">Tree View Gray</option>
+						<option value="treeview-famfamfam">Tree View FamFamFam</option>
+                </field>
+				<field 
+					name="showControl" 
+					type="radio" 
+					default="1" 
+					class="btn-group btn-group-yesno"
+					label="ULA_TREEVIEW_VMART_SHOW_CONTROL" 
+					description="ULA_TREEVIEW_VMART_SHOW_CONTROL_DESC">
+						<option value="0">JHIDE</option>
+						<option value="1">JSHOW</option>
+                </field>
+				<field 
+					name="animated" 
+					type="list" 
+					default="normal" 
+					label="ULA_TREEVIEW_VMART_ANIMATED" 
+					description="ULA_TREEVIEW_VMART_ANIMATED_DESC">
+						<option value="slow">Slow</option>
+						<option value="normal">Normal</option>
+						<option value="fast">Fast</option>
+                </field>
+				<field 
+					name="collapsed" 
+					type="radio" 
+					default="1" 
+					class="btn-group btn-group-yesno"
+					label="ULA_TREEVIEW_VMART_COLLAPSED" 
+					description="ULA_TREEVIEW_VMART_COLLAPSED_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+                </field>
+				<field 
+					name="unique" 
+					type="radio" 
+					default="0" 
+					class="btn-group btn-group-yesno"
+					label="ULA_TREEVIEW_VMART_UNIQUE" 
+					description="ULA_TREEVIEW_VMART_UNIQUE_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+                </field>
+				<field 
+					name="persist" 
+					type="radio" 
+					default="cookie" 
+					class="btn-group btn-group-yesno"
+					label="ULA_TREEVIEW_VMART_PERSIST" 
+					description="ULA_TREEVIEW_VMART_PERSIST_DESC">
+						<option value="location">Location</option>
+						<option value="cookie">Cookie</option>
+                </field>
+			</fieldset>
+			
+			<!-- Advanced Block -->
+			<fieldset name="advanced">
+				<field
+					name="moduleclass_sfx"
+					type="textarea" rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+						<option value="1">JGLOBAL_USE_GLOBAL</option>
+						<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

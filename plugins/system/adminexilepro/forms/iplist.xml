@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="network" label="PLG_SYS_ADMINEXILEPRO_FIELDSET_NETWORK_LABEL">
+        <field name="address" type="text" 
+            class="required validate-ipaddress" 
+            label="PLG_SYS_ADMINEXILEPRO_ADDRESS_LABEL"
+            description="PLG_SYS_ADMINEXILEPRO_ADDRESS_DESC" />
+        <field name="netmask" type="integer" default="32" first="1" last="128" step="1"
+            label="PLG_SYS_ADMINEXILEPRO_NETMASK_LABEL"
+            description="PLG_SYS_ADMINEXILEPRO_NETMASK_DESC"/>
+        <field name="note" type="text" label="PLG_SYS_ADMINEXILEPRO_NOTE_LABEL" description="PLG_SYS_ADMINEXILEPRO_NOTE_DESC" />
+        <field name="hits" type="aespacer" label="PLG_SYS_ADMINEXILEPRO_HITS_LABEL" description="PLG_SYS_ADMINEXILEPRO_HITS_DESC" />
+    </fieldset>
+</form>

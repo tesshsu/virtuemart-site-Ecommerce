@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="3.0" method="upgrade" group="system">
+	<name>AcyMailing: display a squeeze page on site entry</name>
+	<creationDate>January 2012</creationDate>
+	<version>1.3.4</version>
+	<author>Acyba</author>
+	<authorEmail>dev@acyba.com</authorEmail>
+	<authorUrl>http://www.acyba.com</authorUrl>
+	<copyright>Copyright (C) 2009-2016 ACYBA SAS - All rights reserved..</copyright>
+	<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<description>This plugin enables you to display an acymailing's subscription form in a squeeze page when a user enter your site</description>
+	<files>
+		<filename plugin="acymailingsqueezepage">acymailingsqueezepage.php</filename>
+		<filename>mobile_detect.php</filename>
+		<filename>acymailingsqueezepage.xml</filename>
+		<filename>index.html</filename>
+		<filename>listdesignfiles.php</filename>
+	</files>
+	<media destination="com_acymailing" folder="media">
+		<folder>plugins</folder>
+	</media>
+</extension>

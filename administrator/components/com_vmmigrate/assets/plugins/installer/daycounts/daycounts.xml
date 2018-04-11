@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" minimum_version="2.5.19" type="plugin" group="installer" method="upgrade">
+	<name>Installer - Daycounts</name>
+	<author>Daycounts.com</author>
+	<authorEmail>info@daycounts.com</authorEmail>
+	<authorUrl>http://www.daycounts.com</authorUrl>
+	<creationDate>May. 2016</creationDate>
+	<copyright>Copyright (C) 2011 Daycounts. All rights reserved.</copyright>
+	<license>GNU General Public License</license>
+	<version>3.1</version>
+	<description>PLG_INSTALLER_DAYCOUNTS_DESC</description>
+	<scriptfile>install.php</scriptfile>
+	<files>
+		<filename plugin="daycounts">daycounts.php</filename>
+		<filename>index.html</filename>
+		<folder>elements</folder>
+		<!--folder>language</folder-->
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_installer_daycounts.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_installer_daycounts.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params" addfieldpath="/plugins/installer/daycounts/elements">
+			<fieldset name="PLG_DAYCOUNTS_VERSION">
+				<field type="versioncheck" name="daycounts" versioncat="40" label="PLG_DAYCOUNTS_VERSION" pluginfolder="installer" pluginname="daycounts" />
+				<field type="versionhistory" name="versionhistory" versioncat="40" label="" description="" />
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+		<server type="extension" priority="1" name="Daycounts Updater plugin"><![CDATA[http://www.daycounts.com/index.php?option=com_versions&catid=40&task=updateserver.xml]]></server>
+	</updateservers>
+</extension>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<OB>
+	<CLIENT>
+		<BOM>
+			<BO>
+			<AdmInfo>
+				<Object>2</Object>
+				<Version>2</Version>
+			</AdmInfo>
+			<BusinessPartners>
+				<row>
+					<CardType>cCustomer</CardType>
+					<CardCode>0000037419INTFR</CardCode>
+					<CardName>SHI XIAOCHEN</CardName>
+					<GroupCode>100</GroupCode>
+					<Phone1>33 647365922</Phone1>
+					<Fax/>
+					<Cellular/>
+					<EmailAddress>sxcalice@outlook.com</EmailAddress>
+					<FederalTaxID/>
+					<LanguageCode>22</LanguageCode>
+					<U_OB1TYPETOTAL>TTC</U_OB1TYPETOTAL>
+					<VatLiable>vLiable</VatLiable>
+					<VatGroup>C4</VatGroup>
+					<ContactPerson>SHI</ContactPerson>
+					<U_OB1REMCLT/>
+					<PayTermsGrpCode>131</PayTermsGrpCode>
+				</row>
+			</BusinessPartners>
+			<ContactEmployees>
+				<row>
+					<Name>SHI</Name>
+					<FirstName>XIAOCHEN</FirstName>
+					<Phone1>33 647365922</Phone1>
+					<Fax/>
+					<MobilePhone/>
+					<E_Mail>sxcalice@outlook.com</E_Mail>
+				</row>
+			</ContactEmployees>
+			<BPAddresses>
+				<row>
+					<AddressType>bo_ShipTo</AddressType>
+					<AddressName>SHI XIAOCHEN</AddressName>
+					<AddressName3/>
+					<Street>32 rue EMILE LITTRE</Street>
+					<Block/>
+					<ZipCode>42100</ZipCode>
+					<City>SAINT ETIENNE</City>
+					<State/>
+					<BuildingFloorRoom>33 647365922</BuildingFloorRoom>
+					<Country>FR</Country>
+				</row>
+				<row>
+					<AddressType>bo_BillTo</AddressType>
+					<AddressName>SHI XIAOCHEN</AddressName>
+					<AddressName3/>
+					<Street>32 rue EMILE LITTRE</Street>
+					<Block/>
+					<ZipCode>42100</ZipCode>
+					<City>SAINT ETIENNE</City>
+					<State/>
+					<BuildingFloorRoom>33 647365922</BuildingFloorRoom>
+					<Country>FR</Country>
+				</row>
+			</BPAddresses>
+			</BO>
+		</BOM>
+	</CLIENT>
+	<COMMANDE>
+		<BOM>
+			<BO>
+			<AdmInfo>
+				<Object>17</Object>
+				<Version>2</Version>
+			</AdmInfo>
+			<Documents>
+				<row>
+					<DocType>dDocument_Items</DocType>
+					<DocDate>20180327</DocDate>
+					<DocDueDate>20180327</DocDueDate>
+					<CardCode>0000037419INTFR</CardCode>
+					<NumAtCard>34100</NumAtCard>
+					<ShipToCode>SHI XIAOCHEN</ShipToCode>
+					<PayToCode>SHI XIAOCHEN</PayToCode>
+					<U_OB1CODELANGUE>22</U_OB1CODELANGUE>
+					<U_OB1TYPETOTAL>TTC</U_OB1TYPETOTAL>
+					<U_OB1REMARKPACK>Paiement : Carte bancaire || Livraison : Frais de port gratuits</U_OB1REMARKPACK>
+					<PaymentGroupCode>131</PaymentGroupCode>
+					<U_OB1TRANSP>2</U_OB1TRANSP>
+				</row>
+			</Documents>
+			<Document_Lines>
+				<row>
+					<ItemCode>FLH072 - 200ml</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>6.62</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLH056 - 200ml</ItemCode>
+					<Quantity>2</Quantity>
+					<UnitPrice>5.04</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLH030 - 200ml</ItemCode>
+					<Quantity>2</Quantity>
+					<UnitPrice>5.67</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLH015 - 200ml</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>5.04</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLH028 - 500ml</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>9.14</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLH002 - 500ml</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>9.14</UnitPrice>
+				</row>
+			</Document_Lines>
+			</BO>
+		</BOM>
+	</COMMANDE>
+</OB>

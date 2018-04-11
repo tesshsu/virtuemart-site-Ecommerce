@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension version="2.5" type="plugin" group="vmuserfield" method="upgrade">
+    <name>VM - Userfield, iStraxx EU VAT Checker, tested 2.6.6 and vm2.9.9, version 2.0</name>
+    <creationDate>October 2014</creationDate>
+    <author>Max Milbers</author>
+    <authorUrl>http://extensions.virtuemart.net</authorUrl>
+    <copyright>Copyright (C) 2014 - 2015 iStraxx UG (haftungsbeschränkt). All rights reserved</copyright>
+    <license>istraxx_license.txt Proprietary License. This code belongs to iStraxx UG (haftungsbeschränkt) 
+ * You are not allowed to distribute or sell this code. You bought only a license to use it for ONE virtuemart installation. 
+ * You are not allowed to modify the core, but you may modify the layout</license>
+    <version>1.2.6</version>
+    <description><![CDATA[
+<b>Plugin for Eu vat tax.</b>
+<br/><a target="_blank" href="http://www.extensions.virtuemart.net">Visit extensions.virtuemart.net for more extensions</a>
+<p><img src="../plugins/vmuserfield/istraxx_euvatchecker/istraxx_euvatchecker/assets/images/vm-istraxx.png" align="bottom"/></p>
+
+<br style="clear: both;">
+<br/>
+<br/>
+First installation:
+<a target="_blank" href="index.php?option=com_plugins&view=plugins&filter_search=VM - Userfield, iStraxx EU VAT Checker, tested 2.6.6 and vm2.9.9, version 2.0&filter_folder=vmuserfield">
+  Click here to enable plugin</a>
+
+<br/>
+Plugin already enabled?
+<a target="_blank" href="index.php?option=com_virtuemart&view=userfields">
+  Click here to configure plugin</a>
+<br/>
+<br/>
+See also:
+<br/>
+<a target="_blank" href="http://www.extensions.virtuemart.net">
+  Installation Guide</a>
+&nbsp;
+
+]]></description>
+
+    <files>
+        <filename plugin="istraxx_euvatchecker">istraxx_euvatchecker.php</filename>
+        <folder>istraxx_euvatchecker</folder>
+        <folder>language</folder>
+    </files>
+    <config addfieldpath="/plugins/vmuserfield/istraxx_euvatchecker/istraxx_euvatchecker/fields">
+        <fields name="params"  >
+            <fieldset name="template" addfieldpath="/plugins/vmuserfield/istraxx_euvatchecker/istraxx_euvatchecker/fields">
+                <field type="vmjpluginwarning" addfieldpath="/plugins/vmuserfield/istraxx_euvatchecker/istraxx_euvatchecker/fields" />
+                <field addfieldpath="/plugins/vmuserfield/istraxx_euvatchecker/istraxx_euvatchecker/fields" name="shoppergroup_vat" type="shoppergroup" default="" label="VMUSERFIELD_ISTRAXX_EUVATCHECKER_VATGROUP"
+                       description="VMUSERFIELD_ISTRAXX_EUVATCHECKER_VATGROUP_DESC"/>
+                <field name="shoppergroup_nonvat" type="shoppergroup" default="" label="VMUSERFIELD_ISTRAXX_EUVATCHECKER_NONVATGROUP"
+                       description="VMUSERFIELD_ISTRAXX_EUVATCHECKER_NONVATGROUP_DESC"/>
+
+                <field name="country_consistency" type="list" default="0" label="VMUSERFIELD_ISTRAXX_EUVATCHECKER_COUNTRY_CONSISTENCY"
+                       description="VMUSERFIELD_ISTRAXX_EUVATCHECKER_COUNTRY_CONSISTENCY_DESC">
+                    <option value="0">COM_VIRTUEMART_NO</option>
+                    <option value="1">COM_VIRTUEMART_YES</option>
+                </field>
+                <field name="requiredForEurope" type="list" default="1" label="VMUSERFIELD_ISTRAXX_EUVATCHECKER_REQUIRED_EUROPE"
+                       description="VMUSERFIELD_ISTRAXX_EUVATCHECKER_REQUIRED_EUROPE_DESC">
+                    <option value="0">COM_VIRTUEMART_NO</option>
+                    <option value="1">COM_VIRTUEMART_YES</option>
+                </field>
+                <field name="preferBT" type="list" default="0" label="VMUSERFIELD_ISTRAXX_EUVATCHECKER_PREFER_BT"
+                       description="VMUSERFIELD_ISTRAXX_EUVATCHECKER_PREFER_BT_DESC">
+                    <option value="0">COM_VIRTUEMART_NO</option>
+                    <option value="1">COM_VIRTUEMART_YES</option>
+                </field>
+                <field name="keepTINValidDays" type="text" size="4" default="" label="VMUSERFIELD_ISTRAXX_EUVATCHECKER_KEEP_TIN_FOR_DAYS" description="VMUSERFIELD_ISTRAXX_EUVATCHECKER_KEEP_TIN_FOR_DAYS_TIP" />
+            </fieldset>
+        </fields>
+    </config>
+    <params addpath="/plugins/vmuserfield/istraxx_euvatchecker/istraxx_euvatchecker/elements"/>
+    <params addpath="/administrator/components/com_virtuemart/elements"/>
+    <params>
+        <param type="vmjpluginwarning"/>
+        <param name="" type="developerinfo" default="" label="" description=""/>
+        <param name="shoppergroup_vat" type="shoppergroup" default="" label="VMUSERFIELD_ISTRAXX_EUVATCHECKER_VATGROUP"
+               description="VMUSERFIELD_ISTRAXX_EUVATCHECKER_VATGROUP_DESC"/>
+        <param name="shoppergroup_nonvat" type="shoppergroup" default="" label="VMUSERFIELD_ISTRAXX_EUVATCHECKER_NONVATGROUP"
+               description="VMUSERFIELD_ISTRAXX_EUVATCHECKER_NONVATGROUP_DESC"/>
+
+        <param name="country_consistency" type="list" default="0" label="VMUSERFIELD_ISTRAXX_EUVATCHECKER_COUNTRY_CONSISTENCY"
+               description="VMUSERFIELD_ISTRAXX_EUVATCHECKER_COUNTRY_CONSISTENCY_DESC">
+            <option value="0">COM_VIRTUEMART_NO</option>
+            <option value="1">COM_VIRTUEMART_YES</option>
+        </param>
+        <param name="requiredForEurope" type="list" default="1" label="VMUSERFIELD_ISTRAXX_EUVATCHECKER_REQUIRED_EUROPE"
+               description="VMUSERFIELD_ISTRAXX_EUVATCHECKER_REQUIRED_EUROPE_DESC">
+            <option value="0">COM_VIRTUEMART_NO</option>
+            <option value="1">COM_VIRTUEMART_YES</option>
+        </param>
+        <param name="preferBT" type="list" default="0" label="VMUSERFIELD_ISTRAXX_EUVATCHECKER_PREFER_BT"
+               description="VMUSERFIELD_ISTRAXX_EUVATCHECKER_PREFER_BT_DESC">
+            <option value="0">COM_VIRTUEMART_NO</option>
+            <option value="1">COM_VIRTUEMART_YES</option>
+        </param>
+        <param name="keepTINValidDays" type="text" default="" label="VMUSERFIELD_ISTRAXX_EUVATCHECKER_KEEP_TIN_FOR_DAYS"
+               description="VMUSERFIELD_ISTRAXX_EUVATCHECKER_KEEP_TIN_FOR_DAYS_DESC" />
+
+        <!--param name="company_consistency" type="list" default="0" label="VMUSERFIELD_ISTRAXX_EUVATCHECKER_COMPANY_CONSISTENCY"
+               description="VMUSERFIELD_ISTRAXX_EUVATCHECKER_COMPANY_CONSISTENCY_DESC">
+            <option value="0">COM_VIRTUEMART_NO</option>
+            <option value="1">COM_VIRTUEMART_YES</option>
+        </param-->
+    </params>
+
+    <updateservers>
+        <!-- Note: No spaces or linebreaks allowed between the server tags -->
+        <server type="extension" name="VirtueMart, istraxx - euvatchecker - Update Site"><![CDATA[http://extensions.virtuemart.net/releases/istraxx/istraxx_plgvm2_3_euvatchecker.xml]]></server>
+    </updateservers>
+    
+</extension>

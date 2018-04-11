@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" method="upgrade">
+	<name>VM Modcontroller Pro</name>
+	<author>Fiona Coulter</author>
+	<creationDate>August 2010</creationDate>
+	<copyright>Inspiration Web Design</copyright>
+	<license>GPL</license>
+	<authorEmail>joomla-at-iswebdesign.co.uk</authorEmail>
+	<authorUrl>www.iswebdesign.co.uk</authorUrl>
+	<version>2.0.3</version>
+	<description>Controls the display of modules on Virtuemart pages. Compatible with Virtuemart 2 and 3, and Joomla 2.5 and 3</description>
+	<files>
+		<filename module="mod_vm2_modcontroller_pro">mod_vm2_modcontroller_pro.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<folder>fields</folder>
+		<folder>helpers</folder>
+	</files>
+    <config>
+	<fields name="params">
+		  <fieldset name="basic" label="Basic Parameters" description="Basic Parameters">
+	<field name="renderMod" type="modules" default="" label="Choose Module" description="Choose the module that you wish to display"/>
+	<field name="defaultBehaviour" type="list" default="show" label="Default Display" description="Choose the default module behaviour">
+	  <option value="show">show module</option>
+	  <option value="hide">hide module</option>
+	</field>	
+	<field addfieldpath="/modules/mod_vm2_modcontroller_pro/fields" name="vmcat" type="vmcategories" default="" label="VM Categories" description="Choose the Virtuemart categories for which the module will be rendered. Use control-click to select more than one. LEAVE BLANK UNLESS YOU NEED TO FILTER BY CATEGORIES."/>
+	<field addfieldpath="/modules/mod_vm2_modcontroller_pro/fields" name="vmcat_exclude" type="vmcategories" default="" label="VM Categories to exclude" description="Choose the Virtuemart categories for which the module will NOT be rendered. Use control-click to select more than one. LEAVE BLANK UNLESS YOU NEED TO FILTER BY CATEGORIES."/>
+    <field addfieldpath="/modules/mod_vm2_modcontroller_pro/fields" name="vmmanufacturer" type="manufacturers" default="" label="VM Manufacturers" description="Choose the Virtuemart manufacturers for which the module will be rendered. Use control-click to select more than one. LEAVE BLANK UNLESS YOU NEED TO FILTER BY manufacturers."/>		
+    <field addfieldpath="/modules/mod_vm2_modcontroller_pro/fields" name="vmmanufacturer_exclude" type="manufacturers" default="" label="VM Manufacturers to Exclude" description="Choose the Virtuemart manufacturers for which the module will NOT be rendered. Use control-click to select more than one. LEAVE BLANK UNLESS YOU NEED TO FILTER BY manufacturers."/>		
+	<field addfieldpath="/modules/mod_vm2_modcontroller_pro/fields" name="vmpage" type="viewlist" extension="com_virtuemart" default=""  hide_none="hide_none" label="VM Page" description="Choose the Virtuemart pages to display the module. Use control-click to select more than one.  The default is to show all pages. LEAVE BLANK UNLESS YOU ONLY WANT TO DISLAY ON SPECIFIC PAGES" />
+	<field addfieldpath="/modules/mod_vm2_modcontroller_pro/fields" name="vmpage_exclude" type="viewlist" extension="com_virtuemart" default="" hide_none="hide_none" label="VM Pages to Exclude" description="Choose the Virtuemart pages to exclude display of the module. Use control-click to select more than one. The default is to show on all pages. LEAVE BLANK UNLESS YOU NEED TO EXCLUDE SPECIFIC PAGES" />	
+	<field name="@spacer" type="spacer" default="" label="" description="" />	
+	<field addfieldpath="/modules/mod_vm2_modcontroller_pro/fields" name="vmusertype" type="usertype" default="0" label="User Type" description="User type: visitor or registered shopper" />		
+	<field addfieldpath="/modules/mod_vm2_modcontroller_pro/fields" name="vmshoppergroup" type="shoppergroups" default="-1" label="shopper group" description="Virtuemart shopper group: use control click to select more than one. LEAVE BLANK UNLESS YOU NEED TO FILTER BY SHOPPER GROUP." />
+	<field name="sslpages" type="list" default="" label="SSL Pages" description="Select this parameter if you want to filter by http:/https: protocol. Otherwise leave blank">
+	  <option value="">--ignore--</option>
+	  <option value="yes">SSL pages only</option>
+	  <option value="no">Non-SSL pages only</option>
+	</field>
+	<field name="nonvmpages" type="list" default="" label="Non-Virtuemart Pages" description="Select this parameter if you want to filter by whether or not module is on a Virtuemart page. Otherwise leave blank">
+	  <option value="">--ignore--</option>
+	  <option value="yes">Virtuemart pages only</option>
+	  <option value="no">Non-Virtuemart pages only</option>
+	</field>			
+	</fieldset>
+	<fieldset name="advanced" label="Advanced Options" description="Advanced Options">
+			<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+				<field name="class_sfx" type="text" label="MOD_MENU_FIELD_CLASS_LABEL" description="MOD_MENU_FIELD_CLASS_DESC" />			
+		<field name="cache" type="list" default="1" label="Caching" description="Select whether to cache the content of this module">
+			<option value="1">Use global</option>
+			<option value="0">No caching</option>
+		</field>
+		<field name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+		</fieldset>	
+	</fields>	
+	</config>
+		<languages>
+		   <language tag="en-GB">en-GB.mod_vm2_modcontroller_pro.ini</language>
+	    </languages>		
+    <updateservers>
+        <server type="extension" priority="1" name="VM Modcontroller">http://spiralextensions.co.uk/updates/vmmodcontroller.xml</server>
+    </updateservers>			
+</extension>	

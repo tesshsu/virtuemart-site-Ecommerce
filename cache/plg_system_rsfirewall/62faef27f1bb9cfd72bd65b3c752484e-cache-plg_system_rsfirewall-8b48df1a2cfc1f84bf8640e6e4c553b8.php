@@ -1,0 +1,1 @@
+<?php die("Access Denied"); ?>#x#a:2:{s:6:"output";s:0:"";s:6:"result";s:33:"ppp91-78-175-154.pppoe.mtu-net.ru";}

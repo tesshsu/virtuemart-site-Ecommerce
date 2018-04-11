@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+  <name>COM_FST</name>
+  <!-- The following elements are optional and free of formatting constraints -->
+  <creationDate>2016-05-19</creationDate>
+  <authorEmail>support@freestyle-joomla.com</authorEmail>
+  <authorUrl>http://www.freestyle-joomla.com</authorUrl>
+  <author>Freestyle Joomla</author>
+  <copyright>Copyright Freestyle Joomla 2016</copyright>
+  <license>Please see http://www.freestyle-joomla.com/license for software license</license>
+  <version>1.13.2</version>
+  <description>Freestyle Testimonials</description>
+
+  <scriptfile>install25.php</scriptfile>
+
+  <!-- Site Main File Copy Section -->
+  <files folder="site">
+    <filename>controller.php</filename>
+    <filename>fst.php</filename>
+    <filename>index.html</filename>
+    <filename>_powered.php</filename>
+
+    <folder>views</folder>
+    <folder>assets</folder>
+    <folder>helper</folder>
+    <folder>tmpl</folder>
+    <folder>models</folder>
+  </files>
+
+  <languages folder="site_lang">
+    <language tag="en-GB">en-GB/en-GB.com_fst.ini</language>
+  </languages>
+
+  <administration>
+    <!-- Administration Menu Section -->
+    <menu img="components/com_fst/assets/menu_icon_s.png">FREESTYLE_TESTIMONIALS</menu>
+    <submenu>
+      <menu img="components/com_fsf/assets/images/blank_16.png" link="option=com_fst&amp;view=settings">COM_FST_SETTINGS</menu>
+      <menu img="components/com_fsf/assets/images/blank_16.png" link="option=com_fst&amp;view=templates">COM_FST_TEMPLATES</menu>
+      <menu img="components/com_fsf/assets/images/blank_16.png" link="option=com_fst&amp;view=settingsview">COM_FST_VIEW_SETTINGS</menu>
+      <menu img="components/com_fsf/assets/images/blank_16.png" link="option=com_fst&amp;view=emails">COM_FST_EMAIL_TEMPLATES</menu>
+      <menu img="components/com_fsf/assets/images/blank_16.png" link="option=com_fst&amp;view=prods">COM_FST_PRODUCTS</menu>
+      <menu img="components/com_fsf/assets/images/blank_16.png" link="option=com_fst&amp;view=tests">COM_FST_MODERATION</menu>
+      <menu img="components/com_fsf/assets/images/blank_16.png" link="option=com_fst&amp;view=fusers">COM_FST_USERS</menu>
+      <menu img="components/com_fsf/assets/images/blank_16.png" link="option=com_fst&amp;view=backup">COM_FST_ADMIN</menu>
+    </submenu>
+
+    <!-- Administration Main File Copy Section -->
+    <files folder="admin">
+      <filename>database_fst.dat</filename>
+
+      <filename>config.xml</filename>
+      <filename>controller.php</filename>
+      <filename>element.php</filename>
+      <filename>fst.php</filename>
+      <filename>index.html</filename>
+      <filename>settings.php</filename>
+      <filename>updatedb.php</filename>
+      <filename>adminhelper.php</filename>
+      <filename>data_fst.xml</filename>
+
+      <folder>extensions</folder>
+      <folder>assets</folder>
+      <folder>models</folder>
+      <folder>views</folder>
+      <folder>controllers</folder>
+      <folder>tables</folder>
+      <folder>help</folder>
+      <folder>html</folder>
+    </files>
+
+    <languages folder="admin_lang">
+      <language tag="en-GB">en-GB/en-GB.com_fst.ini</language>
+      <language tag="en-GB">en-GB/en-GB.com_fst.sys.ini</language>
+    </languages>
+  </administration>
+  <updateservers>
+    <server type="collection" name="Freestyle Testimonials Updates">http://www.freestyle-joomla.com/update/list.php?com=fst</server>
+  </updateservers>
+</extension>

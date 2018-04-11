@@ -1,0 +1,14 @@
+<?php
+if (!class_exists( 'VmConfig' )) require(JPATH_ADMINISTRATOR.DS.'components'.DS.'com_virtuemart'.DS.'helpers'.DS.'config.php');
+
+/* Setting */
+$categoryModel = VmModel::getModel('Category');
+$category_id = $params->get('Parent_Category_id', 0);
+$vendorId = '1';
+
+$categories = $categoryModel->getChildCategoryList($vendorId, $category_id);
+
+var_dump($categories );
+
+
+?>

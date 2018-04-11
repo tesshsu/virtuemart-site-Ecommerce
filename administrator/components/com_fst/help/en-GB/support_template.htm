@@ -1,0 +1,37 @@
+<strong>Available Fields:</strong><br>
+<b>{ref}</b> : Ticket reference<br>
+<b>{name}</b> : Users name<br>
+<b>{username}</b> : Users username<br>
+<b>{email}</b> : Users email<br>
+<b>{handlername}</b> : Handlers name<br>
+<b>{handlerusername}</b> : Handlers username<br>
+<b>{handleremail}</b> : Handlers email<br>
+<b>{subject}</b> : Ticket subject including link to ticket details<br>
+<b>{icons}*</b> : Ticket info icons, including locked, tags etc<br>
+<b>{product}</b> : Product name<br>
+<b>{department}</b> : Department<br>
+<b>{category}</b> : Category<br>
+<b>{custom_X}*</b> : Custom field, where X is the ID of the custom field, eg, custom5 to display field with ID 5<br>
+<b>{custom_AAAAAA}*</b> : Custom field, where AAAAAA is the alias of the custom field, eg, custom_fish to display field with alias fish<br>
+<b>{custom}*</b> : All custom fields set to display in list<br>
+<b>{opened}*</b> : Date and time ticket was opened<br>
+<b>{closed}*</b> : Date and time ticket was closed<br>
+<b>{lastactivity}*</b> : Last activity date and time on ticket<br>
+<b>{priority}</b> : Priority<br>
+<b>{status}</b> : Status<br>
+<b>{trhl}*</b> : Put this within each &lt;tr&gt; tag used. Sets up the mouse over and a few other things. 
+Example &lt;tr {trhl}&gt;&lt;td&gt;{name}&lt;/td&gt;&lt;/td&gt;<br>
+<br>
+<strong>Advanced customization</strong><br>
+<b>{view}</b> : Current view. Values are: 'open', 'followup', 'waiting', 'allopen', 'closed', 'archive'. 
+This is used to customize the ticket list based on what view is selected.<br>
+<b>{showassigned}</b> : If user can only view their own tickets<br>
+<b>{hidehandler}</b> : If the hide ticket handler settings is set<br>
+<b>{candelete}</b> : If the can delete setting is set<br>
+<b>{archivebutton}*</b> : Shows archive button<br>
+<b>{deletebutton}*</b> : Show delete button<br>
+<b>{if,field,value,operator}HTML{endif}</b> : If statement. field should be one of the fields above. 
+Value should be a string or number, enclosed in speech marks ("). If value is blank, then compares against 
+an empty string. Operator is equals if empty, other values: 'not' for not equals. Fileds with a * cannot 
+be used in an if statement.<br><br>This HTML code will be output within a &lt;table&gt; element, so 
+needs to be in the format &lt;tr {trhl}&gt;&lt;td&gt;{name}&lt;/td&gt;&lt;/td&gt;<br> 

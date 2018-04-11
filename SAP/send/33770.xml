@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<OB>
+	<CLIENT>
+		<BOM>
+			<BO>
+			<AdmInfo>
+				<Object>2</Object>
+				<Version>2</Version>
+			</AdmInfo>
+			<BusinessPartners>
+				<row>
+					<CardType>cCustomer</CardType>
+					<CardCode>0000037923INTFR</CardCode>
+					<CardName>tessier geoffrey</CardName>
+					<GroupCode>100</GroupCode>
+					<Phone1>0218260045</Phone1>
+					<Fax/>
+					<Cellular/>
+					<EmailAddress>geoffrey.tessier@labo-heme.com</EmailAddress>
+					<FederalTaxID/>
+					<LanguageCode>22</LanguageCode>
+					<U_OB1TYPETOTAL>TTC</U_OB1TYPETOTAL>
+					<VatLiable>vLiable</VatLiable>
+					<VatGroup>C4</VatGroup>
+					<ContactPerson>tessier</ContactPerson>
+					<PayTermsGrpCode>131</PayTermsGrpCode>
+				</row>
+			</BusinessPartners>
+			<ContactEmployees>
+				<row>
+					<Name>tessier</Name>
+					<FirstName>geoffrey</FirstName>
+					<Phone1>0218260045</Phone1>
+					<Fax/>
+					<MobilePhone/>
+					<E_Mail>geoffrey.tessier@labo-heme.com</E_Mail>
+				</row>
+			</ContactEmployees>
+			<BPAddresses>
+				<row>
+					<AddressType>bo_ShipTo</AddressType>
+					<AddressName>Tessier Geoffrey</AddressName>
+					<AddressName3> - Laboheme - Codina</AddressName3>
+					<Street>25, route du vieux domaine</Street>
+					<Block/>
+					<ZipCode>18100</ZipCode>
+					<City>vierzon</City>
+					<State/>
+					<BuildingFloorRoom>0218260045</BuildingFloorRoom>
+					<Country>FR</Country>
+				</row>
+				<row>
+					<AddressType>bo_BillTo</AddressType>
+					<AddressName>Tessier Geoffrey</AddressName>
+					<AddressName3> - Laboheme - Codina</AddressName3>
+					<Street>25, route du vieux domaine</Street>
+					<Block/>
+					<ZipCode>18100</ZipCode>
+					<City>vierzon</City>
+					<State/>
+					<BuildingFloorRoom>0218260045</BuildingFloorRoom>
+					<Country>FR</Country>
+				</row>
+			</BPAddresses>
+			</BO>
+		</BOM>
+	</CLIENT>
+	<COMMANDE>
+		<BOM>
+			<BO>
+			<AdmInfo>
+				<Object>17</Object>
+				<Version>2</Version>
+			</AdmInfo>
+			<Documents>
+				<row>
+					<DocType>dDocument_Items</DocType>
+					<DocDate>20180312</DocDate>
+					<DocDueDate>20180312</DocDueDate>
+					<CardCode>0000037923INTFR</CardCode>
+					<NumAtCard>33770</NumAtCard>
+					<ShipToCode>Tessier Geoffrey</ShipToCode>
+					<PayToCode>Tessier Geoffrey</PayToCode>
+					<U_OB1CODELANGUE>22</U_OB1CODELANGUE>
+					<U_OB1TYPETOTAL>TTC</U_OB1TYPETOTAL>
+					<U_OB1REMARKPACK>Paiement : Carte bancaire || Livraison : Colissimo France - National</U_OB1REMARKPACK>
+					<PaymentGroupCode>131</PaymentGroupCode>
+					<U_OB1TRANSP>2</U_OB1TRANSP>
+				</row>
+			</Documents>
+			<Document_Lines>
+				<row>
+					<ItemCode>FLH056 - 100ml PET</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>4.2</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLT037 - 15ml</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>3.36</UnitPrice>
+				</row>
+				<row>
+					<ItemCode>FLH035 - 100ml PET</ItemCode>
+					<Quantity>1</Quantity>
+					<UnitPrice>4.2</UnitPrice>
+				</row>
+			</Document_Lines>
+			<DocumentsAdditionalExpenses>
+				<row>
+					<ExpenseCode>1</ExpenseCode>
+					<LineTotal>5.43</LineTotal>
+				</row>
+			</DocumentsAdditionalExpenses>
+			</BO>
+		</BOM>
+	</COMMANDE>
+</OB>

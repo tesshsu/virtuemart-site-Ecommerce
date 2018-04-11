@@ -1,0 +1,1 @@
+<?php die("Access Denied"); ?>#x#a:2:{s:6:"output";s:0:"";s:6:"result";s:49:"ec2-52-40-165-132.us-west-2.compute.amazonaws.com";}

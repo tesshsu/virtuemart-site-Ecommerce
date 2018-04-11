@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.0" method="upgrade">
+    <name>COM_ZTVIRTUEMARTER</name>
+    <creationDate>May 25, 2016</creationDate>
+    <author>Zootemplate</author>
+    <authorEmail>support@zootemplate.com</authorEmail>
+    <authorUrl>http://www.zootemplate.com/</authorUrl>
+    <copyright>Copyright (c) 2008 - 2016 ZooTemplate.com</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GPLv2 or later</license>
+
+    <version>1.2.0</version>
+
+    <description>COM_ZTVIRTUEMARTER_DESCRIPTION</description>
+
+    <files>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>models</folder>
+        <folder>tables</folder>
+        <folder>views</folder>
+        <filename>index.html</filename>
+        <filename>router.php</filename>
+        <filename>ztvirtuemarter.php</filename>
+    </files>
+
+    <languages folder="languages">
+        <language tag="en-GB">en-GB/en-GB.com_ztvirtuemarter.sys.ini</language>
+        <language tag="en-GB">en-GB/en-GB.com_ztvirtuemarter.ini</language>
+    </languages>
+
+    <install>
+        <sql>
+            <file charset="utf8" driver="mysql">sql/install.mysql.sql</file>
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file charset="utf8" driver="mysql">sql/uninstall.mysql.sql</file>
+        </sql>
+    </uninstall>
+    <administration>
+        <menu link="index.php?option=com_ztvirtuemarter">COM_ZTVIRTUEMARTER_MENU</menu>
+        <languages folder="admin/languages">
+            <language tag="en-GB">en-GB/en-GB.com_ztvirtuemarter.sys.ini</language>
+            <language tag="en-GB">en-GB/en-GB.com_ztvirtuemarter.ini</language>
+        </languages>
+        <files folder="admin">
+            <filename>ztvirtuemarter.php</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>
+            <folder>controllers</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+    </administration>
+</extension>
