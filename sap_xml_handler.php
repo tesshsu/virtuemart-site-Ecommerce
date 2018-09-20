@@ -368,6 +368,16 @@ Class Sap_xml_handler {
 		} else {
 			$shipping_octg = 1;
 		}
+        
+        //Ajout de value de discount si il y a
+		$order_items_request = $db_sap->query('SELECT * 
+										FROM h8q2p_virtuemart_order_items
+										WHERE virtuemart_order_id = '.$order_id);
+		while($order_items_data = $order_items_request->fetch()) {
+			if($order_items_data['product_item_price'] != $order_items_data['product_discountedPriceWithoutTax']) {
+				$discount_value = ( 1 - ( $order_items_data['product_discountedPriceWithoutTax'] / $order_items_data['product_item_price'] ) )*100;
+			}
+		}
 
 		//Suppression du + des N° de tel
 		$phone_number_delivery = str_replace('+', '', $order_user_info_delivery['phone_1']);
@@ -399,7 +409,7 @@ Class Sap_xml_handler {
 					$XML_content.="\t\t\t\t\t<VatLiable>".$VatLiable."</VatLiable>\n";
 					$XML_content.="\t\t\t\t\t<VatGroup>".$VatGroup."</VatGroup>\n";
 					$XML_content.="\t\t\t\t\t<ContactPerson>".$user_data_BT['last_name']."</ContactPerson>\n"; // AJOUT BRUNO POUR ORGA BURO
-					$XML_content.="\t\t\t\t\t<U_OB1REMCLT></U_OB1REMCLT>\n"; // AJOUT TESS POIR DISCOUNT EMAIL
+					$XML_content.="\t\t\t\t\t<U_OB1REMCLT>".$discount_value."</U_OB1REMCLT>\n"; // AJOUT TESS POIR DISCOUNT VALUE
 					$XML_content.=$exonereTVA;
 					$XML_content.=$PayTermsGrpCode;
 				$XML_content.="\t\t\t\t</row>\n";
