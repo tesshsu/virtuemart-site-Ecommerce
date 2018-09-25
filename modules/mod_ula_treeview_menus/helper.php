@@ -162,16 +162,5 @@ class ModUlaTreeviewMenusHelper
 		$template 	= self::getTemplate();
 		$document 	= JFactory::getDocument();
 		$url_base 	= JURI::base() . 'modules/' . $module->module . '/assets/';
-		
-		$document->addScript($url_base . 'js/jquery.cookie.js');
-		$document->addScript($url_base . 'js/jquery.treeview.js');
-		
-		//load style of module
-		if(file_exists(JPATH_BASE . '/templates/' . $template . '/css/' . $module->module . '.css')) {
-			$document->addStyleSheet(JURI::base() . 'templates/' . $template . '/css/' . $module->module . '.css');		
-		}
-		else {
-			$document->addStyleSheet($url_base . 'css/jquery.treeview.css');
-		}
 	}
 }

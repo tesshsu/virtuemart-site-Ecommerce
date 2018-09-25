@@ -4,9 +4,6 @@
 defined('_JEXEC') or die;
 
 $document = JFactory::getDocument();
-$document->addScript(JURI::base() . 'modules/' . $module->module . '/assets/js/jquery.cookie.js');
-$document->addScript(JURI::base() . 'modules/' . $module->module . '/assets/js/jquery.treeview.js');
-$document->addStyleSheet(JURI::base() . 'modules/' . $module->module . '/assets/css/jquery.treeview.css');
 
 $count_root_category = count($categories);
 $i = 1;
