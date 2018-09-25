@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         17.9.3799
+ * @version         17.1.24691
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -9,19 +9,18 @@
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
-namespace RegularLabs\Plugin\System\RegularLabs;
+namespace RegularLabs\LibraryPlugin;
 
 defined('_JEXEC') or die;
 
 use JFactory;
-use RegularLabs\Library\Document as RL_Document;
 
 class SearchHelper
 {
 	public static function load()
 	{
 		// Only in frontend search component view
-		if ( ! RL_Document::isClient('site') || JFactory::getApplication()->input->get('option') != 'com_search')
+		if (!JFactory::getApplication()->isSite() || JFactory::getApplication()->input->get('option') != 'com_search')
 		{
 			return;
 		}

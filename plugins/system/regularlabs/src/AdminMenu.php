@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         17.9.3799
+ * @version         17.1.24691
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -9,7 +9,7 @@
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
-namespace RegularLabs\Plugin\System\RegularLabs;
+namespace RegularLabs\LibraryPlugin;
 
 defined('_JEXEC') or die;
 
@@ -22,7 +22,7 @@ class AdminMenu
 	{
 		$params = Params::get();
 
-		if ( ! $params->combine_admin_menu)
+		if (!$params->combine_admin_menu)
 		{
 			return;
 		}
@@ -41,7 +41,7 @@ class AdminMenu
 			return;
 		}
 
-		if ( ! RL_RegEx::matchAll(
+		if (!RL_RegEx::matchAll(
 			'<li><a class="(?:no-dropdown )?menu-[^>]*>Regular Labs [^<]*</a></li>',
 			$html,
 			$matches,
@@ -85,7 +85,7 @@ class AdminMenu
 
 		$main_link = "";
 
-		if ( ! is_null($manager))
+		if (!is_null($manager))
 		{
 			array_unshift($menu_items, $manager);
 			$main_link = 'href="index.php?option=com_regularlabsmanager"';
@@ -111,7 +111,7 @@ class AdminMenu
 	{
 		$params = Params::get();
 
-		if ( ! $params->show_help_menu)
+		if (!$params->show_help_menu)
 		{
 			return;
 		}
@@ -126,7 +126,7 @@ class AdminMenu
 		$pos_1 = strpos($html, '<!-- Top Navigation -->');
 		$pos_2 = strpos($html, '<!-- Header -->');
 
-		if ( ! $pos_1 || ! $pos_2)
+		if (!$pos_1 || !$pos_2)
 		{
 			return;
 		}

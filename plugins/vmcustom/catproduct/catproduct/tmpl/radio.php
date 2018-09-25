@@ -156,27 +156,6 @@ foreach ($viewData[0] as $group) {
 		echo '<td colspan="'.$colspan.'" style="text-align:center;">'.$product['group_title'].'</td>';
 		echo '</tr>';
 	} else {
-/*	$price_per_unit = 'NA';
-	if (isset($product['child']['product_packaging']) && $product['child']['product_packaging'] <> 0 ){
-		$product_unit = $product['child']['product_unit'];
-		switch ($product_unit) {
-			case 'KG':
-				$price_per_unit = round(((float) $product['prices']['salesPrice'] / (float) $product['child']['product_packaging']),2).' / '.$product_unit ;
-				break;
-			case 'L':
-				$price_per_unit = round(((float) $product['prices']['salesPrice'] / (float) $product['child']['product_packaging']),2) ;
-				break;
-			case 'M':
-				$price_per_unit = round(((float) $product['prices']['salesPrice'] / (float) $product['child']['product_packaging']),2) ;
-				break;
-			default:	
-				$price_per_unit = round(((float) $product['prices']['salesPrice'] / (float) $product['child']['product_packaging']),2) ;
-		}
-	}
-	print_r($price_per_unit);
-	  //$product['child']['product_packaging'];
-	  print_r($currency->_priceConfig);
-	  */
 	  	// min max box quantity
 		$min_order_level = '0';
 		$max_order_level = '0';
@@ -460,7 +439,6 @@ foreach ($viewData[0] as $group) {
 	if (JFactory::getApplication()->get('catproduct_js_css') !== true) {
 		$document->addScript(JURI::root(true). "/plugins/vmcustom/catproduct/catproduct/js/cp_javascript.js");
 		$document->addStyleSheet(JURI::root(true). "/plugins/vmcustom/catproduct/catproduct/css/catproduct.css");
-		$document->addStyleSheet(JURI::root(true). "/plugins/vmcustom/catproduct/catproduct/css/res-table.css");
 		JFactory::getApplication()->set('catproduct_js_css', true);
 	}
 

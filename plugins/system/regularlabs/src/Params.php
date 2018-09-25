@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         17.9.3799
+ * @version         17.1.24691
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -9,7 +9,7 @@
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
-namespace RegularLabs\Plugin\System\RegularLabs;
+namespace RegularLabs\LibraryPlugin;
 
 defined('_JEXEC') or die;
 
@@ -21,7 +21,7 @@ class Params
 
 	public static function get()
 	{
-		if ( ! is_null(self::$params))
+		if (!is_null(self::$params))
 		{
 			return self::$params;
 		}

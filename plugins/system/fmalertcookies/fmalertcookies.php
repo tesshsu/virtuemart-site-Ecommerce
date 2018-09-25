@@ -55,12 +55,6 @@ class plgSystemFmAlertCookies extends JPlugin
 	        	}
 			}
 
-			$document->addStyleSheet(JURI::root().'plugins/system/fmalertcookies/assets/css/bootstrap.min.css');
-			if(file_exists(dirname(__FILE__).'/assets/css/custom.css')){
-				$document->addStyleSheet(JURI::root().'plugins/system/fmalertcookies/assets/css/custom.css');
-			}
-
-
 			if($this->params->get('type_affichage') == 0) {
 				$document->addScript('https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js');
 				$document->addStyleSheet(JURI::root().'plugins/system/fmalertcookies/assets/css/magnific-popup.css');

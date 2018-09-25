@@ -1,7 +1,7 @@
 <?php
 /**
  * @package         Regular Labs Library
- * @version         17.9.3799
+ * @version         17.1.24691
  * 
  * @author          Peter van Westen <info@regularlabs.com>
  * @link            http://www.regularlabs.com
@@ -9,7 +9,7 @@
  * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  */
 
-namespace RegularLabs\Plugin\System\RegularLabs;
+namespace RegularLabs\LibraryPlugin;
 
 defined('_JEXEC') or die;
 
@@ -23,7 +23,7 @@ class QuickPage
 {
 	public static function render()
 	{
-		if ( ! JFactory::getApplication()->input->getInt('rl_qp', 0))
+		if (!JFactory::getApplication()->input->getInt('rl_qp', 0))
 		{
 			return;
 		}
@@ -65,14 +65,14 @@ class QuickPage
 			$file = implode('/', explode('.', $folder)) . '/' . $file;
 		}
 
-		if ( ! $file || in_array($file, $allowed) === false)
+		if (!$file || in_array($file, $allowed) === false)
 		{
 			die;
 		}
 
 		jimport('joomla.filesystem.file');
 
-		if (RL_Document::isClient('site'))
+		if (JFactory::getApplication()->isSite())
 		{
 			JFactory::getApplication()->setTemplate('../administrator/templates/isis');
 		}
@@ -115,8 +115,7 @@ class QuickPage
 		$app = new Application;
 		$app->render();
 
-		$html = JFactory::getApplication()->getBody();
-
+		$html = JFactory::getApplication()->toString(JFactory::getApplication()->getCfg('gzip'));
 		$html = RL_RegEx::replace('\s*<link [^>]*href="[^"]*templates/system/[^"]*\.css[^"]*"[^>]*( /)?>', '', $html);
 		$html = RL_RegEx::replace('(<body [^>]*class=")', '\1reglab-popup ', $html);
 		$html = str_replace('<body>', '<body class="reglab-popup"', $html);

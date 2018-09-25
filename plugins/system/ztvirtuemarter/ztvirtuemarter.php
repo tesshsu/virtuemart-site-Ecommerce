@@ -44,10 +44,7 @@ class plgSystemZtvirtuemarter extends JPlugin
         if (self::getZtvirtuemarterSetting()->enable_photozoom == '1')
             $doc->addScript(JURI::root() . '/plugins/system/ztvirtuemarter/assets/js/jquery.elevateZoom-3.0.8.min.js');
 
-        $doc->addStyleSheet(JURI::root() . '/plugins/system/ztvirtuemarter/assets/css/style.ztvirtuemarter.css');
         $doc->addScript(JURI::root() . '/plugins/system/ztvirtuemarter/assets/js/ztvirtuemarter.js');
-        //add js
-        JFactory::getDocument()->addScript(JUri::root().'/modules/mod_ztvirtuemarter_product/assets/js/owl.carousel.min.js');
 
         if (self::getZtvirtuemarterSetting()->enable_auto_insert == '1') {
             $scriptAction = array();

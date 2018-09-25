@@ -141,7 +141,6 @@ $colspan = 5;
 	if (JFactory::getApplication()->get('catproduct_js_css') !== true) {
 		$document->addScript(JURI::root(true). "/plugins/vmcustom/catproduct/catproduct/js/cp_javascript.js");
 		$document->addStyleSheet(JURI::root(true). "/plugins/vmcustom/catproduct/catproduct/css/catproduct.css");
-		$document->addStyleSheet(JURI::root(true). "/plugins/vmcustom/catproduct/catproduct/css/res-table.css");
 		JFactory::getApplication()->set('catproduct_js_css', true);
 	}
  ?>
