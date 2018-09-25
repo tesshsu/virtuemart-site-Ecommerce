@@ -36,39 +36,14 @@ class Helix3FeatureSocial {
 			$html  = '<ul class="social-icons">';
 
 			if( $facebook ) {
-				$html .= '<li><a class="icon-facebook" data-toggle="tooltip" title="Facebook" target="_blank" href="'. $facebook .'"><i class="fa fa-facebook fa-2x"></i></a></li>';
-			}
-			if( $twitter ) {
-				$html .= '<li><a class="icon-twitter" data-toggle="tooltip" title="Twitter" target="_blank" href="'. $twitter .'"><i class="fa fa-twitter fa-2x"></i></a></li>';
-			}
-			if( $googleplus ) {
-				$html .= '<li><a class="icon-google-plus" data-toggle="tooltip" title="Google plus" target="_blank" href="'. $googleplus .'"><i class="fa fa-google-plus fa-2x"></i></a></li>';
-			}
-			if( $pinterest ) {
-				$html .= '<li><a class="icon-pinterest" data-toggle="tooltip" title="Pinterest" target="_blank" href="'. $pinterest .'"><i class="fa fa-pinterest fa-2x"></i></a></li>';
-			}
+				$html .= '<li><a id="facebook-icon" data-toggle="tooltip" title="Facebook" target="_blank" href="'. $facebook .'"></a></li>';
+			}			
 			if( $youtube ) {
-				$html .= '<li><a class="icon-linkedin" data-toggle="tooltip" title="Youtube" target="_blank" href="'. $youtube .'"><i class="fa fa-youtube fa-2x"></i></a></li>';
-			}
-			if( $linkedin ) {
-				$html .= '<li><a class="icon-dribbble" data-toggle="tooltip" title="Dribbble" target="_blank" href="'. $linkedin .'"><i class="fa fa-linkedin fa-2x"></i></a></li>';
-			}
-			if( $dribbble ) {
-				$html .= '<li><a class="icon-behance" data-toggle="tooltip" title="Behance" target="_blank" href="'. $dribbble .'"><i class="fa fa-dribbble fa-2x"></i></a></li>';
+				$html .= '<li><a id="youtube-icon" data-toggle="tooltip" title="Youtube" target="_blank" href="'. $youtube .'"></a></li>';
 			}
 			if( $behance ) {
-				$html .= '<li><a class="icon-youtube" data-toggle="tooltip" title="Instagram" target="_blank" href="'. $behance .'"><i class="fa fa-instagram fa-2x"></i></a></li>';
-			}
-			if( $flickr ) {
-				$html .= '<li><a class="icon-flickr" data-toggle="tooltip" title="Flickr" target="_blank" href="'. $flickr .'"><i class="fa fa-flickr fa-2x"></i></a></li>';
-			}
-			if( $vk ) {
-				$html .= '<li><a class="icon-skype" data-toggle="tooltip" title="Skype" target="_blank" href="'. $vk .'"><i class="fa fa-vk fa-2x"></i></a></li>';
-			}
-			if( $skype ) {
-				$html .= '<li><a class="icon-vk" data-toggle="tooltip" title="VK" href="skype:'. $skype .'?chat"><i class="fa fa-skype fa-2x"></i></a></li>';
-			}
-
+				$html .= '<li><a id="instagram-icon" data-toggle="tooltip" title="Instagram" target="_blank" href="'. $behance .'"></a></li>';
+			}			
 			$html .= '</ul>';
 
 			return $html;
