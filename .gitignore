@@ -1,7 +1,3 @@
-
-# Created by https://www.gitignore.io/api/joomla
-
-### Joomla ###
 /.htaccess
 /administrator/cache/*
 /administrator/components/com_admin/*
@@ -536,9 +532,3 @@
 /joomla.xml
 /*.txt
 /robots.txt.dist
-# OSX
-# =========================
-
-.DS_Store
-
-# End of https://www.gitignore.io/api/joomla
