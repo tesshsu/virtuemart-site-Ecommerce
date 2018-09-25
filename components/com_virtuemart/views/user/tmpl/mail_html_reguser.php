@@ -57,7 +57,6 @@ $li = '<br />';
 				</td>
 			    </tr>
 			</table>
-
 			<table class="html-email" cellspacing="0" cellpadding="0" border="0" width="100%">
 			    <tr>
 				<th width="100%">
@@ -84,6 +83,25 @@ $li = '<br />';
 				</td>
 			    </tr>
 			</table>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0" class="html-email">
+                <tr>
+                    <th width="100%">
+                    <?php echo vmText::_('COM_VIRTUEMART_RGPD_USER') ?>
+                </th>
+                </tr>
+                <tr>
+                <td valign="top" width="100%">
+                    <?php
+                    $link = JURI::root() .'index.php?option=com_content&view=article&id=31';
+                    echo $li.vmText::_('COM_VIRTUEMART_RGPD_1') . $li;
+                    echo $li.vmText::_('COM_VIRTUEMART_RGPD_2') . $li;
+                    echo $li.vmText::_('COM_VIRTUEMART_RGPD_3') . $li;
+                    echo '<br/><br/>';
+                    echo vmText::_('COM_VIRTUEMART_RGPD_LINK' ) . '<a href="'.$link.'">'.vmText::_('COM_VIRTUEMART_RGPD_CLIC' ).'</a>';
+                    ?>
+                </td>
+                </tr>
+            </table>
 		    </td>
 		</tr>
 	    </table>

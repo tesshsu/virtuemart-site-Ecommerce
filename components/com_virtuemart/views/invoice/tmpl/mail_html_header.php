@@ -41,6 +41,11 @@ if ($this->orderDetails['details']['BT']->order_language == 'fr-FR') {
 			</div>
 		</td>
 	</tr>
+	<tr>
+		<td colspan="2" width="100%" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #0a6c0f;">
+			<strong><?php echo vmText::_('COM_VIRTUEMART_ORDER_PRINT_ANNONCE') ?></strong><br/>
+		</td>
+	</tr>
 	<?php if ($this->vendor->vendor_letter_header_line == 1) { ?>
 	<tr><td colspan=2 width="100%" class="vmdoc-header-separator"><hr/></td></tr>
 	<?php } // END if header_line ?>

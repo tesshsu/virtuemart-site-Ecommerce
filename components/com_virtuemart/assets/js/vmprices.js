@@ -100,7 +100,7 @@ Virtuemart.cartEffect = function(form) {
 					"titlePosition" : 	"inside",
 					"transitionIn"	:	"fade",
 					"transitionOut"	:	"fade",
-					"changeFade"    :   "fast",
+					"changeFade"    :   "slow",
 					"type"			:	"html",
 					"autoCenter"    :   true,
 					"closeBtn"      :   false,
