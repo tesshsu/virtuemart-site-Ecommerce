@@ -129,7 +129,7 @@ $product_request = $db_product->query('SELECT virtuemart_product_id
 								WHERE virtuemart_category_id = '.$this->product->virtuemart_category_id);
 $allProducts = array();
 ?>
-<div class="listeProduitsTitre"><?php echo(vmText::_ ('TPL_MILANO_SAME_CATEGORY')) ?><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+<div class="listeProduitsTitre"><?php echo(vmText::_ ('TPL_MILANO_SAME_CATEGORY')) ?><img class="arrow-img" src="../images/down-arrow.png" /></div>
 <ul class="listeProduitsCat">
 	<?php 
 	while($product_data = $product_request->fetch()) {
