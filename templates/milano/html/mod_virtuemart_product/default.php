@@ -19,9 +19,10 @@ if ($products_per_row > 1) {
 }
 	if ($display_style == "div") {
 		?>
-		<ul class="list-inline">
+		<div class="vmproduct<?php echo $params->get ('moduleclass_sfx'); ?> productdetails">
 			<?php foreach ($products as $product) { ?>
-			<li class="<?php echo $pwidth ?> <?php echo $float ?>">
+			<div class="<?php echo $pwidth ?> <?php echo $float ?>">
+				<div class="spacer">
 					<?php
 					echo '<div class="image-block">';
 					if (!empty($product->images[0])) {
@@ -34,18 +35,46 @@ if ($products_per_row > 1) {
 					echo '<div class="productdetails">';
 					$url = JRoute::_ ('index.php?option=com_virtuemart&view=productdetails&virtuemart_product_id=' . $product->virtuemart_product_id . '&virtuemart_category_id=' .$product->virtuemart_category_id); ?>
 					<h3 class="product-name"><a href="<?php echo $url ?>"><?php echo $product->product_name ?></a></h3>
-					
-			</li>
+					<?php echo '<div class="clear"></div>';
+					if ($show_price) {
+						echo '<div class="price-box">';
+						echo '<div class="product-price">';
+						// 		echo $currency->priceDisplay($product->prices['salesPrice']);
+						if (!empty($product->prices['salesPrice'])) {
+							echo $currency->createPriceDiv ('salesPrice', '', $product->prices, FALSE, FALSE, 1.0, TRUE);
+						}
+						// 		if ($product->prices['salesPriceWithDiscount']>0) echo $currency->priceDisplay($product->prices['salesPriceWithDiscount']);
+						if (!empty($product->prices['salesPriceWithDiscount'])) {
+							echo $currency->createPriceDiv ('salesPriceWithDiscount', '', $product->prices, FALSE, FALSE, 1.0, TRUE);
+						}
+						echo '</div>';
+						echo '</div>';
+
+					}
+					if ($show_addtocart) {
+						echo shopFunctionsF::renderVmSubLayout('addtocart',array('product'=>$product));
+					}
+					echo '</div>';
+					?>
+				</div>
+			</div>
 			<?php
-			
+			if ($col == $products_per_row && $products_per_row && $col < $totalProd) {
+				echo "	</div><div style='clear:both;'>";
+				$col = 1;
+			} else {
+				$col++;
+			}
 		} ?>
-		</ul>
+		</div>
+		<br style='clear:both;'/>
+
 		<?php
 	} else {
 		$last = count ($products) - 1;
 		?>
 
-		<ul class="productdetails">
+		<ul class="vmproduct<?php echo $params->get ('moduleclass_sfx'); ?> productdetails">
 			<?php foreach ($products as $product) : ?>
 			<li class="<?php echo $pwidth ?> <?php echo $float ?>">
 				<?php
@@ -60,7 +89,7 @@ if ($products_per_row > 1) {
 				echo '<div class="productdetails">';
 				$url = JRoute::_ ('index.php?option=com_virtuemart&view=productdetails&virtuemart_product_id=' . $product->virtuemart_product_id . '&virtuemart_category_id=' .$product->virtuemart_category_id); ?>
 				<h3 class="product-name"><a href="<?php echo $url ?>"><?php echo $product->product_name ?></a></h3>
-				<?php echo '';
+				<?php echo '<div class="clear"></div>';
 				// $product->prices is not set when show_prices in config is unchecked
 				if ($show_price and  isset($product->prices)) {
 					echo '<div class="price-box">';
@@ -80,7 +109,7 @@ if ($products_per_row > 1) {
 			<?php
 			if ($col == $products_per_row && $products_per_row && $last) {
 				echo '
-		</ul>
+		</ul><div class="clear"></div>
 		<ul  class="vmproduct' . $params->get ('moduleclass_sfx') . ' productdetails">';
 				$col = 1;
 			} else {
@@ -89,7 +118,7 @@ if ($products_per_row > 1) {
 			$last--;
 		endforeach; ?>
 		</ul>
-		
+		<div class="clear"></div>
 
 		<?php
 	}

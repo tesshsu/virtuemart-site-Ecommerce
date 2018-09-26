@@ -93,7 +93,7 @@ $colGrid = array(
                             <li><a href="#" class="hasTooltip column-layout-custom column-layout custom <?php echo $active; ?>" data-layout="" data-type='custom' data-original-title="<strong>Custom Layout</strong>"></a></li>
                         </ul>
                     </li>
-                    <li><a class="btn btn-small add-row" href="#"><i class="fa bar-icon"></i> <?php echo JText::_('HELIX_ADD_ROW'); ?></a></li>
+                    <li><a class="btn btn-small add-row" href="#"><i class="fa fa-bars"></i> <?php echo JText::_('HELIX_ADD_ROW'); ?></a></li>
                     <li><a class="btn btn-small row-ops-set" href="#"><i class="fa fa-gears"></i> <?php echo JText::_('HELIX_SETTINGS'); ?></a></li>
                     <li><a class="btn btn-danger btn-small remove-row" href="#"><i class="fa fa-times"></i> <?php echo JText::_('HELIX_REMOVE'); ?></a></li>
                 </ul>

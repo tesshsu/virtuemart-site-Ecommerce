@@ -186,3 +186,6 @@ if (!empty($this->item->pagination) && $this->item->pagination && $this->item->p
 	<?php endif; ?>
 	
 </article>
+<script type="text/javascript" src="https://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "0f5be4d4-f599-4a8a-a6b6-42b6c788f6a8", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+ 

@@ -7,6 +7,7 @@
 
 // no direct access
 defined('_JEXEC') or die('Restricted access');
+JHtml::_('stylesheet', 'mod_falang/template.css', array(), true);
 
 //add alternate tag
 $doc = JFactory::getDocument();

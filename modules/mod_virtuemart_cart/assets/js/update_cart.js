@@ -15,13 +15,15 @@ jQuery(function($) {
 						if (datas.totalProduct > 0) {
 							jQuery(module).find(".vm_cart_products").html("");
 							jQuery.each(datas.products, function (key, val) {
-								jQuery("#hiddencontainer .vmcontainer").clone().appendTo(".vmcontainer .vm_cart_products");
+								//jQuery("#hiddencontainer .vmcontainer").clone().appendTo(".vmcontainer .vm_cart_products");
+								jQuery(module).find(".hiddencontainer .vmcontainer .product_row").clone().appendTo( jQuery(module).find(".vm_cart_products") );
 								jQuery.each(val, function (key, val) {
 									jQuery(module).find(".vm_cart_products ." + key).last().html(val);
 								});
 							});
 						}
 						jQuery(module).find(".show_cart").html(		datas.cart_show);
+						jQuery(module).find(".total_products").html(	datas.totalProductTxt);
 						jQuery(module).find(".total").html(		datas.billTotal);
 					});
 				}
@@ -29,5 +31,14 @@ jQuery(function($) {
 		};
 		base.init();
 	};
+	// Definition Of Defaults
+	Virtuemart.customUpdateVirtueMartCartModule.defaults = {
+		name1: 'value1'
+	};
+
 });
 
+jQuery(document).ready(function( $ ) {
+	jQuery(document).off("updateVirtueMartCartModule","body",Virtuemart.customUpdateVirtueMartCartModule);
+	jQuery(document).on("updateVirtueMartCartModule","body",Virtuemart.customUpdateVirtueMartCartModule);
+});
