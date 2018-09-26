@@ -11,7 +11,9 @@ a {
 #sp-header-block div.sp-vmsearch .search-input-wrapper {
     padding-left:210px;
 } 
-
+_:-ms-fullscreen, :root .sp-default-logo {
+    max-width: 370px;
+}
 /* CATEGORIE */
 
 .orderby-displaynumber .pull-right.list-grid {
@@ -320,6 +322,12 @@ div.ula-treeview-menus .treeview .hitarea {
 }
 .pe-7s-search:before {
     content: "\1F50D";
+}
+.arrow-img{ 
+    float: right;
+    font-size: 14px;
+    color: white;
+    padding: 1px 15px 0 0;
 }
 /*CART CHECKTOU PAGE*/
 .trash-icon{
