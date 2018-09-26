@@ -48,7 +48,8 @@ class Helix3FeatureLogo {
 		if( $this->helix3->getParam('mobile_logo') ) {
 			$custom_logo_class = ' hidden-xs';
 		}
-		$html .= '<a class="logo" href="' . JURI::root(true) . '/">';
+
+		$html .= '<a class="logo" href="' . JURI::base(true) . '/">';
 
 		if( $this->helix3->getParam('logo_type') == 'image' ) {
 			if( $this->helix3->getParam('logo_image') ) {

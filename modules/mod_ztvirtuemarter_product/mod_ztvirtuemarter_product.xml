@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" method="upgrade">
+    <name>Ztvirtuemarter Product</name>
+    <creationDate>May 25, 2016</creationDate>
+    <author>Zootemplate</author>
+    <authorEmail>support@zootemplate.com</authorEmail>
+    <authorUrl>http://www.zootemplate.com/</authorUrl>
+    <copyright>Copyright (c) 2008 - 2016 ZooTemplate.com</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <version>1.2.0</version>
+    <description>MOD_ZTVIRTUEMARTER_PRODUCT_DESC</description>
+    <files>
+        <filename module="mod_ztvirtuemarter_product">mod_ztvirtuemarter_product.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <folder>assets</folder>
+        <folder>fields</folder>
+        <folder>tmpl</folder>
+        <folder>language</folder>
+    </files>
+
+    <config>
+        <fields name="params" addfieldpath="/modules/mod_ztvirtuemarter_product/fields">
+            <fieldset name="basic">
+                <field name="layout" type="filelist" label="MOD_ZTVIRTUEMARTER_PRODUCT_LAYOUT"
+                       description="MOD_ZTVIRTUEMARTER_PRODUCT_LAYOUT_DESC"
+                       directory="/modules/mod_ztvirtuemarter_product/tmpl"
+                       default="default" hide_default="1" hide_none="1"
+                       stripext="1" filter="\.php$" exclude="^_"/>
+
+
+                <field name="virtuemart_category_ids" type="tab"
+                       label="MOD_ZTVIRTUEMARTER_PRODUCT_CATEGORY_ID"
+                       description="MOD_ZTVIRTUEMARTER_PRODUCT_CATEGORY_ID_DESC"/>
+
+                <field name="product_group" type="list" default="featured"
+                       label="MOD_ZTVIRTUEMARTER_PRODUCT_DISPLAY"
+                       description="MOD_ZTVIRTUEMARTER_PRODUCT_DISPLAY_DESC">
+                    <option value="featured">MOD_ZTVIRTUEMARTER_PRODUCT_FEATURED_PRODUCTS</option>
+                    <option value="latest">MOD_ZTVIRTUEMARTER_PRODUCT_LATEST_PRODUCTS</option>
+                    <option value="random">MOD_ZTVIRTUEMARTER_PRODUCT_RANDOM_PRODUCTS</option>
+                    <option value="topten">MOD_ZTVIRTUEMARTER_PRODUCT_BEST_SALES</option>
+                    <option value="recent">MOD_ZTVIRTUEMARTER_PRODUCT_RECENT_PRODUCTS</option>
+                </field>
+
+
+
+                <field name="product_group_tab" type="list" default="featured"
+                       label="MOD_ZTVIRTUEMARTER_PRODUCT_DISPLAY"
+                       description="MOD_ZTVIRTUEMARTER_PRODUCT_DISPLAY_DESC"
+                       multiple="multiple">
+                    <option value="featured">MOD_ZTVIRTUEMARTER_PRODUCT_FEATURED_PRODUCTS</option>
+                    <option value="latest">MOD_ZTVIRTUEMARTER_PRODUCT_LATEST_PRODUCTS</option>
+                    <option value="random">MOD_ZTVIRTUEMARTER_PRODUCT_RANDOM_PRODUCTS</option>
+                    <option value="topten">MOD_ZTVIRTUEMARTER_PRODUCT_BEST_SALES</option>
+                    <option value="recent">MOD_ZTVIRTUEMARTER_PRODUCT_RECENT_PRODUCTS</option>
+
+                </field>
+
+                <field name="max_items" type="text" default="2"
+                       label="MOD_ZTVIRTUEMARTER_PRODUCT_MAX_ITEMS"
+                       description="MOD_ZTVIRTUEMARTER_PRODUCT_MAX_ITEMS_DESC"/>
+
+                <field name="new_product_from" type="list" default="7"
+                       label="MOD_ZTVIRTUEMARTER_PRODUCT_NEW_PRODUCT_FROM"
+                       description="MOD_ZTVIRTUEMARTER_PRODUCT_NEW_PRODUCT_FROM_DESC">
+                    <option value="1">MOD_ZTVIRTUEMARTER_PRODUCT_NEW_PRODUCT_FROM_ONE_DAY</option>
+                    <option value="2">MOD_ZTVIRTUEMARTER_PRODUCT_NEW_PRODUCT_FROM_TWO_DAYS</option>
+                    <option value="3">MOD_ZTVIRTUEMARTER_PRODUCT_NEW_PRODUCT_FROM_THREE_DAYS</option>
+                    <option value="7">MOD_ZTVIRTUEMARTER_PRODUCT_NEW_PRODUCT_FROM_ONE_WEEK</option>
+                    <option value="14">MOD_ZTVIRTUEMARTER_PRODUCT_NEW_PRODUCT_FROM_TWO_WEEKS</option>
+                    <option value="30">MOD_ZTVIRTUEMARTER_PRODUCT_NEW_PRODUCT_FROM_ONE_MONTH</option>
+                    <option value="60">MOD_ZTVIRTUEMARTER_PRODUCT_NEW_PRODUCT_FROM_TWO_MONTHS</option>
+                    <option value="90">MOD_ZTVIRTUEMARTER_PRODUCT_NEW_PRODUCT_FROM_THREE_MONTHS</option>
+                </field>
+                <field name="products_per_row" type="text" default="1"
+                       label="MOD_ZTVIRTUEMARTER_PRODUCT_PRODUCTS_PER_ROW"
+                       description="MOD_ZTVIRTUEMARTER_PRODUCT_PRODUCTS_PER_ROW_DESC"/>
+                <field name="display_style" type="list" default="list"
+                       label="MOD_ZTVIRTUEMARTER_PRODUCT_DISPLAY_STYLE"
+                       description="MOD_ZTVIRTUEMARTER_PRODUCT_DISPLAY_STYLE_DESC">
+                    <option value="list">MOD_ZTVIRTUEMARTER_PRODUCT_DISPLAY_UL</option>
+                    <option value="div">MOD_ZTVIRTUEMARTER_PRODUCT_DISPLAY_DIV</option>
+                </field>
+                <field name="show_price" type="list" default="1"
+                       label="MOD_ZTVIRTUEMARTER_PRODUCT_SHOW_PRICE"
+                       description="MOD_ZTVIRTUEMARTER_PRODUCT_SHOW_PRICE_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="show_addtocart" type="list" default="1"
+                       label="MOD_ZTVIRTUEMARTER_PRODUCT_SHOW_ADDTOCART"
+                       description="MOD_ZTVIRTUEMARTER_PRODUCT_SHOW_ADDTOCART_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="@spacer" type="spacer" default="" label="" description=""/>
+                <field name="headerText" type="text" default=""
+                       label="MOD_ZTVIRTUEMARTER_PRODUCT_HEADER_TEXT"
+                       description="MOD_ZTVIRTUEMARTER_PRODUCT_HEADER_TEXT_DESC"/>
+                <field name="footerText" type="text" default=""
+                       label="MOD_ZTVIRTUEMARTER_PRODUCT_FOOTER_TEXT"
+                       description="MOD_ZTVIRTUEMARTER_PRODUCT_FOOTER_TEXT_DESC"/>
+                <field name="filter_category" type="list" default="0"
+                       label="MOD_ZTVIRTUEMARTER_PRODUCT_FILTER_CATEGORY"
+                       description="MOD_ZTVIRTUEMARTER_PRODUCT_FILTER_CATEGORY_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field name="vmcache" type="list"
+                       default="1"
+                       label="MOD_ZTVIRTUEMARTER_PRODUCT_CACHING_LABEL"
+                       description="MOD_ZTVIRTUEMARTER_PRODUCT_CACHING_DESC"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="vmcachetime" type="text"
+                       default="300"
+                       label="MOD_ZTVIRTUEMARTER_PRODUCT_CACHING_TIME_LABEL"
+                       description="MOD_ZTVIRTUEMARTER_PRODUCT_CACHING_TIME_DESC"
+                />
+            </fieldset>
+            <fieldset name="advanced">
+                <field name="cache" type="list"
+                       default="1"
+                       label="COM_MODULES_FIELD_CACHING_LABEL"
+                       description="COM_MODULES_FIELD_CACHING_DESC"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field name="moduleclass_sfx" type="text" default=""
+                       label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                       description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+                <field name="class_sfx" type="text" default=""
+                       label="Menu Class Suffix"
+                       description="A suffix to be applied to the css class of the menu items"/>
+            </fieldset>
+        </fields>
+    </config>
+    <updateservers>
+        <!-- Note: No spaces or linebreaks allowed between the server tags -->
+        <server type="extension" name="VirtueMart3 mod_ztvirtuemarter_product Update Site">
+            <![CDATA[http://virtuemart.net/releases/vm3/mod_ztvirtuemarter_product_update.xml]]></server>
+    </updateservers>
+</extension>

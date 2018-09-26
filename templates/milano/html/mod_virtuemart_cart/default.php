@@ -1,5 +1,8 @@
 <?php // no direct access
 defined('_JEXEC') or die('Restricted access');
+
+vmJsApi::removeJScript("/modules/mod_virtuemart_cart/assets/js/update_cart.js");
+
 //dump ($cart,'mod cart');
 // Ajax is displayed in vm_cart_products
 // ALL THE DISPLAY IS Done by Ajax using "hiddencontainer" ?>
@@ -53,12 +56,16 @@ defined('_JEXEC') or die('Restricted access');
     								<?php } ?>
     							<?php } ?>
     						</ol>
-    					</div>   					
+    					</div>
+    					
     					<div class="total">
     						<?php if ($data->totalProduct and $show_price and $currencyDisplay->_priceConfig['salesPrice'][0]) { ?>
     							<?php echo $data->billTotal; ?>
     						<?php } ?>
     					</div>
+    
+    					<!--<div class="total_products"><?php //echo  $data->totalProductTxt ?></div>-->
+    					
     					<div class="show_cart">
     						<?php if ($data->totalProduct) { ?>
     							<?php echo  $data->cart_show; ?>
@@ -75,6 +82,7 @@ defined('_JEXEC') or die('Restricted access');
 	<noscript>
 		<?php echo vmText::_('MOD_VIRTUEMART_CART_AJAX_CART_PLZ_JAVASCRIPT') ?>
 	</noscript>
+	
 	<script>
 		if (typeof Virtuemart === "undefined")
 		Virtuemart = {};
@@ -88,23 +96,23 @@ defined('_JEXEC') or die('Restricted access');
 				base.options 	= $.extend({}, Virtuemart.customUpdateVirtueMartCartModule.defaults, options);
 					
 				base.init = function(){
-					jQuery("body").addClass("loading");
 					$.ajaxSetup({ cache: false })
 					$.getJSON(window.vmSiteurl + "index.php?option=com_virtuemart&nosef=1&view=cart&task=viewJS&format=json" + window.vmLang,
 						function (datas, textStatus) {
-							jQuery("body").removeClass("loading");
 							base.$el.each(function( index ,  module ) {
 								if (datas.totalProduct > 0) {
 									$(module).find(".vm_cart_products").html("");
 									$.each(datas.products, function (key, val) {
+										//jQuery("#hiddencontainer .vmcontainer").clone().appendTo(".vmcontainer .vm_cart_products");
 										$(module).find(".hiddencontainer .vmcontainer .product_row").clone().appendTo( $(module).find(".vm_cart_products") );
 										$.each(val, function (key, val) {
 											$(module).find(".vm_cart_products ." + key).last().html(val);
 										});
 									});
 								}
-								$(module).find(".number").html(datas.totalProduct);
 								$(module).find(".show_cart").html(datas.cart_show);
+								//$(module).find(".total_products").html(	datas.totalProductTxt);
+								$(module).find(".number").html(datas.totalProduct);
 								$(module).find(".total").html(datas.billTotal);
 							});
 						}
@@ -116,13 +124,13 @@ defined('_JEXEC') or die('Restricted access');
 			Virtuemart.customUpdateVirtueMartCartModule.defaults = {
 				name1: 'value1'
 			};
+
 		});
+
 		jQuery(document).ready(function( $ ) {
 			jQuery(document).off("updateVirtueMartCartModule","body",Virtuemart.customUpdateVirtueMartCartModule);
 			jQuery(document).on("updateVirtueMartCartModule","body",Virtuemart.customUpdateVirtueMartCartModule);
 		});
-		jQuery("body").removeClass("loading");
 	</script>
 </div>
 </div>
-<div class="processing"><!-- Place at bottom of page --></div>
