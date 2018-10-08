@@ -56,8 +56,9 @@ $dateDiff = date_diff(date_create(), date_create($this->product->product_availab
 if ($features) {
 	//$htmlLabel .= '<span class="sticker top-left"><span class="hotsale">New</span></span>';
 }
-if ($dateDiff->days < 7) {
+if ($dateDiff->days < 60) {
     //$htmlLabel .= '<span class="sticker top-right"><span class="labelnew">New</span></span>';
+    $htmlLabel .= '<span class="sticker top-left"><span class="hotsale">New</span></span>';
 }
 if (isset($this->product->percentage)) {
     $htmlLabel .= '<span class="sticker top-right"><span class="labelsale">'.$this->product->percentage.'</span></span>';
