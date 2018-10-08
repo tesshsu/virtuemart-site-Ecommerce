@@ -215,7 +215,7 @@ if(vRequest::getInt('print',false)){ ?>
                         }
                         foreach ($this->product->customfieldsSorted['normal'] as $field){    
                                 if ($field->custom_element=='bio' && $field->customfield_value=='oui'){
-                                   if($this->product->categoryItem[0]['slug']!="cosmetiques-bio" && $isCosmetic==false && $this->product->categoryItem[0]['slug']!="huiles-de-maceration" && $isMaceration==false && $this->product->product_sku!== 'FLV046' && $this->product->product_sku!== 'FLV047' && $this->product->product_sku!== 'FLV045' && $this->product->product_sku!== 'FLV011' && $this->product->product_sku!== 'FLV049' && $this->product->product_sku!= 'FLV043' && $this->product->product_sku!= 'FLV015' && $this->product->product_sku!= 'FLV002' && $this->product->product_sku!== 'FLV003' && $this->product->product_sku!== 'FLV041' && $this->product->product_sku!= 'FLV025' && $this->product->product_sku!= 'FLV001' && $this->product->product_sku!== 'FLK001' && $this->product->product_sku!== 'FLK002' && $this->product->product_sku!= 'FLV018'){
+                                   if($this->product->categoryItem[0]['slug']!="cosmetiques-bio" && $isCosmetic==false && $this->product->categoryItem[0]['slug']!="huiles-de-maceration" && $isMaceration==false && $this->product->product_sku!== 'FLV046' && $this->product->product_sku!== 'FLV047' && $this->product->product_sku!== 'FLV045' && $this->product->product_sku!== 'FLV011' && $this->product->product_sku!== 'FLV049' && $this->product->product_sku!= 'FLV043' && $this->product->product_sku!= 'FLV015' && $this->product->product_sku!= 'FLV002' && $this->product->product_sku!== 'FLV003' && $this->product->product_sku!== 'FLV041' && $this->product->product_sku!= 'FLV025' && $this->product->product_sku!= 'FLV001' && $this->product->product_sku!== 'FLK001' && $this->product->product_sku!== 'FLK002' && $this->product->product_sku!= 'FLV018' && $this->product->product_sku!= 'FLV030' && $this->product->product_sku!= 'FLV022' && $this->product->product_sku!= 'FLV029' && $this->product->product_sku!= 'FLV013' && $this->product->product_sku!= 'FLV021' && $this->product->product_sku!= 'FLV048' && $this->product->product_sku!= 'FLV044' && $this->product->product_sku!= 'FLV027' && $this->product->product_sku!= 'FLV042'){
                                         echo'<img src="/images/icon-bio-v2.png">';
                                     }else{
                                         echo'<div class="banniere_bio">';
@@ -243,15 +243,15 @@ if(vRequest::getInt('print',false)){ ?>
                         ?>
                     </div>
                 </div>
-                <!--<div class="share_this"> 
+                 <!-- #328 add share social network in product page site France -->
+                <div class="share_this"> 
                     <ul class="social-icons">  
-                        <li class="st_facebook_large" data-toggle="tooltip" data-placement="top" title="Share on Facebook"><a class="icon-facebook" href="#"><i class="fa fa-facebook-f"></i></a></li>
-                        <li class="st_twitter_large" data-toggle="tooltip" data-placement="top" title="Share on Twitter"><a class="icon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li class="st_googleplus_large"  data-toggle="tooltip" data-placement="top" title="Share on Google+"><a class="icon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li class="st_pinterest_large" data-toggle="tooltip" data-placement="top" title="Share on Pinterest"><a class="icon-pinterest" href="#"><i class="fa fa-pinterest"></i></a></li>
-                        <li class="st_linkedin_large" data-toggle="tooltip" data-placement="top" title="Share on Linkedin"><a class="icon-dribbble" href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li data-toggle="tooltip" data-placement="top" title="Share on Facebook"><a id="facebook-icon"  href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank"></a></li>
+                        <li data-toggle="tooltip" data-placement="top" title="Share on Twitter"><a id="twitter-icon" href="https://twitter.com/home?status=https%3A//www.florihana.com/" target="_blank"></a></li>
+                        <li data-toggle="tooltip" data-placement="top" title="Share on Google+"><a id="google-icon" href="https://plus.google.com/share?url=https%3A//www.florihana.com/" target="_blank"></a></li>
+                        <li data-toggle="tooltip" data-placement="top" title="Share on LinkedIn"><a id="linkedin-icon" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A//www.florihana.com/" target="_blank"></a></li>
                     </ul>
-                </div>-->
+                </div>
             </div>
         </div>
         </div>  
@@ -410,26 +410,6 @@ if(vRequest::getInt('print',false)){ ?>
         
     }
 
-    //Issue #208 genere la box pour les densite, differente des autres car elle contient plusieurs fichiers par produit
-    function generate_icon_box_densite($sku, $cat_id, $lang = false){
-        $file_array = scandir("images/boutique/product_files/fiches_densite/".$sku);
-        unset($file_array[0]);
-        unset($file_array[1]);
-        $link_string = "";
-        $libelle = '';
-        if($cat_id == 7 ) {
-                $libelle = 'COM_VIRTUEMART_CUSTOM_DENSITE';
-            }else if($cat_id == 22 ) {
-                $libelle = 'COM_VIRTUEMART_CUSTOM_DENSITE_AB';
-            }
-        foreach($file_array as $value){
-            $link_string.='<a target="_blank" href="images/boutique/product_files/fiches_densite/'.$sku.'/'.$value.'">'.$value.'</a>';
-        }
-        $icon_box = '<div class="icon_box col-lg-3 col-md-4 col-sm-6 col-xs-12"><img src="/templates/milano/images/products/icon-densite.png"/><div class="icon_box_text"><p class=icon_box_title>'.vmText::_ ($libelle).'</p><div class=icon_box_dropdown><button class=drop_button>'.vmText::_ ('COM_VIRTUEMART_CUSTOM_DOWNLOAD').' </button><div class="drop_content">'.$link_string.'</div></div></div></div>';
-        return $icon_box;
-        
-    }
-
     //genere la box pour les dentise, differente des autres car elle contient meme fichiers par produit
     function generate_icon_box_pesticides($sku, $cat_id){
         $file_array = scandir("images/boutique/product_files/analyses_pesticide/".$sku);
@@ -505,13 +485,7 @@ if(vRequest::getInt('print',false)){ ?>
             case "natural":
                 echo '<div class="icon_box col-lg-3 col-md-4 col-sm-6 col-xs-12"><img src="/templates/milano/images/products/percentage.jpg"/><div class="icon_box_text"><p class=icon_box_title>'.vmText::_ ($field->custom_title).'</p><p class=icon_box_content>'.$field->customfield_value.'%</p></div></div>';
                 break;
-            case "certificate_file":
-            /*
-                $certificate_file_suffix = '';
-                if($currentLangTag[0] != 'fr' && check_file($field->customfield_value.'_EN', "certificate_file")) {
-                    $certificate_file_suffix = '_EN';
-                }
-            */
+            /*case "certificate_file":
                 $certificate_list = explode(PHP_EOL, $field->customfield_value);
 
                 $ending;$certificate_value;
@@ -537,7 +511,7 @@ if(vRequest::getInt('print',false)){ ?>
                             </div>
                         </div>
                       </div>';
-                break;
+                break;*/
 
             case "technical_data":
                 echo '<div class="icon_box col-lg-3 col-md-4 col-sm-6 col-xs-12"><img src="/templates/milano/images/products/technical_data.png"/><div class="icon_box_text"><p class=icon_box_title>'.$field->custom_title.'</p><p class=icon_box_content>'.$field->customfield_value.'</p></div></div>';
@@ -555,12 +529,6 @@ if(vRequest::getInt('print',false)){ ?>
     if(check_file($this->product->product_sku, "fiches_allergenes")){
         echo generate_icon_box($this->product->product_sku, "allergenes");
     }
-
-    // update densite
-    /*if(check_file($this->product->product_sku, "fiches_densite")){
-        echo generate_icon_box($this->product->product_sku, "densite");
-    }*/
-    
     if(check_file($this->product->product_sku, "certificats")){
         echo generate_icon_box($this->product->product_sku, "ifra");
     }
@@ -578,13 +546,21 @@ if(vRequest::getInt('print',false)){ ?>
     }
     if(check_file($this->product->product_sku, "analyses_pesticide")){
         echo generate_icon_box_pesticides($this->product->product_sku, $this->product->virtuemart_category_id);
-    }    
-    // update densite
-    if(check_file($this->product->product_sku, "fiches_densite")){
-        echo generate_icon_box_densite($this->product->product_sku, $this->product->virtuemart_category_id);
-    }
-    
+    }   
     echo '</div>';
+
+    // issue #342 Add block "nos exigence" for category cosmetique
+    if($this->product->categoryItem[0]['slug']=="cosmetiques-bio"){
+    echo '<div class="row">
+            <div class="col-md-6 quality_container">
+            <h4 class="quality_title">'.vmText::_ ('COM_VIRTUEMART_ENGAGEMENT_QUALITY').'</h4>
+            <p class="quality_text">'.vmText::_ ('COM_VIRTUEMART_ENGAGEMENT_QUALITY_TEXT').'</p>
+            <p class="quality_text_3"><a href="images/boutique/product_files/engagements/FLORIHANA-requirements-'.$currentLangTag[0].'.pdf" target="_blank">'.vmText::_ ('COM_VIRTUEMART_ENGAGEMENT_QUALITY_TEXT_3').'</a></p>
+            </div>
+            <div class="col-md-6">
+            </div>
+          </div>';
+    }
     
     echo '<div class="row info_container">
         <div class="col-md-4 info_box">
@@ -660,6 +636,3 @@ echo vmJsApi::writeJS();
     echo shopFunctionsF::renderVmSubLayout('customfields',array('product'=>$this->product,'position'=>'related_categories','class'=> 'product-related-categories'));
 
 ?>
-<script type="text/javascript" src="https://w.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript">stLight.options({publisher: "0f5be4d4-f599-4a8a-a6b6-42b6c788f6a8", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
-
