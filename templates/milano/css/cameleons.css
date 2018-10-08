@@ -14,6 +14,11 @@ a {
 _:-ms-fullscreen, :root .sp-default-logo {
     max-width: 370px;
 }
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .sp-default-logo {
+      max-width: 370px;
+    }
+}
 /* CATEGORIE */
 
 .orderby-displaynumber .pull-right.list-grid {
