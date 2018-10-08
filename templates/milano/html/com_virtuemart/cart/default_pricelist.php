@@ -41,7 +41,7 @@ foreach ($this->cart->products as $pkey => $prow) {
 
 <tr>
 	<input type="hidden" name="cartpos[]" value="<?php echo $pkey ?>" />
-    <td class="product-remove"><button type="submit"  class="fa fa-trash" name="delete.<?php echo $pkey ?>"   ></td>
+    <td class="product-remove"><button type="submit"  class="trash-icon" name="delete.<?php echo $pkey ?>"   ></td>
     <td class="product-image"> 
     		 <?php
 
