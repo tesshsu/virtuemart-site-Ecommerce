@@ -18,32 +18,17 @@
 	$check_stock = 0;
 	$global_params = $viewData[3];
 	$see_price = true;
-
-	/*Issue #145 For product pharmacie not show buy button if is in France language */
-	$lang = JFactory::getLanguage();
-	$jinput = JFactory::getApplication()->input;
-	$bproduct_id = $jinput->get('virtuemart_product_id');
-
-    if($lang->getTag() == 'fr-FR') {
-		if($bproduct_id == 607 || $bproduct_id == 684 || $bproduct_id == 210 || $bproduct_id == 918 || $bproduct_id == 847 || $bproduct_id == 842 || $bproduct_id == 887 || $bproduct_id == 889 || $bproduct_id == 899 || $bproduct_id == 807 || $bproduct_id == 832 || $bproduct_id == 1513 || $bproduct_id == 1594 || $bproduct_id == 675 || $bproduct_id == 651 || $bproduct_id == 639 || $bproduct_id == 1502|| $bproduct_id == 367|| $bproduct_id == 546 || $bproduct_id == 534 || $bproduct_id == 590 || $bproduct_id == 494 || $bproduct_id == 432 || $bproduct_id == 1645 || $bproduct_id == 623 || $bproduct_id == 206 || $bproduct_id == 194 || $bproduct_id == 226 || $bproduct_id == 550 || $bproduct_id == 230 || $bproduct_id == 444 || $bproduct_id == 251 || $bproduct_id == 602 || $bproduct_id == 310 || $bproduct_id == 514 || $bproduct_id == 522 || $bproduct_id == 222 || $bproduct_id == 566 || $bproduct_id == 502 || $bproduct_id == 542 || $bproduct_id == 379 || $bproduct_id == 338 || $bproduct_id == 330 || $bproduct_id == 182 || $bproduct_id == 1550 || $bproduct_id == 578 || $bproduct_id == 510 || $bproduct_id == 383 || $bproduct_id == 271 || $bproduct_id == 395 || $bproduct_id == 899 || $bproduct_id == 889 || $bproduct_id == 887 || $bproduct_id == 1065 || $bproduct_id == 1059 || $bproduct_id == 1053 || $bproduct_id == 941 || $bproduct_id == 1643 || $bproduct_id == 1635 || $bproduct_id == 1488 || $bproduct_id == 1485 || $bproduct_id == 986 || $bproduct_id == 968 || $bproduct_id == 965 || $bproduct_id == 1307 || $bproduct_id == 1214 || $bproduct_id == 1628 || $bproduct_id == 1623 || $bproduct_id == 1621) {
-		    ?>
-			<style type="text/css">.product-options-bottom{
-			display:none;
-			}</style>
-			<?php
-	    }
-	}
-    /*Issue #145 end */
-
     //Issue #155 removed Ecocert logo for certain product
-    if($bproduct_id == 1560) {
-		    ?>
-			<style type="text/css">.ecocertLogo{
-			display:none;
-			}</style>
-			<?php
-	}
-	
+    $jinput = JFactory::getApplication()->input;
+	$bproduct_id = $jinput->get('virtuemart_product_id');
+	if($bproduct_id == 1560) {
+            ?>
+            <style type="text/css">.ecocertLogo{
+            display:none;
+            }</style>
+            <?php
+    }
+
 	if (isset($global_params["show_prices"])) $see_price = $global_params["show_prices"];
 	
 	if ($global_params['use_default'] == 1) {
@@ -129,6 +114,7 @@ echo $currency->getCatproductMainData($parametri, $parent_product);
 	if ($parametri["show_basePrice"] == 1) { echo $currency->showTableField('th','cell_basePrice',JText::_('CATPRODUCT_TABLE_BASEPRICE'),'scope="col" data-type="currency"'); $colspan += 1; }
 	if ($parametri["show_basePriceWithTax"] == 1) { echo $currency->showTableField('th','cell_basePriceWithTax',JText::_('CATPRODUCT_TABLE_BASEPRICEWITHTAX'),'scope="col" data-type="currency"'); $colspan += 1; }
 	if ($parametri["show_priceWithoutTax"] == 1) { echo $currency->showTableField('th','cell_priceWithoutTax',JText::_('CATPRODUCT_TABLE_PRICEWITHOUTTAX'),'scope="col" data-type="currency"'); $colspan += 1; }
+  
 	if ($parametri["show_salesPrice"] == 1) { echo $currency->showTableField('th','cell_salesPrice',JText::_('CATPRODUCT_TABLE_SALESPRICE'),'scope="col" data-type="currency"'); $colspan += 1; }
 	if ($parametri["show_taxAmount"] == 1) { echo $currency->showTableField('th','cell_taxAmount',JText::_('CATPRODUCT_TABLE_TAXAMOUNT'),'scope="col" data-type="currency"'); $colspan += 1; }
 	if ($parametri["show_discountAmount"] == 1) { echo $currency->showTableField('th','cell_discountAmount',JText::_('CATPRODUCT_TABLE_DISCOUNTAMOUNT'),'scope="col" data-type="currency"'); $colspan += 1; }
@@ -142,6 +128,8 @@ echo $currency->getCatproductMainData($parametri, $parent_product);
 		}
 	}
 	
+
+    
 	if ($parametri["show_sum_weight"] == 1 && $see_price) { 
 		echo $currency->showTableField('th','cell_sum_product_weight',JText::_('CATPRODUCT_TABLE_SUM_WEIGHT'),'scope="col" data-type="currency"'); $colspan += 1; 
 	}
@@ -268,7 +256,7 @@ foreach ($viewData[0] as $group) {
 		foreach ($product['child']['customfieldsSorted']['normal'] as $productChild) {
 			
 			if($productChild->virtuemart_custom_id == 22) {
-				echo '<td class="poid-produit" colspan="2">'.$productChild->customfield_value.'</td>';
+				echo '<td class="poid-produit">'.$productChild->customfield_value.'</td>';
 			}
 		}
 
@@ -378,11 +366,34 @@ foreach ($viewData[0] as $group) {
 		if ($parametri["show_priceWithoutTax"] == 1 && $see_price) { echo $currency->showTableField('td','cell_priceWithoutTax','<div class="priceWithoutTax_text">'.$currency->createPriceDiv ('priceWithoutTax', '', $product['prices']).'</div>', 'data-title="'.JText::_('CATPRODUCT_TABLE_PRICEWITHOUTTAX').'" data-type="currency"');}
 		// Product final price with tax
 		if ($parametri["show_salesPrice"] == 1 && $see_price) { echo $currency->showTableField('td','cell_salesPrice','<div class="salesPrice_text">'.$currency->createPriceDiv ('salesPrice', '', $product['prices']).'</div>', 'data-title="'.JText::_('CATPRODUCT_TABLE_SALESPRICE').'" data-type="currency"');} */
+        
+     if ($parametri["show_priceWithoutTax"] == 1 && $see_price ) { 
+      // Conversion EUR => Dollar
+	  // for ECB convert
+	  //$tauxDollar = null;
+	  //$xml=simplexml_load_file('/var/www/vhosts/florihana-usa.com/test.florihana-usa.com/cache/daily.xml');
+	  
+	  //foreach($xml->Cube->Cube->children() as $cube) {
+	  //   if($cube['currency'] == 'USD'){
+		//	  $tauxDollar = doubleval($cube['rate']);
+		//	  break;
+	   //  }  
+	  // } 	
 
-		//BRUNO CAMELEONS FUSION DES CELLULE POUR GERER L'AFFICHAGE PARTICULIER/PRO
-		if ($parametri["show_priceWithoutTax"] == 1 && $see_price ) { 
-			echo $currency->showTableField('td','cell_salesPrice','<div class="salesPrice_text">'.$currency->createPriceDiv('priceWithoutTax', '', $product['prices']).$currency->createPriceDiv ('salesPrice', '', $product['prices']).'</div>','data-title="'.JText::_('CATPRODUCT_TABLE_PRICEWITHOUTTAX').'" data-type="currency"');
-		}
+    //for XE convert $tauxDollar = fgets(fopen('/var/www/vhosts/florihana-usa.com/new8/cache/USD_XE.txt', 'r')); 
+	  
+      //$priceWithoutTax = $product['prices']['priceWithoutTax'];
+      //$salesPrice = $product['prices']['salesPrice'];
+      
+      // Conversion EUR => Dollar
+      //$product['prices']['priceWithoutTax'] = round($product['prices']['priceWithoutTax'] * $tauxDollar, 2);
+      //$product['prices']['salesPrice'] = round($product['prices']['salesPrice'] * $tauxDollar, 2);
+
+	   echo $currency->showTableField('td','cell_salesPrice','<div class="salesPrice_text">'.$currency->createPriceDiv('priceWithoutTax', '', $product['prices']).$currency->createPriceDiv ('salesPrice', '', $product['prices']).'</div>','data-title="'.JText::_('CATPRODUCT_TABLE_PRICEWITHOUTTAX').'" data-type="currency"');
+		  // Restore original price
+      //$product['prices']['priceWithoutTax'] =  $priceWithoutTax ;
+      //$product['prices']['salesPrice'] = $salesPrice; 
+    }
 
 
 		// Tax amount
@@ -397,10 +408,10 @@ foreach ($viewData[0] as $group) {
 				if ($see_price) {
 					echo '<td class="cell_quantity" colspan="2" data-title="'.JText::_('CATPRODUCT_TABLE_QUANTITY').'">
 					<div class="wrapper_quantity">
-						<span class="quantity-controls fa fa-minus-square-o"><input class="quantity-controls quantity-minus" type="button"></span>
-						<span class="quantity-box"><input class="quantity-input" size="2" name="quantity[]" value="0" type="text" ></span>
-						<span class="quantity-controls fa fa-plus-square-o"><input class="quantity-controls quantity-plus" type="button"></span>
-					</div>
+                        <span class="quantity-controls"><img src="../plugins/vmcustom/catproduct/catproduct/css/minus.png" /><input class="quantity-controls quantity-minus" type="button"></span>
+                        <span class="quantity-box"><input class="quantity-input" size="2" name="quantity[]" value="0" type="text" ></span>
+                        <span class="quantity-controls"><img src="../plugins/vmcustom/catproduct/catproduct/css/add.png" /><input class="quantity-controls quantity-plus" type="button"></span>
+                    </div>
 					</td>';
 				} else {
 					echo '<td class="cell_quantity" data-title="'.JText::_('CATPRODUCT_TABLE_QUANTITY').'"><input type="hidden" name="quantity[]" value="0">';
@@ -481,7 +492,8 @@ foreach ($viewData[0] as $group) {
 	// total final price with tax
 	if ($parametri["show_total_salesPrice"] == 1 && $see_price) {
 		echo $currency->showTotalRow ( 'salesPrice', JText::_('CATPRODUCT_TABLE_TOTAL_SALESPRICE'),$currency->createPriceDiv ('', '', '0.00'), $colspan);
-	}
+	}      
+       
 	// show addtocartbutton
 	echo $see_price?$currency->showAddtocartButton('forall', $parametri, $colspan, 0, 1, $classes):'';
 ?>
