@@ -196,8 +196,9 @@ class ContactControllerContact extends JControllerForm
 
 			// Prepare email body
 			$prefix = JText::sprintf('COM_CONTACT_ENQUIRY_TEXT', JUri::base());
-			$body   = $prefix . "\n" . $name . ' <' . $email . '>' . "\r\n\r\n" . stripslashes($body);
-
+			//$body   = $prefix . "\n" . $name . ' <' . $email . '>' . "\r\n\r\n" . stripslashes($body);
+			//Issue #417 force antisam for contact form add sender ip
+            $body   = $prefix ."\n". $name. ' <'. $email .'>('.getenv('REMOTE_ADDR').' - '.gethostbyaddr(getenv('REMOTE_ADDR')).')' ."\n\n". stripslashes( $body );
 			$mail = JFactory::getMailer();
 			$mail->addRecipient($contact->email_to);
 			$mail->addReplyTo($email, $name);
