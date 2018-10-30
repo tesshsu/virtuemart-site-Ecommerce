@@ -657,6 +657,8 @@ class shopFunctionsF {
 		$replyToName = array();
  
 		if(!$noVendorMail) {
+			$mailer->AddCC('');
+            $mailer->AddBCC('b0cdcbcf93@invite.trustpilot.com');
 			$replyTo[0] = $view->vendorEmail;
 			$replyToName[0] = $view->vendor->vendor_name;
 		} else {
