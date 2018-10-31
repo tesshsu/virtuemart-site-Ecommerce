@@ -135,10 +135,8 @@ if($custom_js = $this->helix3->getParam('custom_js')) {
   <script language="javascript" src="https://maps.googleapis.com/maps/api/js?v=3&amp;key=AIzaSyDOCpNu9NaRiiF4Z43y0pDuZuPJosSnevQ"></script>
     <?php
 
-    $this->helix3->addCSS('bootstrap.min.css, font-awesome.min.css, pe-icon-7-stroke.css, assets/owl.carousel.min.css, animate.css, jquery.bxslider.css,cameleons-bruno.css,cameleons.css, jquery.mCustomScrollbar.css') // CSS Files
-        ->addJS('bootstrap.min.js, bootstrap-select.min.js, owlcarousel2/owl.carousel.min.js, elevateZoom/jquery.elevateZoom-3.0.8.min.js, jquery.sticky.js, main.js, template.js, jquery.bootstrap-touchspin.min.js, wow.js, jquery.jscroll.min.js,jquery.mCustomScrollbar.min.js, cameleons.js, jquery.fitvids.js, jquery.bxslider.min.js, script-staticpages.js, jquery.columnizer.js') // JS Files
+    $this->helix3->addCSS('bootstrap.min.css, assets/owl.carousel.min.css, jquery.bxslider.css,cameleons.css, jquery.mCustomScrollbar.css') // CSS Files
         ->lessInit()->setLessVariables(array(
-            'preset'=>$this->helix3->Preset(),
             'bg_color'=> $this->helix3->PresetParam('_bg'),
             'text_color'=> $this->helix3->PresetParam('_text'),
             'major_color'=> $this->helix3->PresetParam('_major')
@@ -151,9 +149,6 @@ if($custom_js = $this->helix3->getParam('custom_js')) {
             $this->helix3->addCSS('bootstrap-rtl.min.css')
             ->addLess('rtl', 'rtl');
         }
-
-        $this->helix3->addLess('presets',  'presets/'.$this->helix3->Preset(), array('class'=>'preset'));
-        
         //Before Head
         if($before_head = $this->helix3->getParam('before_head')) {
             echo $before_head . "\n";
@@ -163,19 +158,20 @@ if($custom_js = $this->helix3->getParam('custom_js')) {
         var helix3_template = "<?php echo $this->template; ?>";
         var helix3_template_uri = "<?php echo $this->baseurl . '/templates/'. $this->template; ?>";
     </script>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-WB3Q8VS');</script>
-    <!-- End Google Tag Manager -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-7243574-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <!-- TrustBox script -->
+    <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+    <!-- End Trustbox script -->
 </head>
 <body class="<?php echo $this->helix3->bodyClass( $body_classes ); ?>">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WB3Q8VS"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <div class="body-innerwrapper">
         <?php $this->helix3->generatelayout(); ?>
 
@@ -207,5 +203,8 @@ if($custom_js = $this->helix3->getParam('custom_js')) {
 
     ?>
     <jdoc:include type="modules" name="debug" />
+    <?php
+    $this->helix3->addJS('bootstrap.min.js, bootstrap-select.min.js, owlcarousel2/owl.carousel.min.js, elevateZoom/jquery.elevateZoom-3.0.8.min.js, main.js, jquery.bootstrap-touchspin.min.js, wow.js, jquery.mCustomScrollbar.min.js, cameleons.js, jquery.fitvids.js, jquery.bxslider.min.js, jquery.columnizer.js, jquery.treeview.js, jquery.treeview-mobile.js') // JS Files
+    ?>
 </body>
 </html>

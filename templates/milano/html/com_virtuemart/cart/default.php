@@ -103,7 +103,11 @@ $this->addCheckRequiredJs();
 	//	echo $this->loadTemplate ('cartfields');
 
 		?>  
-
+        <div class="row">
+            <div class="trustpilot-widget" data-locale="en-US" data-template-id="539ad60defb9600b94d7df2c" data-businessunit-id="564654390000ff000585815a" data-style-height="220px" data-style-width="100%" data-theme="light" data-tags="fastDelivery" data-stars="5">
+            <a href="https://www.trustpilot.com/review/florihana.com" target="_blank">Trustpilot</a>
+            </div>
+        </div>
 		<?php // Continue and Checkout Button END ?>
 		<input type='hidden' name='order_language' value='<?php echo $this->order_language; ?>'/>
 		<input type='hidden' name='task' value='updatecart'/>
