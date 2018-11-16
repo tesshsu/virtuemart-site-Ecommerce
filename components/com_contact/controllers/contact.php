@@ -191,6 +191,7 @@ class ContactControllerContact extends JControllerForm
 
 			$name    = $data['contact_name'];
 			$email   = JStringPunycode::emailToPunycode($data['contact_email']);
+			$object = $data['list_suject'];
 			$subject = $data['contact_subject'];
 			$body    = $data['contact_message'];
 
@@ -203,7 +204,7 @@ class ContactControllerContact extends JControllerForm
 			$mail->addRecipient($contact->email_to);
 			$mail->addReplyTo($email, $name);
 			$mail->setSender(array($mailfrom, $fromname));
-			$mail->setSubject($sitename . ': ' . $subject);
+			$mail->setSubject($sitename . ' require object: ' . $object );
 			$mail->setBody($body);
 			$sent = $mail->Send();
 

@@ -30,17 +30,6 @@
 			required="true"
 		/>
 		<field
-			name="contact_subject"
-			type="text"
-			label="COM_CONTACT_CONTACT_MESSAGE_SUBJECT_LABEL"
-			description="COM_CONTACT_CONTACT_MESSAGE_SUBJECT_DESC"
-			id="contact-emailmsg"
-			size="60"
-			filter="string"
-			validate="contactemailsubject"
-			required="true"
-		/>
-		<field
 			name="contact_message"
 			type="textarea"
 			label="COM_CONTACT_CONTACT_ENTER_MESSAGE_LABEL"
@@ -52,14 +41,12 @@
 			validate="contactemailmessage"
 			required="true"
 		/>
-		<field
-			name="contact_email_copy"
-			type="checkbox"
-			label="COM_CONTACT_CONTACT_EMAIL_A_COPY_LABEL"
-			description="COM_CONTACT_CONTACT_EMAIL_A_COPY_DESC"
-			id="contact-email-copy"
-			default="0"
-		/>
+		<field name="list_suject" type="list" default="" required="true" label="Select an option" description="">
+		  <option value="">COM_CONTACT_CONTACT_SELECT</option>
+		  <option value="Service Client">COM_CONTACT_CONTACT_SUJET_ONE</option>
+		  <option value="Service Export">COM_CONTACT_CONTACT_SUJET_TWO</option>
+		  <option value="Autre">COM_CONTACT_CONTACT_SUJET_THERE</option>
+		</field>
 	</fieldset>
 	<fieldset name="captcha">
 		<field

@@ -22,6 +22,10 @@ if (isset($this->error)) : ?>
 	<form id="contact-form" action="<?php echo JRoute::_('index.php'); ?>" method="post" class="form-validate">
         <div class="row">
             <div class="col-md-4 no-padding-left text-left"> 
+            	<div class="control-group">
+                    <label><?php echo JText::_('COM_CONTACT_CONTACT_MESSAGE_SUBJECT_LABEL'); ?></label>
+    				<?php echo $this->form->getInput('list_suject'); ?>
+    			</div>
     		    <div class="control-group">
                     <label><?php echo JText::_('COM_CONTACT_CONTACT_EMAIL_NAME_LABEL'); ?></label>
     				<?php echo $this->form->getInput('contact_name'); ?>
@@ -30,19 +34,12 @@ if (isset($this->error)) : ?>
                     <label><?php echo JText::_('COM_CONTACT_EMAIL_LABEL'); ?></label>
     				<?php echo $this->form->getInput('contact_email'); ?>
     			</div>
-    			<div class="control-group">
-                    <label><?php echo JText::_('COM_CONTACT_CONTACT_MESSAGE_SUBJECT_LABEL'); ?></label>
-    				<?php echo $this->form->getInput('contact_subject'); ?>
-    			</div>
             </div>
     		<div class="col-md-8 text-left">
                 <label><?php echo JText::_('COM_CONTACT_CONTACT_ENTER_MESSAGE_LABEL'); ?></label>
     			<?php echo $this->form->getInput('contact_message'); ?>
     		</div>
         </div>
-		<?php if ($this->params->get('show_email_copy')) : ?>
-			<?php echo $this->form->getInput('contact_email_copy'); ?>
-		<?php endif; ?>
 		<?php // Dynamically load any additional fields from plugins. ?>
 		<?php foreach ($this->form->getFieldsets() as $fieldset) : ?>
 			<?php if ($fieldset->name != 'contact') : ?>
