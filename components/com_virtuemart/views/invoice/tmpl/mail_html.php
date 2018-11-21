@@ -54,13 +54,16 @@ defined('_JEXEC') or die('Restricted access');
 	    td.vmdoc-header-separator, td.vmdoc-header-separator hr { padding: 0; margin-top: 0; margin-bottom: 0; }
 	    td.vmdoc-header-separator { padding: 0; }
 	</style>
-   <script type="application/json+trustpilot">
-		{
-		  "recipientName": "<?php echo $this->orderDetails['details']['BT']->first_name; ?>",
+	<script type="application/json+trustpilot">
+        {
+          "recipientName": "<?php echo $this->orderDetails['details']['BT']->first_name; ?>",
           "recipientEmail": "<?php echo $this->orderDetails['details']['BT']->email; ?>",
-          "referenceId": "<?php echo $this->orderDetails['details']['BT']->virtuemart_order_id; ?>"
-		}
+          "referenceId": "<?php echo $this->orderDetails['details']['BT']->virtuemart_order_id; ?>",
+          "locale": "en-GB",
+          "templateId": "5bc83921143a0900011bac0e"
+        }
     </script>
+
     </head>
 
     <body style="background: #F2F2F2;word-wrap: break-word;">
