@@ -44,9 +44,19 @@
 		<field name="list_suject" type="list" default="" required="true" label="Select an option" description="">
 		  <option value="">COM_CONTACT_CONTACT_SELECT</option>
 		  <option value="Service Client">COM_CONTACT_CONTACT_SUJET_ONE</option>
-		  <option value="Service Export">COM_CONTACT_CONTACT_SUJET_TWO</option>
+		  <option value="Service d'exportation">COM_CONTACT_CONTACT_SUJET_TWO</option>
 		  <option value="Autre">COM_CONTACT_CONTACT_SUJET_THERE</option>
 		</field>
+		<field
+			name="contact_website"
+			type="text"
+			label="contact_website"
+			description="contact_website"
+			id="contact_website"
+			validate="contactwebsite"
+			size="1"
+			filter="string"
+		/>
 	</fieldset>
 	<fieldset name="captcha">
 		<field
